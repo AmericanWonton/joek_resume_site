@@ -45,7 +45,7 @@ q:before, q:after {
 }
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+    border-spacing: 0;
 }
 
 /* ------------------------------------------------- */
@@ -53,7 +53,10 @@ table {
 body {
     display: flex;
     flex-flow: row wrap;
-    background-color: black;
+    /* background image */
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN36ChyOUvSwnwVi7flolYO0PqtybaM5qOGbFC-IjWcVjWYuVOfw&s");
+    background-repeat: repeat;
+    background-size: contain;
 }
 
 /* This is the main header content */
@@ -61,87 +64,96 @@ header {
     margin-top: 0px;
     margin: 0px;
     display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
+    flex-flow: row wrap;
     width: 100%;
     color: white;
     background-color: pink;
 }
 
-/* This is the main page section */
-.mainpage {
+.namediv {
     display: flex;
-    flex-flow: row wrap;
-    height: 100vh;
-    width: 100%;
-}
-
-/* This is the content portion of the main page */
-#contentdiv {
-    /* Major Design Layout */
-    display: flex;
-    flex-flow: row wrap;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-
-    /* color/design */
-    background-color: darkgoldenrod;
-}
-
-/* This is the pullout link option on the side. */
-
-#outerlinkpullout {
-    /* General layout and format */
-    position: fixed;
-    top: 50%;
-    left: 10px;
-    display: flex;
-    flex-flow: row wrap;
-    height: 200px;
-    width: 200px;
-
-    /* color/design */
-    background-color: gray;
-}
-
-#linkpullout {
-    display: flex; 
-    flex-flow: row wrap;
+    flex-wrap: row wrap;
     align-content: center;
     justify-content: center;
-    height: 100%;
-    width: 50%;
-    padding: 5px;
     background-color: teal;
-}
-/* These are the links for the pullout on the side. */
-.navlinks {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-/*This is the button that pulls the sidebar out */
-#buttonnav {
-    align-self: center;
-    background-color: bisque;
-    color: red;
-    height: 05%;;
-    width: 5vw;
-}
-
-footer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+    border: 2px solid black;
     width: 100%;
-    background-color: yellow;
+    /* Order for mobile */
+    order: 1;
 }
 
-img {
+.myName {
+    /* This is for style */
+    font-size: 3rem;
+}
+
+.linkdiv{
+    display: flex;
+    flex-wrap: row wrap;
+    align-content: center;
+    justify-content: flex-end;
+    background-color: purple;
+    border: 2px solid black;
+    width: 100%;
+    /* Order for mobile */
+    order: 3;
+}
+
+.inspirationaldiv{
+    display: flex;
+    flex-wrap: row wrap;
+    align-content: center;
+    justify-content: center;
+    background-color: gray;
+    border: 2px solid black;
+    width: 100%;
+    /* Order for mobile */
+    order: 2;
+}
+
+a {
+    font-size: 1rem;
+    margin: 5px;
+    padding: 5px;
+}
+
+/* This is the main page section */
+.maindiv {
+    /* flexbox arrangements */
+    display: flex;
+    flex-wrap: row wrap;
+    height: 100vh;
+    width: 100%;
+    border: 2px dashed black;
+}
+
+.myfacediv{
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: flex-end;
+    width: 100%;
+    border: 2px solid orange;
+    background-image: ;
+}
+
+.myface {
+    width: 40vw;
+    height: 40vh;
     margin: 10px;
-    width: 10vw;
-    height: 10vh;
+    image
+}
+
+
+.itsmediv {
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: flex-end;
+    width: 100%;
+    border: 2px solid black;
+}
+
+.itsme{
+    font-size: 2rem;
+    padding: 2px;
+    margin: 2px;
 }
