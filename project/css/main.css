@@ -54,7 +54,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     /* background image */
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN36ChyOUvSwnwVi7flolYO0PqtybaM5qOGbFC-IjWcVjWYuVOfw&s");
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN36ChyOUvSwnwVi7flolYO0PqtybaM5qOGbFC-IjWcVjWYuVOfw&s"); */
     background-repeat: repeat;
     background-size: contain;
 }
@@ -99,6 +99,45 @@ header {
     order: 3;
 }
 
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: purple;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
 .inspirationaldiv{
     display: flex;
     flex-wrap: row wrap;
@@ -117,43 +156,103 @@ a {
     padding: 5px;
 }
 
+/*  ###################################### MAIN PAGE SECTION ##########################*/
 /* This is the main page section */
 .maindiv {
     /* flexbox arrangements */
     display: flex;
     flex-wrap: row wrap;
-    height: 100vh;
+    height: 150vh;
     width: 100%;
     border: 2px dashed black;
 }
 
-.myfacediv{
-    display: flex;
-    flex-wrap: row wrap;
-    justify-content: flex-end;
+/* This orders our picture and introduction quote */
+.intro_container {
     width: 100%;
-    border: 2px solid orange;
-    background-image: ;
+    height: 140vh;
+    border: 2px solid green;
+}
+
+/* This gives the introudction to me with a greeting next to picture */
+.myfacediv{
+    /* flexbox arrangements */
+    display: flex;
+    flex-wrap: row nowrap;
+    justify-content: center;
+    align-content: center;
+    height: 40vh;
+    width: 100%;
+    border: 1px solid orange;
 }
 
 .myface {
-    width: 40vw;
-    height: 40vh;
-    margin: 10px;
-    image
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
 }
 
-
-.itsmediv {
+/* This is the text introducing the user to me */
+.emptyfacediv {
+    /* flexbox arrangements */
     display: flex;
     flex-wrap: row wrap;
-    justify-content: flex-end;
+    justify-content: center;
+    align-content: center;
     width: 100%;
-    border: 2px solid black;
+    height: 10vh;
+    border: 1px solid brown;
+    background-color: chartreuse;
 }
-
+/* Here's the text greeting the user */
 .itsme{
+    align-self: center;
     font-size: 2rem;
     padding: 2px;
     margin: 2px;
+}
+
+/* Here's a quick info bit about me...the 'quicksphele' */
+.quicksphelediv {
+    /* flexbox arrangements */
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid pink;
+    background-color: rgb(255, 42, 42);
+}
+
+.quicksphelep {
+    font-size: 1rem;
+    padding: 5px;
+    margin: 5px;
+}
+
+/* Here's a quick showing of my skills. */
+.what_doing_container {
+    width: 100%;
+    height: auto;
+    border: 2px solid powderblue;
+}
+
+.comelook_h3 {
+    align-self: center;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2px;
+    margin: 2px;
+}
+
+ol {
+
+}
+
+/*  ###################################### Footer SECTION ##########################*/
+footer {
+    background-color: burlywood;
+    width: 100%;
 }

@@ -28,7 +28,14 @@
             <div class="linkdiv">
                 <a href="about.html">About Me</a>
                 <!--Not sure how to pull off the 'Check Out My Work' tab...-->
-                <a href="gamedesign.html">Checkout My Work</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Check Out My Work!</button>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
                 <a href="contact.html">Contact</a>
             </div>
             <!--This will contain a short, inspirational quote-->
@@ -39,11 +46,42 @@
 
         <!--Main page body-->
         <div class="maindiv">
-            <div class="myfacediv">
-                <img class="myface" src="img/Joe+Keller+Front.jpg" alt="A picture of me!">
+            <!--Quick Me Info Section-->
+            <div class="intro_container">
+                <div class="myfacediv">
+                    <img src="img/Joe+Keller+Front.jpg" alt="Picture of me!" class="myface">
+                </div>
+                <div class="emptyfacediv">
+                    <h2 class="itsme">Hello, my name is Joseph Keller!</h2>
+                </div>
+                <div class="quicksphelediv">
+                    <p class="quicksphelep">I'm a Developer of web apps, mobile apps, and 
+                        video games. I'm always happy to move into the next big opportunity I find!
+                        Currently working at Centene on a Software Production Support team. I’m also collaborating on game
+                        prototypes and app software on mobile devices. Around my colleagues I'm known 
+                        for my leadership skills, as well as dedication, cooperation, and creativity 
+                        when tackling problems.</p>
+                </div>
+                <!--Quick 'What am I doing' section-->
+                <div class="what_doing_container">
+                    <h3 class="comelook_h3">Check out what I'm interested in...the list is always growing!</h3>
+                    <ol>
+                        <li>
+                            <p class="quicksphelep">In my current role of Software Production Support,
+                                I get to work with a lot of IDE’s, languages, and technology stacks. 
+                                There’s system/server monitoring like TIBCO Queues and Kibana, Oracle 
+                                and MS SQL where I run and develop database queries, SSIS packages, 
+                                as well as Python, C++, and Java in my assistant development work. 
+                                I’m currently learning Golang and Mongo for our companies new upgrade! 
+                                The technology stack is getting higher and higher!</p>
+                        </li>
+                    </ol>
+                </div>
             </div>
-            
         </div>
 
+
+        <!--This is the footer content-->
+        <footer>This is the footer</footer>
     </body>                    
 </html>
