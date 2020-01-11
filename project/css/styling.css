@@ -1,19 +1,7 @@
-ol {
-    display: block;
-    list-style-type: upper-roman;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 2px;
+/* Below are for my lists and unordered lists */
+.myul {
+    list-style: circle;
 }
-
-ul {
-    display: list-item;
-    list-style-type: upper-roman;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 2px;
-    margin-right: 0;
-    padding-left: 2px;
+.myol {
+    list-style: upper-roman;
 }
