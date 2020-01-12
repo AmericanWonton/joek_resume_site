@@ -218,7 +218,7 @@ a {
 .quicksphelediv {
     /* flexbox arrangements */
     display: flex;
-    flex-wrap: row wrap;
+    flex-wrap: row nowrap;
     justify-content: center;
     align-content: center;
     width: 100%;
@@ -284,6 +284,8 @@ footer {
     /* Flex-box display */
     display: flex;
     flex-flow: row nowrap;
+    align-content: center;
+    justify-content: center;
 }
 
 .infospace {
@@ -313,4 +315,37 @@ footer {
 .infoimg {
     width: 25px;
     height: 25px;
+}
+
+/* This is formatting for other images in the project */
+.bigprojectpicture {
+    /* This is for formatting the pic */
+    width: 75vw;
+    height: 75vh;
+    /* This keeps it aligned in the center for viewing */
+    align-content: center;
+    padding: 5px;
+}
+
+/* This is a testing zone */
+.projectdownloaddiv {
+    /* Flexbox Orientation */
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    /* Coloring */
+    border: 2px dashed grey;
+}
+
+.projectlinkdiv {
+    /* Flexbox Orientation */
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    width: 30.33%;
+    background-color: black;
+    border: 4px dashed red;
 }
