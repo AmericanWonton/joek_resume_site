@@ -161,7 +161,7 @@ a {
 
 /* This is for the 'above the fold' look */
 .above_fold {
-    height: 120vh;
+    height: 100vh;
     border: 5px solid black;
 }
 
@@ -216,11 +216,8 @@ a {
 
 /* Here's a quick info bit about me...the 'quicksphele' */
 .quicksphelediv {
-    /* flexbox arrangements */
-    display: flex;
-    flex-wrap: row nowrap;
-    justify-content: center;
-    align-content: center;
+    /* flexbox arrangements...are they needed? */
+
     width: 100%;
     height: auto;
     border: 1px solid pink;
@@ -228,6 +225,7 @@ a {
 }
 
 .quicksphelep {
+    align-self: center;
     font-size: 1rem;
     padding: 5px;
     margin: 5px;
@@ -315,6 +313,12 @@ footer {
 .infoimg {
     width: 25px;
     height: 25px;
+}
+
+/* This is for the contact form */
+.divform {
+    background-color: initial;
+    border: 3px dashed peru;
 }
 
 /* This is formatting for other images in the project */

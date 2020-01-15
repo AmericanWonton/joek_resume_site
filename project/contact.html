@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Joseph Keller Site</title>
+        <!--Phone pixel density markup-->
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <!--Media Query and stylesheets-->
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/styling.css">
+        <link rel="stylesheet" media="(min-width: 600px)" href="css/mq_600.css">
+        <link rel="stylesheet" media="(min-width: 900px)" href="css/mq_900.css">
+        <!--Fonts-->
+
+        <!--Javascript-->
+        <script type="text/javascript" src="js/moveNav.js"></script>
+
+    </head>
+    <body>
+        <!--Header Navigation Area-->
+        <header>
+            <!--This will contain my name in large font-->
+            <div class="namediv">
+                <h1 class="myName">Joseph Keller</h1>
+            </div>
+            <!--This will contain the links throughout my page-->
+            <div class="linkdiv">
+                <a href="index.html">About Me</a>
+                <!--Not sure how to pull off the 'Check Out My Work' tab...-->
+                <div class="dropdown">
+                    <button class="dropbtn">Check Out My Work!</button>
+                    <div class="dropdown-content">
+                        <a href="softwaredesign.html">Software Design</a>
+                        <a href="gamedesign.html">Game Design</a>
+                        <a href="leveldesign.html">Level Design</a>
+                        <a href="writing.html">Writing</a>
+                    </div>
+                </div>
+                <a href="contact.html">Contact</a>
+            </div>
+            <!--This will contain a short, inspirational quote-->
+            <div class="inspirationaldiv">
+                <p>Something inspirational here...</p>
+            </div>
+        </header>
+        <!--Here's the 'above the fold' section.-->
+        <div class="above_fold">
+            <!--Here's a large picture of me-->
+            <div class="myfacediv">
+                <img class="myface" src="img/JoeKellerImage2.jpg">
+            </div>
+            <!--Main form content page-->
+            <div class="maindiv">
+                <h2 class="itsme">Thanks for visiting, be sure to keep in touch!</h2>
+                <br><br>
+                <div class="divform">
+                    form goes here.
+                </div>
+            </div>
+        </div>
+
+        <!--My Contact Info section-->
+        <div class="maindiv">
+            <div class="quicksphelediv">
+                <p class="quicksphelep">Name: Joseph Keller</p>
+                <p class="quicksphelep">Phone Number: 314-322-8594</p>
+                <p class="quicksphelep">Email: jbkeller0303@gmail.com</p>
+                <p class="quicksphelep">LinkedIn: <a href="https://www.linkedin.com/in/josephbk/" alt="Linkedin">This should be a linkedinbutton to click</a></p>
+            </div>
+        </div>
+        
+        <!--This is the footer content-->
+        <footer>
+            <div class="myname">
+                Made by Joseph Keller
+            </div>
+            <div class="infodiv">
+                <div class="infospace">
+                    <div class="svgimgdiv">
+                        <img class="infoimg" src="img/phone_svg.svg">
+                    </div>
+                    <p class="infop">phone num here</p>
+                </div>
+                <div class="infospace">
+                    <div class="svgimgdiv">
+                        <img class="infoimg" src="img/phone_svg.svg">
+                    </div>
+                    <p class="infop">email info here</p>
+                </div>
+            </div>
+        </footer>
+    </body>                    
+</html>
