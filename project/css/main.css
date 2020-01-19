@@ -4,7 +4,7 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
+html, body, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -71,6 +71,7 @@ header {
 }
 
 .namediv {
+    /* Flexbox setup */
     display: flex;
     flex-wrap: row wrap;
     align-content: center;
@@ -88,6 +89,7 @@ header {
 }
 
 .linkdiv{
+    /* Flexbox Setup */
     display: flex;
     flex-wrap: row wrap;
     align-content: center;
@@ -139,6 +141,7 @@ header {
 /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
 
 .inspirationaldiv{
+    /* flexbox content */
     display: flex;
     flex-wrap: row wrap;
     align-content: center;
@@ -148,6 +151,46 @@ header {
     width: 100%;
     /* Order for mobile */
     order: 2;
+}
+
+/* This is the div section for downloading my resumes */
+.downloadresdiv {
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.instructionressection {
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    background-color: yellow;
+    box-sizing: border-box;
+}
+
+.resdownloadsection {
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 50%;
+    background-color: green;
+    box-sizing: border-box;
+}
+
+.resumeInfo {
+    font-size: 1em;
+    margin: 2px;
+    padding: 2px;
+    width: 100%;
+    /* text size and alignment */
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 a {
@@ -161,8 +204,9 @@ a {
 
 /* This is for the 'above the fold' look */
 .above_fold {
-    height: 100vh;
+    height: 115vh;
     border: 5px solid black;
+    box-sizing: border-box;
 }
 
 .maindiv {
@@ -322,34 +366,14 @@ footer {
 }
 
 /* This is formatting for other images in the project */
-.bigprojectpicture {
+.bigprojectpicture_mobile {
     /* This is for formatting the pic */
-    width: 75vw;
-    height: 75vh;
+    width: 5vw;
+    height: 5vh;
     /* This keeps it aligned in the center for viewing */
     align-content: center;
-    padding: 5px;
+    padding: 1px;
+    margin: 1px;
 }
 
 /* This is a testing zone */
-.projectdownloaddiv {
-    /* Flexbox Orientation */
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    align-content: center;
-    justify-content: center;
-    /* Coloring */
-    border: 2px dashed grey;
-}
-
-.projectlinkdiv {
-    /* Flexbox Orientation */
-    display: flex;
-    flex-flow: column wrap;
-    align-content: center;
-    justify-content: center;
-    width: 30.33%;
-    background-color: black;
-    border: 4px dashed red;
-}
