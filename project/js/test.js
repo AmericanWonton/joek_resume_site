@@ -4,7 +4,7 @@ var whichPic2 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 var whichPic3 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 
 /* The first three functions are called when a User clicks either the left or right
-Arrow buttons to change the pictures...they are used to add 1 or lose 1 to the 'whichpic' variable assossiated
+Arrow buttons to change the pictures...they are used to add 1 or lose 1 to the 'whichpic' variable associated
 to it. 
 */
 
@@ -99,15 +99,36 @@ function displayPicSet(pictureNum, targetedID){
             switch (pictureNum){
                 case 0:
                     //Display first picture for group pic 1
-                    document.getElementById("bigprojectpicture_mobile1").src = "img/test_image.jpg";
+                    var dogPic = document.getElementById("bigprojectpicture_mobile1");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/test_image.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
                     break;
                 case 1:
                     //Display second picture for group pic 1
-                    document.getElementById("bigprojectpicture_mobile1").src = "img/test_image_2.jpg";
+                    var dogPic = document.getElementById("bigprojectpicture_mobile1");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/test_image_2.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
                     break;
                 case 2:
                     //Display third picture for group pic 1
-                    document.getElementById("bigprojectpicture_mobile1").src = "img/test_image_3.jpg";
+                    var dogPic = document.getElementById("bigprojectpicture_mobile1");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/test_image_3.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
                     break;
                 default:
                     //write error
@@ -119,19 +140,47 @@ function displayPicSet(pictureNum, targetedID){
             switch (pictureNum){
                 case 0:
                     //Display first picture for group pic 2
-                    document.getElementById("bigprojectpicture_mobile2").src = "img/test_image.jpg";
+                    var dogPic = document.getElementById("bigprojectpicture_mobile2");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/test_image.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
                     break;
                 case 1:
                     //Display second picture for group pic 2
-                    document.getElementById("bigprojectpicture_mobile2").src = "img/test_image_2.jpg";
+                    var dogPic = document.getElementById("bigprojectpicture_mobile2");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/test_image_2.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
                     break;
                 case 2:
                     //Display third picture for group pic 2
-                    document.getElementById("bigprojectpicture_mobile2").src = "img/test_image_3.jpg";
+                    var dogPic = document.getElementById("bigprojectpicture_mobile2");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/test_image_3.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
                     break;
                 case 3:
                     //Display fourth picture for group pic 2
-                    document.getElementById("bigprojectpicture_mobile2").src = "img/test_image_4.png";
+                    var dogPic = document.getElementById("bigprojectpicture_mobile2");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/test_image_4.png";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
                 default:
                     //write error
                     console.log("Error in flipping pictures in test.js.(Area2).");
@@ -144,15 +193,36 @@ function displayPicSet(pictureNum, targetedID){
             switch (pictureNum){
                 case 0:
                     //Display first picture for group pic 3
-                    document.getElementById("bigprojectpicture_mobile3").src = "img/test_image.jpg";
+                    var dogPic = document.getElementById("bigprojectpicture_mobile3");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/test_image.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
                     break;
                 case 1:
                     //Display second picture for group pic 3
-                    document.getElementById("bigprojectpicture_mobile3").src = "img/test_image_2.jpg";
+                    var dogPic = document.getElementById("bigprojectpicture_mobile3");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/test_image_2.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
                     break;
                 case 2:
                     //Display first picture for group pic 3
-                    document.getElementById("bigprojectpicture_mobile3").src = "img/test_image_3.jpg";
+                    var dogPic = document.getElementById("bigprojectpicture_mobile3");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/test_image_3.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
                     break;
                 default:
                     //write error
@@ -167,9 +237,16 @@ function displayPicSet(pictureNum, targetedID){
 }
 
 function testFunc(){
-    document.getElementById("stuffshower").innerHTML = "Hey, we changed the HTML";
+    var elem = document.getElementById("stuffshower");
+    elem.style.transition = "opacity .1s linear 0s";
+    elem.style.opacity = "0";
+    setTimeout(function() {
+        elem.innerHTML = "Hey, we changed the HTML, okay?";
+        elem.style.transition = "opacity .1s linear 0s";
+        elem.style.opacity = "1";
+    }, 100);
 }
 
 function superTest(){
-    document.getElementById("bigprojectpicture_mobile1").src = "img/test_image_2.jpg"
+    document.getElementById("bigprojectpicture_mobile1").src = "img/test_image_2.jpg";
 }
