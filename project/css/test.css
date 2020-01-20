@@ -40,7 +40,7 @@
     
 }
 
-.bigprojectpicture_mobile {
+#bigprojectpicture_mobile1 {
     /* This is for formatting the pic */
     width: 45vw;
     height: 45vh;
@@ -48,4 +48,33 @@
     align-content: center;
     padding: 1px;
     margin: 1px;
+}
+
+#bigprojectpicture_mobile2 {
+    /* This is for formatting the pic */
+    width: 45vw;
+    height: 45vh;
+    /* This keeps it aligned in the center for viewing */
+    align-content: center;
+    padding: 1px;
+    margin: 1px;
+}
+
+#bigprojectpicture_mobile3 {
+    /* This is for formatting the pic */
+    width: 45vw;
+    height: 45vh;
+    /* This keeps it aligned in the center for viewing */
+    align-content: center;
+    padding: 1px;
+    margin: 1px;
+}
+
+
+.showstuff {
+    border: 2px solid black;
+}
+
+#stuffshower {
+
 }

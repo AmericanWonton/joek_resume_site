@@ -1,9 +1,7 @@
 To Do List:
 
 1. Try to make a form that will take information.
-2. Make a div that can do sliding photos for those content sections.
-3. Figure out how to have Users download a file from a link.
+2. Make a div that can animate picture changes when buttons are clicked on.
 4. Insert Logo pictures down in the footer and header.
-5. Figure out how to let Users download my Resume
 
 So apparently if you want flexbox to work sometimes, you just need 'wrap'...not row wrap or column wrap...the hell?
