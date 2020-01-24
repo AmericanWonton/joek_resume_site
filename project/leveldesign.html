@@ -14,6 +14,7 @@
 
         <!--Javascript-->
         <script type="text/javascript" src="js/moveNav.js"></script>
+        <script type="text/javascript" src="js/picture_gallery.js"></script>
 
     </head>
     <body>
@@ -72,7 +73,21 @@
                 </div>
                 <!--Test Level Pictures-->
                 <div class="infodiv">
-                    <h2 class="itsme">THERE SHOULD BE SOME SLIDING PICTURES HERE WITH A BUTTON.</h2>
+                    <div class="picturegallerydiv">
+                        <div class="buttonspacediv">
+                            <button class="buttonclicker" id="button_pic" onclick="changePicSet(0, 2)">
+                                Back
+                            </button>
+                        </div>
+                        <div class="bigprojectpicture_div">
+                            <img id="bigprojectpicture_mobile3" src="img/levelDesign/Bathroom.png" alt="LevelDesign Picture">
+                        </div>
+                        <div class="buttonspacediv">
+                            <button class="buttonclicker" id="button_pic" onclick="changePicSet(1, 2)">
+                                Next
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <!--Here's my section for the assets-->
                 <div class="quicksphelediv">
@@ -85,10 +100,6 @@
                             <i>FBX Assets Download</i>
                         </a>
                     </p>
-                </div>
-                <!--Here's our FBX Assets Pictures-->
-                <div class="infodiv">
-                    <h2 class="itsme">THERE SHOULD BE SOME SLIDING PICTURES HERE WITH A BUTTON.</h2>
                 </div>
             </div>
             

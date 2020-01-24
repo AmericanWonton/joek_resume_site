@@ -361,9 +361,70 @@ footer {
 
 /* This is for the contact form */
 .divform {
-    background-color: initial;
+    background-color: pink;
     border: 3px dashed peru;
 }
+
+.formMobile {
+
+}
+
+.contactFormRow {
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    background-color: cornflowerblue;
+    padding: 5px;
+}
+
+.inputTextMobile{
+    width: 45%;
+    border: 2px solid orange;
+    display: inline-block;
+}
+
+.inputTextMobileMessage {
+    width: 45%;
+    /* height added for message stuff */
+    height: 10vh;
+    /* text-align used for message stuff */
+    text-align: left;
+    vertical-align: text-top;
+    text-align
+    border: 2px solid orange;
+    display: inline-block;
+}
+
+.inputTitleDivMobile{
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-end;
+    width: 45%;
+    border: 2px solid teal;
+}
+
+.inputTitlePMobile {
+    font-size: 1.5rem;
+    margin: 2px;
+}
+
+.phoneNumDiv {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 45%;
+    /* Debug colors */
+    background-color: orchid;
+}
+
+
+
+
 
 /* This is for formatting pictures on mobile */
 .picturegallerydiv {
@@ -438,6 +499,16 @@ footer {
     margin: 1px;
 }
 
+#bigprojectpicture_mobile4 {
+    /* This is for formatting the pic */
+    width: 45vw;
+    height: 45vh;
+    /* This keeps it aligned in the center for viewing */
+    align-content: center;
+    padding: 1px;
+    margin: 1px;
+}
+
 
 .showstuff {
     border: 2px solid black;
@@ -445,6 +516,23 @@ footer {
 
 #stuffshower {
     opacity: 100%;
+}
+
+/* This is for showing and displaying video */
+.videoDiv {
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    /* padding */
+    padding: 5px;
+    margin: 5px;
+}
+
+.YTVideoPlayer {
+    width: 420px;
+    height: 345px;
 }
 
 /* This is a testing zone */

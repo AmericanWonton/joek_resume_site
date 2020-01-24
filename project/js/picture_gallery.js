@@ -11,7 +11,7 @@ to it.
 function changePicSet(leftOright, setOPics){
     /* Take the integer, (0 is go back, 1 is go forward) and return which pic should be displayed */
     if (leftOright === 0) {
-        /* Which set of Pictures is getting moved? 0 is Trashtronaught, 1 is middle, 2 is bottom. */
+        /* Which set of Pictures is getting moved? 0 is Trashtronaught, 1 is Die-R-Combat, 2 is LevelDesign Test Level. */
         switch(setOPics){
             case 0:
                 //Trashtronaught set of pics getting moved down. 
@@ -24,24 +24,34 @@ function changePicSet(leftOright, setOPics){
                 displayPicSet(whichPic1, "bigprojectpicture_mobile1");
                 break;
             case 1:
-                //Middle set of pics getting moved down. 
+                //Die-R-Combat set of pics getting moved down. 
                 if (whichPic2 === 0){
-                    whichPic2 = 3;
+                    whichPic2 = 8;
                 }else{
-                    whichPic2 = whichPic2 -1;
+                    whichPic2 = whichPic2 - 1;
                 }
                 // Display picture based on switch num
                 displayPicSet(whichPic2, "bigprojectpicture_mobile2");
                 break;
             case 2:
-                //Bottom set of pics getting moved down. 
+                //Level Design set of pics getting moved down. 
                 if (whichPic3 === 0){
-                    whichPic3 = 2;
+                    whichPic3 = 10;
                 }else{
                     whichPic3 = whichPic3 -1;
                 }
                 // Display picture based on switch num
                 displayPicSet(whichPic3, "bigprojectpicture_mobile3");
+                break;
+            case 3:
+                //Storyboards getting moved down
+                if (whichPic3 === 0){
+                    whichPic3 = 7;
+                }else{
+                    whichPic3 = whichPic3 -1;
+                }
+                // Display picture based on switch num
+                displayPicSet(whichPic3, "bigprojectpicture_mobile4");
                 break;
             default:
                 //This is an error display. 
@@ -51,7 +61,7 @@ function changePicSet(leftOright, setOPics){
         /* Which set of Pictures is getting moved? 0 is top, 1 is middle, 2 is bottom. */
         switch(setOPics){
             case 0:
-                //Top set of pics getting moved up. 
+                //Trashtronaught set of pics getting moved up. 
                 if (whichPic1 === 4){
                     whichPic1 = 0;
                 }else{
@@ -61,8 +71,8 @@ function changePicSet(leftOright, setOPics){
                 displayPicSet(whichPic1, "bigprojectpicture_mobile1");
                 break;
             case 1:
-                //Middle set of pics getting moved up. 
-                if (whichPic2 === 3){
+                //Die-R-Combat set of pics getting moved up. 
+                if (whichPic2 === 8){
                     whichPic2 = 0;
                 }else{
                     whichPic2 = whichPic2 + 1;
@@ -71,14 +81,24 @@ function changePicSet(leftOright, setOPics){
                 displayPicSet(whichPic2, "bigprojectpicture_mobile2");
                 break;
             case 2:
-                //Bottom set of pics getting moved up. 
-                if (whichPic3 === 2){
+                //Level Design set of pics getting moved up. 
+                if (whichPic3 === 10){
                     whichPic3 = 0;
                 }else{
                     whichPic3 = whichPic3 + 1;
                 }
                 // Display picture based on switch num
                 displayPicSet(whichPic3, "bigprojectpicture_mobile3");
+                break;
+            case 3:
+                //Storyboards set of pics getting moved up. 
+                if (whichPic3 === 7){
+                    whichPic3 = 0;
+                }else{
+                    whichPic3 = whichPic3 + 1;
+                }
+                // Display picture based on switch num
+                displayPicSet(whichPic3, "bigprojectpicture_mobile4");
                 break;
             default:
                 //This is an error display. 
@@ -103,7 +123,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/Trashtronaught_cover_photo.png";
+                        dogPic.src = "img/GameDesign/Trashtronaught_cover_photo.png";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -114,7 +134,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/global_game_jam_2019.jpg";
+                        dogPic.src = "img/GameDesign/global_game_jam_2019.jpg";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -125,7 +145,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/team_photo_game_jam_2019.jpg";
+                        dogPic.src = "img/GameDesign/team_photo_game_jam_2019.jpg";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -136,7 +156,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/Drone+Shot.png";
+                        dogPic.src = "img/GameDesign/Drone+Shot.png";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -147,7 +167,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/Sewer_pic.png";
+                        dogPic.src = "img/GameDesign/Sewer_pic.png";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -165,7 +185,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/test_image.jpg";
+                        dogPic.src = "img/GameDesign/Die+R+Combat_TitlePage.png";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -176,7 +196,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/test_image_2.jpg";
+                        dogPic.src = "img/GameDesign/combat_board.png";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -187,7 +207,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/test_image_3.jpg";
+                        dogPic.src = "img/GameDesign/combat_board2.png";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -198,10 +218,66 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/test_image_4.png";
+                        dogPic.src = "img/GameDesign/Die-R-Combat-Game-Pic.png";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
+                    break;
+                case 4:
+                    //Display fifth picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile2");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/GameDesign/die-r-combat-dice.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 5:
+                    //Display sixth picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile2");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/GameDesign/die-r-combat-paper-page.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 6:
+                    //Display seventh picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile2");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/GameDesign/die-r-combat-RulePage.jfif";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 7:
+                    //Display eighth picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile2");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/GameDesign/python_DRC.jfif";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 8:
+                    //Display ninth picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile2");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/GameDesign/python_DRC2.jfif";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
                 default:
                     //write error
                     console.log("Error in flipping pictures in test.js.(Area2).");
@@ -218,7 +294,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/test_image.jpg";
+                        dogPic.src = "img/levelDesign/Bathroom.png";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -229,7 +305,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/test_image_2.jpg";
+                        dogPic.src = "img/levelDesign/Buck+E+Cheese+Hallway.png";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -240,7 +316,95 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/test_image_3.jpg";
+                        dogPic.src = "img/levelDesign/Dice+Stuff.png";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 3:
+                    //Display first picture for group pic 3
+                    var dogPic = document.getElementById("bigprojectpicture_mobile3");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/levelDesign/Eating+Room.png";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 4:
+                    //Display first picture for group pic 3
+                    var dogPic = document.getElementById("bigprojectpicture_mobile3");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/levelDesign/Elevator+Stuff.png";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 5:
+                    //Display first picture for group pic 3
+                    var dogPic = document.getElementById("bigprojectpicture_mobile3");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/levelDesign/ElevatorHallway.png";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 6:
+                    //Display first picture for group pic 3
+                    var dogPic = document.getElementById("bigprojectpicture_mobile3");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/levelDesign/Grave+Area.png";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 7:
+                    //Display first picture for group pic 3
+                    var dogPic = document.getElementById("bigprojectpicture_mobile3");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/levelDesign/Into+Bathroom.png";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 8:
+                    //Display first picture for group pic 3
+                    var dogPic = document.getElementById("bigprojectpicture_mobile3");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/levelDesign/Level+Artway.png";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 9:
+                    //Display first picture for group pic 3
+                    var dogPic = document.getElementById("bigprojectpicture_mobile3");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/levelDesign/Level+Hallway.png";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 10:
+                    //Display first picture for group pic 3
+                    var dogPic = document.getElementById("bigprojectpicture_mobile3");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/levelDesign/Prayer+Room.png";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -248,6 +412,104 @@ function displayPicSet(pictureNum, targetedID){
                 default:
                     //write error
                     console.log("Error in flipping pictures in test.js.(Area3).");
+            }
+            break;
+        case "bigprojectpicture_mobile4":
+            //Find change pic based on num
+            switch (pictureNum){
+                case 0:
+                    //Display first picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile4");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/writing/S1.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 1:
+                    //Display second picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile4");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/writing/S2.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 2:
+                    //Display third picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile4");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/writing/S3.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 3:
+                    //Display fourth picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile4");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/writing/S4.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 4:
+                    //Display fifth picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile4");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/writing/S5.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 5:
+                    //Display sixth picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile4");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/writing/S6.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 6:
+                    //Display seventh picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile4");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/writing/S7.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                case 7:
+                    //Display eighth picture for group pic 2
+                    var dogPic = document.getElementById("bigprojectpicture_mobile4");
+                    dogPic.style.transition = "opacity .1s linear 0s";
+                    dogPic.style.opacity = "0";
+                    setTimeout(function() {
+                        dogPic.src = "img/writing/S8.jpg";
+                        dogPic.style.transition = "opacity .1s linear 0s";
+                        dogPic.style.opacity = "1";
+                    }, 100);
+                    break;
+                default:
+                    //write error
+                    console.log("Error in flipping pictures in test.js.(Area 4).");
+                    //Logic is working fine, not sure why it is erroring here... 
+                    console.log("Logic is working fine, not sure why it is erroring here");
             }
             break;
         default:

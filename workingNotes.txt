@@ -1,8 +1,11 @@
 To Do List:
 
 1. Try to make a form that will take information.
-2. Make a div that can animate picture changes when buttons are clicked on.
 4. Insert Logo pictures down in the footer and header.
-5. Add video for Trashtronaught that plays trailer from YouTube.
+5. Actually make the page look good.
+6. Find an inspirational Quote
+7. Find out how to enter phone numbers in correctly.
 
 So apparently if you want flexbox to work sometimes, you just need 'wrap'...not row wrap or column wrap...the hell?
+
+Also, to make the Youtube vids work, you have to put EMBED in the links before the unique ID.

@@ -78,3 +78,20 @@
 #stuffshower {
     opacity: 100%;
 }
+
+/* This is for showing and displaying video */
+.videoDiv {
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    /* padding */
+    padding: 5px;
+    margin: 5px;
+}
+
+.YTVideoPlayer {
+    width: 420px;
+    height: 345px;
+}

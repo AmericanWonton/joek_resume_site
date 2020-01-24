@@ -14,6 +14,7 @@
 
         <!--Javascript-->
         <script type="text/javascript" src="js/moveNav.js"></script>
+        <script type="text/javascript" src="js/picture_gallery.js"></script>
 
     </head>
     <body>
@@ -70,15 +71,7 @@
                         <br>
                     </p>
                 </div>
-                <!--Script and Story Pictures-->
-                <div class="infodiv">
-                    <h2 class="itsme">THERE SHOULD BE SOME SLIDING PICTURES HERE WITH A BUTTON.</h2>
-                </div>
-                <!--Euotioa drawings-->
-                <div class="infodiv">
-                    <h2 class="itsme">THERE SHOULD BE SOME SLIDING PICTURES HERE WITH A BUTTON.</h2>
-                </div>
-
+                
                 <!--Here's my work for storyboards-->
                 <div class="quicksphelediv">
                     <p class="quicksphelep">
@@ -89,8 +82,23 @@
                 </div>
                 <!--Storyboard drawings-->
                 <div class="infodiv">
-                    <h2 class="itsme">THERE SHOULD BE SOME SLIDING PICTURES HERE WITH A BUTTON.</h2>
+                    <div class="picturegallerydiv">
+                        <div class="buttonspacediv">
+                            <button class="buttonclicker" id="button_pic" onclick="changePicSet(0, 3)">
+                                Back
+                            </button>
+                        </div>
+                        <div class="bigprojectpicture_div">
+                            <img id="bigprojectpicture_mobile4" src="img/writing/S1.jpg" alt="Storyboard Picture">
+                        </div>
+                        <div class="buttonspacediv">
+                            <button class="buttonclicker" id="button_pic" onclick="changePicSet(1, 3)">
+                                Next
+                            </button>
+                        </div>
+                    </div>
                 </div>
+
             </div>
             
         <!--This is the footer content-->
