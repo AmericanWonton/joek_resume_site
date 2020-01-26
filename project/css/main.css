@@ -48,6 +48,13 @@ table {
     border-spacing: 0;
 }
 
+/* Usage of Google Fonts */
+body, div, p, q, i, h1, h2, h3, h4, h5, h6, a, header, footer {
+    font-family: 'Bowlby One SC', cursive, sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Dosis', sans-serif;
+}
+
 /* ------------------------------------------------- */
 /*     Document Design under 600px.... */
 body {
@@ -85,7 +92,11 @@ header {
 
 .myName {
     /* This is for style */
+    font-family: 'Bowlby One SC', cursive, serif, sans-serif;
     font-size: 3rem;
+    /* font alignment */
+    align-content: center;
+    text-align: center;
 }
 
 .linkdiv{
@@ -138,7 +149,7 @@ header {
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+.dropdown:hover .dropbtn {background-color: #94a095;}
 
 .inspirationaldiv{
     /* flexbox content */
@@ -151,6 +162,19 @@ header {
     width: 100%;
     /* Order for mobile */
     order: 2;
+}
+
+.inspirationalp {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.inspirational_quote {
+    /* font styling */
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
 }
 
 /* This is the div section for downloading my resumes */
@@ -184,13 +208,14 @@ header {
 }
 
 .resumeInfo {
-    font-size: 1em;
+    /* text size and alignment */
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
     margin: 2px;
     padding: 2px;
     width: 100%;
-    /* text size and alignment */
-    text-align: center;
-    font-size: 1.5rem;
 }
 
 a {
@@ -204,7 +229,7 @@ a {
 
 /* This is for the 'above the fold' look */
 .above_fold {
-    height: 115vh;
+    height: 125vh;
     border: 5px solid black;
     box-sizing: border-box;
 }
@@ -216,11 +241,6 @@ a {
 }
 
 /* This orders our picture and introduction quote */
-.intro_container {
-    width: 100%;
-    height: 180vh;
-    border: 2px solid green;
-}
 
 /* This gives the introudction to me with a greeting next to picture */
 .myfacediv{
@@ -234,8 +254,8 @@ a {
 }
 
 .myface {
-    width: 145px;
-    height: 145px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
 }
 
@@ -251,9 +271,13 @@ a {
 }
 /* Here's the text greeting the user */
 .itsme{
+    /* Text formatting */
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
     align-self: center;
     font-size: 2rem;
     text-align: center;
+    /* Format Style */
     padding: 2px;
     margin: 2px;
 }
@@ -269,6 +293,8 @@ a {
 }
 
 .quicksphelep {
+    /* Font sytling */
+    font-family: 'Dosis', sans-serif;
     align-self: center;
     font-size: 1rem;
     padding: 5px;
@@ -320,38 +346,49 @@ footer {
 }
 
 .infodiv {
+    /* Flex-box display */
+    display: flex;
+    flex-flow: wrap;
+    margin: 5px;
     /* Size and color */
     width: 100%;
     border: 2px solid teal;
-    /* Flex-box display */
-    display: flex;
-    flex-flow: row nowrap;
-    align-content: center;
-    justify-content: center;
 }
 
 .infospace {
-    width: 50%;
-    border: 3px solid tomato;
+    /* Flex-box display */
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: nowrap;
+    align-content: center;
+    justify-content: center;
+    width: 50%;
+    /* This aligns the text */
+    text-align: center;
 }
 
 .infop {
-    width: 50%;
     font-size: 1rem;
     color: black;
     text-align: center;
-    border: 2px solid green;
+    margin: 5px;
 }
 
 .svgimgdiv {
-    width: 50%;
-    border: 2px solid grey;
     /* flex-box arrangements */
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
+    width: 30%;
+    border: 1px solid black;
+}
+
+.footerfont {
+    /* flex-box arrangements */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    width: 70%;
+    border: 1px solid pink;
 }
 
 .infoimg {
@@ -392,7 +429,6 @@ footer {
     /* text-align used for message stuff */
     text-align: left;
     vertical-align: text-top;
-    text-align
     border: 2px solid orange;
     display: inline-block;
 }
@@ -420,6 +456,13 @@ footer {
     width: 45%;
     /* Debug colors */
     background-color: orchid;
+}
+
+.inputTitlePhoneNum {
+    width: 15%;
+    height: auto;
+    margin: 5px;
+    text-align: right;
 }
 
 

@@ -1,10 +1,12 @@
 To Do List:
 
 1. Try to make a form that will take information.
-4. Insert Logo pictures down in the footer and header.
+2. Put in a pretty 'above the fold' background image from Colorado.
+4. Still need logos for Microsoft Word, PDF, and a name tag for my name.
 5. Actually make the page look good.
-6. Find an inspirational Quote
-7. Find out how to enter phone numbers in correctly.
+6. Find and apply some good fonts.
+7. Maybe make a 'FavIcon',(that shit Websites have with the logo on the tab screen)
+
 
 So apparently if you want flexbox to work sometimes, you just need 'wrap'...not row wrap or column wrap...the hell?
 

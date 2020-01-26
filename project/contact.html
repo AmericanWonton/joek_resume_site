@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Joseph Keller Site</title>
         <!--Phone pixel density markup-->
-        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Media Query and stylesheets-->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/styling.css">
@@ -40,7 +40,10 @@
             </div>
             <!--This will contain a short, inspirational quote-->
             <div class="inspirationaldiv">
-                <p>Something inspirational here...</p>
+                <p class="inspirationalp"><q class="inspirational_quote" cite="https://www.emergingedtech.com/2015/01/inspirational-quotes-for-teachers-from-dr-martin-luther-king-jr/">
+                    “The ultimate measure of a man is not where he stands in moments of comfort and convenience,
+                    but where he stands at times of challenge and controversy.”
+                </q> -Martin Luther King Jr.</p>
             </div>
         </header>
         <!--Here's the 'above the fold' section.-->
@@ -86,7 +89,7 @@
                         <!--Message -->
                         <div class="contactFormRow">
                             <div class="inputTitleDivMobile">
-                                <p class="inputTitlePMobile">Subject:</p>
+                                <p class="inputTitlePMobile">Message:</p>
                             </div>
                             <textarea class="inputTextMobileMessage" type="text"></textarea>
                         </div>
@@ -103,11 +106,12 @@
                                 <p class="inputTitlePMobile">Phone Num:</p>
                             </div>
                             <div class="phoneNumDiv">
-                                
+                                <input class="inputTitlePhoneNum" type="text" maxlength="1">
+                                <input class="inputTitlePhoneNum" type="text" maxlength="3">
+                                <input class="inputTitlePhoneNum" type="text" maxlength="3">
+                                <input class="inputTitlePhoneNum" type="text" maxlength="4">
                             </div>
-                            <input class="inputTextMobile" type="text">
                         </div>
-                        
                     </form>
                 </div>
             </div>
@@ -117,9 +121,14 @@
         <div class="maindiv">
             <div class="quicksphelediv">
                 <p class="quicksphelep">Name: Joseph Keller</p>
-                <p class="quicksphelep">Phone Number: 314-322-8594</p>
-                <p class="quicksphelep">Email: jbkeller0303@gmail.com</p>
-                <p class="quicksphelep">LinkedIn: <a href="https://www.linkedin.com/in/josephbk/" alt="Linkedin">This should be a linkedinbutton to click</a></p>
+                <p class="quicksphelep"><img class="infoimg" src="img/svg/phone.svg">
+                    314-322-8594</p>
+                <p class="quicksphelep"><img class="infoimg" src="img/svg/gmail.svg">
+                    jbkeller0303@gmail.com</p>
+                <p class="quicksphelep"> <a href="https://www.linkedin.com/in/josephbk/" alt="Linkedin">
+                    <img class="infoimg" src="img/svg/LI-In-Bug.svg">
+                    https://www.linkedin.com/in/josephbk/
+                </a></p>
             </div>
         </div>
         
@@ -130,16 +139,14 @@
             </div>
             <div class="infodiv">
                 <div class="infospace">
-                    <div class="svgimgdiv">
-                        <img class="infoimg" src="img/phone_svg.svg">
-                    </div>
-                    <p class="infop">phone num here</p>
+                    <img class="infoimg" src="img/svg/phone.svg">
+                    <p class="infop">314-322-8594</p>
                 </div>
                 <div class="infospace">
-                    <div class="svgimgdiv">
-                        <img class="infoimg" src="img/phone_svg.svg">
+                    <div class="infospace">
+                        <img class="infoimg" src="img/svg/gmail.svg">
+                        <p class="infop">jbkeller0303@gmail.com</p>
                     </div>
-                    <p class="infop">email info here</p>
                 </div>
             </div>
         </footer>
