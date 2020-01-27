@@ -192,7 +192,6 @@ header {
     align-content: center;
     justify-content: center;
     width: 100%;
-    background-color: yellow;
     box-sizing: border-box;
 }
 
@@ -203,7 +202,6 @@ header {
     align-content: center;
     justify-content: center;
     width: 50%;
-    background-color: green;
     box-sizing: border-box;
 }
 
@@ -237,7 +235,6 @@ a {
 .maindiv {
     /* flexbox arrangements */
     width: 100%;
-    background-color: turquoise;
 }
 
 /* This orders our picture and introduction quote */
@@ -250,7 +247,6 @@ a {
     justify-content: center;
     align-content: center;
     width: 100%;
-    border: 1px solid orange;
 }
 
 .myface {
@@ -267,7 +263,6 @@ a {
     justify-content: center;
     align-content: center;
     width: 100%;
-    border: 3px solid brown;
 }
 /* Here's the text greeting the user */
 .itsme{
@@ -285,11 +280,8 @@ a {
 /* Here's a quick info bit about me...the 'quicksphele' */
 .quicksphelediv {
     /* flexbox arrangements...are they needed? */
-
     width: 100%;
     height: auto;
-    border: 1px solid pink;
-    background-color: rgb(255, 42, 42);
 }
 
 .quicksphelep {
@@ -394,6 +386,11 @@ footer {
 .infoimg {
     width: 25px;
     height: 25px;
+}
+
+.infoimg_larger {
+    width: 10vw;
+    height: 10vh;
 }
 
 /* This is for the contact form */

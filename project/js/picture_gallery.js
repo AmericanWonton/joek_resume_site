@@ -123,7 +123,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/Trashtronaught_cover_photo.png";
+                        dogPic.src = "img/bmp/gameDesign/Trashtronaught_cover_photo.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -134,7 +134,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/global_game_jam_2019.jpg";
+                        dogPic.src = "img/bmp/gameDesign/global_game_jam_2019.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -145,7 +145,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/team_photo_game_jam_2019.jpg";
+                        dogPic.src = "img/bmp/gameDesign/team_photo_game_jam_2019.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -156,7 +156,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/Drone+Shot.png";
+                        dogPic.src = "img/bmp/gameDesign/Drone+Shot.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -167,7 +167,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/Sewer_pic.png";
+                        dogPic.src = "img/bmp/gameDesign/Sewer_pic.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -185,7 +185,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/Die+R+Combat_TitlePage.png";
+                        dogPic.src = "iimg/bmp/gameDesign/Die+R+Combat_TitlePage.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -196,7 +196,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/combat_board.png";
+                        dogPic.src = "img/bmp/gameDesign/combat_board.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -207,7 +207,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/combat_board2.png";
+                        dogPic.src = "img/bmp/gameDesign/combat_board2.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -218,7 +218,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/Die-R-Combat-Game-Pic.png";
+                        dogPic.src = "img/bmp/gameDesign/Die-R-Combat-Game-Pic.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -229,7 +229,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/die-r-combat-dice.jpg";
+                        dogPic.src = "img/bmp/gameDesign/die-r-combat-dice.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -240,7 +240,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/die-r-combat-paper-page.jpg";
+                        dogPic.src = "img/bmp/gameDesign/die-r-combat-paper-page.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -251,7 +251,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/die-r-combat-RulePage.jfif";
+                        dogPic.src = "img/bmp/gameDesign/die-r-combat-RulePage.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -262,7 +262,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/python_DRC.jfif";
+                        dogPic.src = "img/bmp/gameDesign/python_DRC.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);
@@ -273,7 +273,7 @@ function displayPicSet(pictureNum, targetedID){
                     dogPic.style.transition = "opacity .1s linear 0s";
                     dogPic.style.opacity = "0";
                     setTimeout(function() {
-                        dogPic.src = "img/GameDesign/python_DRC2.jfif";
+                        dogPic.src = "img/bmp/gameDesign/python_DRC2.bmp";
                         dogPic.style.transition = "opacity .1s linear 0s";
                         dogPic.style.opacity = "1";
                     }, 100);

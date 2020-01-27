@@ -2,12 +2,18 @@ To Do List:
 
 1. Try to make a form that will take information.
 2. Put in a pretty 'above the fold' background image from Colorado.
-4. Still need logos for Microsoft Word, PDF, and a name tag for my name.
 5. Actually make the page look good.
 6. Find and apply some good fonts.
 7. Maybe make a 'FavIcon',(that shit Websites have with the logo on the tab screen)
+8. Change our pngs to fancy bitmaps
+9. Find some SVGS for buttons
 
 
 So apparently if you want flexbox to work sometimes, you just need 'wrap'...not row wrap or column wrap...the hell?
 
 Also, to make the Youtube vids work, you have to put EMBED in the links before the unique ID.
+
+Welp, I have a premium account on IMGBIN now for good ass PNGS...
+
+Having a really shitty time turning SVGs from PNGs on GIMP and elsewhere....it keeps losing color and shit.
+Downloading InkScape to see if that will work well...
