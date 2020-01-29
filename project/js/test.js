@@ -250,3 +250,19 @@ function testFunc(){
 function superTest(){
     document.getElementById("bigprojectpicture_mobile1").src = "img/test_image_2.jpg";
 }
+
+/* This is for testing our email submission */
+function emailSend(){
+    var email = document.getElementById('email_submission');
+    var name = document.getElementById('name_submission');
+    var message = document.getElementById('message_submission');
+    var successOrNot = document.getElementById('success_email');
+
+    if (!email.value || !name.value || !message.value){
+        /* This will print an error because there is nothing in those fields */
+        successOrNot.innerHTML = "You didn't fill everything out!";
+    } else {
+        successOrNot.innerHTML = "Success! Email sent!";
+    }
+
+}

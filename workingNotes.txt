@@ -1,6 +1,6 @@
 To Do List:
 
-1. Try to make a form that will take information.
+1. Try to make a form that will take information and submit an email to me.
 2. Put in a pretty 'above the fold' background image from Colorado.
 5. Actually make the page look good.
 6. Find and apply some good fonts.
