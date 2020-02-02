@@ -11,7 +11,7 @@
         <link rel="stylesheet" media="(min-width: 600px)" href="css/mq_600.css">
         <link rel="stylesheet" media="(min-width: 900px)" href="css/mq_900.css">
         <!--Fonts-->
-
+        <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Bowlby+One+SC|Dosis|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
         <!--Javascript-->
         <script type="text/javascript" src="js/moveNav.js"></script>
         <script type="text/javascript" src="js/picture_gallery.js"></script>
@@ -22,22 +22,22 @@
         <header>
             <!--This will contain my name in large font-->
             <div class="namediv">
-                <h1 class="myName">Joseph Keller</h1>
+                <h1 class="myName">Joseph Keller.com</h1>
             </div>
             <!--This will contain the links throughout my page-->
             <div class="linkdiv">
-                <a href="index.html">About Me</a>
+                <a href="index.html" class="headerLinks">About Me</a>
                 <!--Not sure how to pull off the 'Check Out My Work' tab...-->
                 <div class="dropdown">
                     <button class="dropbtn">Check Out My Work!</button>
                     <div class="dropdown-content">
-                        <a href="softwaredesign.html">Software Design</a>
-                        <a href="gamedesign.html">Game Design</a>
-                        <a href="leveldesign.html">Level Design</a>
-                        <a href="writing.html">Writing</a>
+                        <a href="softwaredesign.html" class="headerLinks">Software Design</a>
+                        <a href="gamedesign.html" class="headerLinks">Game Design</a>
+                        <a href="leveldesign.html" class="headerLinks">Level Design</a>
+                        <a href="writing.html" class="headerLinks">Writing</a>
                     </div>
                 </div>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="headerLinks">Contact</a>
             </div>
             <!--This will contain a short, inspirational quote-->
             <div class="inspirationaldiv">
@@ -49,13 +49,12 @@
         </header>
 
         <!--Main page body-->
-        <div class="maindiv">
-            <!--Here's the invitation for folks to check out my games work.-->
-            <div class="quicksphelediv">
+
+        <div class="backgroundpicDivGame">
+            <div class="maindiv">
+                <!--Here's the invitation for folks to check out my games work.-->
                 <h2 class="itsme">Here's what me and my friends have been working on for Game Design!</h2>
-            </div>
-            <!--Here's a general collection of my work.-->
-            <div class="what_doing_container">
+                <br>
                 <!--Here's my work for Trashtronaut-->
                 <div class="quicksphelediv">
                     <p class="quicksphelep">
@@ -63,15 +62,15 @@
                         Trashtronaut is a 2-D survival platformer; collect trash and deposit it in time to return the spaceman home!
                         Check it out!
                         <br>
-                        <a href="https://americanwonton.itch.io/trashtronaut" alt="Download Trashtronaught">
+                        <a href="https://americanwonton.itch.io/trashtronaut" class="headerLinks" alt="Download Trashtronaught">
                             <i>Download the game here!</i>
                         </a>
                         <br>
-                        <a href="https://www.youtube.com/watch?v=XQrjIWdqzXQ" alt="View trailer">
+                        <a href="https://www.youtube.com/watch?v=XQrjIWdqzXQ" class="headerLinks"alt="View trailer">
                             <i>Check out the trailer here!</i>
                         </a>
                         <br>
-                        <a href="https://github.com/AmericanWonton/ManAndHouse_GameJam2019" alt="Github Trashtronaught link">
+                        <a href="https://github.com/AmericanWonton/ManAndHouse_GameJam2019" class="headerLinks" alt="Github Trashtronaught link">
                             <i>Check out the Git as well!</i>
                         </a>
                     </p>
@@ -106,10 +105,10 @@
                         The goal is to keep your knight alive while eliminating your opponent's Knight. Feel free to 
                         check it out on Windows devices on Itch.io!
                         <br>
-                        <a href="https://americanwonton.itch.io/die-r-combat" alt="Die_R_Combat Link">
+                        <a href="https://americanwonton.itch.io/die-r-combat" class="headerLinks" alt="Die_R_Combat Link">
                             <i>Download the game here!</i>
                         </a>
-                        <a href="https://github.com/search?q=DieRCombat-Phone" alt="Die_R_Combat Github Link">
+                        <a href="https://github.com/search?q=DieRCombat-Phone" class="headerLinks" alt="Die_R_Combat Github Link">
                             <i>Check out my project on Git!</i>
                         </a>
                     </p>
@@ -133,22 +132,21 @@
                     </div>
                 </div>
             </div>
+        </div>
             
         <!--This is the footer content-->
         <footer>
             <div class="myname">
                 Made by Joseph Keller
             </div>
-            <div class="infodiv">
-                <div class="infospace">
+            <div class="mainfootersection">
+                <div class="footersectionSpace">
                     <img class="infoimg" src="img/svg/phone.svg">
                     <p class="infop">314-322-8594</p>
                 </div>
-                <div class="infospace">
-                    <div class="infospace">
-                        <img class="infoimg" src="img/svg/gmail.svg">
-                        <p class="infop">jbkeller0303@gmail.com</p>
-                    </div>
+                <div class="footersectionSpace">
+                    <img class="infoimg" src="img/svg/gmail.svg">
+                    <p class="infop">jbkeller0303@gmail.com</p>
                 </div>
             </div>
         </footer>

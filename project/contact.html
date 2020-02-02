@@ -11,7 +11,7 @@
         <link rel="stylesheet" media="(min-width: 600px)" href="css/mq_600.css">
         <link rel="stylesheet" media="(min-width: 900px)" href="css/mq_900.css">
         <!--Fonts-->
-
+        <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Bowlby+One+SC|Dosis|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
         <!--Javascript-->
         <script type="text/javascript" src="js/moveNav.js"></script>
 
@@ -21,22 +21,22 @@
         <header>
             <!--This will contain my name in large font-->
             <div class="namediv">
-                <h1 class="myName">Joseph Keller</h1>
+                <h1 class="myName">Joseph Keller.com</h1>
             </div>
             <!--This will contain the links throughout my page-->
             <div class="linkdiv">
-                <a href="index.html">About Me</a>
-                <!--'Check out my Work' tab...-->
+                <a href="index.html" class="headerLinks">About Me</a>
+                <!--Not sure how to pull off the 'Check Out My Work' tab...-->
                 <div class="dropdown">
                     <button class="dropbtn">Check Out My Work!</button>
                     <div class="dropdown-content">
-                        <a href="softwaredesign.html">Software Design</a>
-                        <a href="gamedesign.html">Game Design</a>
-                        <a href="leveldesign.html">Level Design</a>
-                        <a href="writing.html">Writing</a>
+                        <a href="softwaredesign.html" class="headerLinks">Software Design</a>
+                        <a href="gamedesign.html" class="headerLinks">Game Design</a>
+                        <a href="leveldesign.html" class="headerLinks">Level Design</a>
+                        <a href="writing.html" class="headerLinks">Writing</a>
                     </div>
                 </div>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="headerLinks">Contact</a>
             </div>
             <!--This will contain a short, inspirational quote-->
             <div class="inspirationaldiv">
@@ -46,16 +46,16 @@
                 </q> -Martin Luther King Jr.</p>
             </div>
         </header>
-        <!--Here's the 'above the fold' section.-->
-        <div class="above_fold">
-            <!--Here's a large picture of me-->
-            <div class="myfacediv">
-                <img class="myface" src="img/JoeKellerImage2.jpg">
-            </div>
-            <!--Main form content page-->
+        <!--Here's the main content section displaying the form-->
+        <div class="backgroundpicDivContact">
             <div class="maindiv">
+                <!--Here's a large picture of me-->
+                <div class="myfacediv">
+                    <img class="myface" src="img/JoeKellerImage2.jpg">
+                </div>
                 <h2 class="itsme">Thanks for visiting, be sure to keep in touch!</h2>
                 <br><br>
+                <!--Form Fillout-->
                 <div class="divform">
                     <form class="formMobile">
                         <!--First Name-->
@@ -114,22 +114,24 @@
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
-
-        <!--My Contact Info section-->
-        <div class="maindiv">
-            <div class="quicksphelediv">
-                <p class="quicksphelep">
-                    Joseph Keller</p>
-                <p class="quicksphelep"><img class="infoimg" src="img/svg/phone.svg">
-                    314-322-8594</p>
-                <p class="quicksphelep"><img class="infoimg" src="img/svg/gmail.svg">
-                    jbkeller0303@gmail.com</p>
-                <p class="quicksphelep"> <a href="https://www.linkedin.com/in/josephbk/" alt="Linkedin">
-                    <img class="infoimg" src="img/svg/LI-In-Bug.svg">
-                    https://www.linkedin.com/in/josephbk/
-                </a></p>
+                <!-- My contact info section -->
+                <div class="what_doing_container">
+                    <p class="quicksphelep">
+                        Joseph Keller
+                    </p>
+                    <p class="quicksphelep">
+                        <img class="infoimg" src="img/svg/phone_blackspace.svg"
+                        style="border-radius: 50%;">
+                        314-322-8594
+                    </p>
+                    <p class="quicksphelep"><img class="infoimg" src="img/svg/gmail.svg">
+                        jbkeller0303@gmail.com</p>
+                    <p class="quicksphelep"> <a href="https://www.linkedin.com/in/josephbk/" class="headerLinks" alt="Linkedin">
+                        <img class="infoimg" src="img/svg/LI-In-Bug.svg">
+                        https://www.linkedin.com/in/josephbk/
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
         
@@ -138,16 +140,14 @@
             <div class="myname">
                 Made by Joseph Keller
             </div>
-            <div class="infodiv">
-                <div class="infospace">
+            <div class="mainfootersection">
+                <div class="footersectionSpace">
                     <img class="infoimg" src="img/svg/phone.svg">
                     <p class="infop">314-322-8594</p>
                 </div>
-                <div class="infospace">
-                    <div class="infospace">
-                        <img class="infoimg" src="img/svg/gmail.svg">
-                        <p class="infop">jbkeller0303@gmail.com</p>
-                    </div>
+                <div class="footersectionSpace">
+                    <img class="infoimg" src="img/svg/gmail.svg">
+                    <p class="infop">jbkeller0303@gmail.com</p>
                 </div>
             </div>
         </footer>

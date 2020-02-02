@@ -11,7 +11,7 @@
         <link rel="stylesheet" media="(min-width: 600px)" href="css/mq_600.css">
         <link rel="stylesheet" media="(min-width: 900px)" href="css/mq_900.css">
         <!--Fonts-->
-
+        <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Bowlby+One+SC|Dosis|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
         <!--Javascript-->
         <script type="text/javascript" src="js/moveNav.js"></script>
 
@@ -21,22 +21,22 @@
         <header>
             <!--This will contain my name in large font-->
             <div class="namediv">
-                <h1 class="myName">Joseph Keller</h1>
+                <h1 class="myName">Joseph Keller.com</h1>
             </div>
             <!--This will contain the links throughout my page-->
             <div class="linkdiv">
-                <a href="index.html">About Me</a>
+                <a href="index.html" class="headerLinks">About Me</a>
                 <!--Not sure how to pull off the 'Check Out My Work' tab...-->
                 <div class="dropdown">
                     <button class="dropbtn">Check Out My Work!</button>
                     <div class="dropdown-content">
-                        <a href="softwaredesign.html">Software Design</a>
-                        <a href="gamedesign.html">Game Design</a>
-                        <a href="leveldesign.html">Level Design</a>
-                        <a href="writing.html">Writing</a>
+                        <a href="softwaredesign.html" class="headerLinks">Software Design</a>
+                        <a href="gamedesign.html" class="headerLinks">Game Design</a>
+                        <a href="leveldesign.html" class="headerLinks">Level Design</a>
+                        <a href="writing.html" class="headerLinks">Writing</a>
                     </div>
                 </div>
-                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="headerLinks">Contact</a>
             </div>
             <!--This will contain a short, inspirational quote-->
             <div class="inspirationaldiv">
@@ -48,17 +48,15 @@
         </header>
 
         <!--Main page body-->
-        <div class="maindiv">
-            <!--Here's the invitation for folks to check out my work.-->
-            <div class="quicksphelediv">
+        
+        <div class="backgroundpicDivSoft">
+            <div class="maindiv">
+                <!--Here's the invitation for folks to check out my work.-->
                 <p class="quicksphelep">
                     Here are my projects for Software Design. This ranges from video games, mobile apps,
                     and of course, this website! Feel free to browse, download, or contribute at your
                     leisure. Let me know what you think!
                 </p>
-            </div>
-            <!--Here's a general collection of my work.-->
-            <div class="what_doing_container">
                 <!--Here's my work for the Citizenship app-->
                 <div class="quicksphelediv">
                     <p class="quicksphelep">
@@ -67,14 +65,14 @@
                         some Javascript and XML to turn it into another page demonstrating a 
                         personally designed ETL load process on this site. Coming soon! 
                         <br>
-                        <a href="https://github.com/AmericanWonton/Go_Citizen_Project" alt="Go_Citizen_Project Link">
+                        <a href="https://github.com/AmericanWonton/Go_Citizen_Project" class="headerLinks" alt="Go_Citizen_Project Link">
                             <i>Check out the Project</i>
                         </a>
                     </p>
                 </div>
                 <!--Here's our picture.-->
                 <div class="infodiv">
-                    <img src="img/bmp/softDesign/Golang_cit_App.bmp" alt="A pic of the Citizen Project" class="bigprojectpicture">
+                    <img src="img/bmp/softDesign/Golang_cit_App_mobile.bmp" class="wideProjectPic"  alt="A pic of the Citizen Project">
                 </div>
                 <!--Here's my section for 'MemeJudger'-->
                 <div class="quicksphelediv">
@@ -85,59 +83,53 @@
                         is very simple. Every journey begins with a single step! Search for Meme Judger 
                         and download on the Google Play store!
                         <br>
-                        <a href="https://play.google.com/store/apps/details?id=com.joek.memejudger" alt="MemeJudger Link">
+                        <a href="https://play.google.com/store/apps/details?id=com.joek.memejudger" class="headerLinks" alt="MemeJudger Link">
                             <i>Click here to download off of Google Play!</i>
                         </a>
                     </p>
+                    <!--Here's our picture.-->
+                    <div class="infodiv">
+                        <img src="img/bmp/softDesign/Android_Studio_MemeJudger_mobile.bmp" class="wideProjectPic" alt="A pic of the MemeJudger Project">
+                    </div>
+                    <!--Here's a section for Punch Up-->
+                    <p class="quicksphelep">
+                        Here’s a console mock-up I made for an App I’m designing called “Punch Up”.
+                        It's going to assist screenwriters with a database of free Scripts to browse,
+                        along with a messaging system to leave feedback for future writers!
+                        Feel free to check out the Git or Download the Java Eclipse project below!
+                    </p>
                 </div>
-                <!--Here's our picture.-->
-                <div class="infodiv">
-                    <img src="img/bmp/softDesign/Android_Studio_MemeJudger.bmp" alt="A pic of the MemeJudger Project" class="bigprojectpicture">
-                </div>
-            </div>
-
-            <!--Here's a section for Punch Up-->
-            <div class="quicksphelediv">
-                <p class="quicksphelep">
-                    Here’s a console mock-up I made for an App I’m designing called “Punch Up”.
-                    It's going to assist screenwriters with a database of free Scripts to browse,
-                    along with a messaging system to leave feedback for future writers!
-                    Feel free to check out the Git or Download the Java Eclipse project below!
-                </p>
-            </div>
-            <div class="projectdownloaddiv">
-                <div class="projectlinkdiv">
+                <div class="projectdownloaddiv">
+                    <div class="projectlinkdiv">
+                        <!--How do folks download a file?-->
+                        <a href="" class="headerLinks">Project Download</a>
+                    </div>
+                    <div class="projectlinkdiv">
+                        <a href="https://github.com/AmericanWonton/PunchUpConsole" class="headerLinks">Github Link</a>
+                    </div>
                     <!--How do folks download a file?-->
-                    <a href="">Project Download</a>
-                </div>
-                <div class="projectlinkdiv">
-                    <a href="https://github.com/AmericanWonton/PunchUpConsole">Github Link</a>
-                </div>
-                <!--How do folks download a file?-->
-                <div class="projectlinkdiv">
-                    <a href="">Simple Java Program</a>
+                    <div class="projectlinkdiv">
+                        <a href="" class="headerLinks">Simple Java Program</a>
+                    </div>
                 </div>
             </div>
         </div>
-
+        
         <!--This is the footer content-->
         <footer>
             <div class="myname">
                 Made by Joseph Keller
             </div>
-            <div class="infodiv">
-                <div class="infospace">
+            <div class="mainfootersection">
+                <div class="footersectionSpace">
                     <img class="infoimg" src="img/svg/phone.svg">
                     <p class="infop">314-322-8594</p>
                 </div>
-                <div class="infospace">
-                    <div class="infospace">
-                        <img class="infoimg" src="img/svg/gmail.svg">
-                        <p class="infop">jbkeller0303@gmail.com</p>
-                    </div>
+                <div class="footersectionSpace">
+                    <img class="infoimg" src="img/svg/gmail.svg">
+                    <p class="infop">jbkeller0303@gmail.com</p>
                 </div>
             </div>
         </footer>
-        
     </body>                    
 </html>

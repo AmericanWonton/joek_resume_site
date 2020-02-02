@@ -194,8 +194,6 @@ color: white; font-size: 1rem;}
     flex-wrap: wrap;
     box-sizing: border-box;
     /* styling */
-    background-color: black;
-    opacity: 0.7;
     margin-left: 15px;
     margin-right: 15px;
 }
@@ -243,7 +241,7 @@ a {
 
 /* This is for the 'above the fold' look */
 .above_fold {
-    height: 115vh;
+    height: 125vh;
     /* border: 5px solid black; */
     box-sizing: border-box;
     /* This is for the background styling */
@@ -253,12 +251,76 @@ a {
     background-repeat: no-repeat;
 }
 
-.maindiv {
-    /* flexbox arrangements */
+/* This is for backgrounds in each content html section */
+.backgroundpicDivSoft {
+    /* This is for the background styling */
+    /* INSERT BACKGROUND IMAGE ON EACH PAGE! */
+    /* background-size: 800px; */
+    box-sizing: border-box;
+    background-image: url("../img/bmp/aboveFold/okayMountain.bmp");
+    background-size: auto;
+    background-repeat: repeat;
+    border: 5px dashed red;
     width: 100%;
 }
 
-/* This orders our picture and introduction quote */
+.backgroundpicDivGame {
+    /* This is for the background styling */
+    /* INSERT BACKGROUND IMAGE ON EACH PAGE! */
+    /* background-size: 800px; */
+    box-sizing: border-box;
+    background-image: url("../img/bmp/aboveFold/forest_mountain_trail.bmp");
+    background-size: auto;
+    background-repeat: repeat;
+    border: 5px dashed red;
+    width: 100%;
+}
+
+.backgroundpicDivLevel {
+    /* This is for the background styling */
+    /* INSERT BACKGROUND IMAGE ON EACH PAGE! */
+    /* background-size: 800px; */
+    box-sizing: border-box;
+    background-image: url("../img/bmp/aboveFold/forest_mountain_trail.bmp");
+    background-size: auto;
+    background-repeat: repeat;
+    border: 5px dashed red;
+    width: 100%;
+}
+
+.backgroundpicDivWriting {
+    /* This is for the background styling */
+    /* INSERT BACKGROUND IMAGE ON EACH PAGE! */
+    /* background-size: 800px; */
+    box-sizing: border-box;
+    background-image: url("../img/bmp/aboveFold/snow_Mountain2/snow_Mountain2.bmp");
+    background-size: auto;
+    background-repeat: repeat;
+    border: 5px dashed red;
+    width: 100%;
+}
+
+.backgroundpicDivContact {
+    /* This is for the background styling */
+    /* INSERT BACKGROUND IMAGE ON EACH PAGE! */
+    /* background-size: 800px; */
+    box-sizing: border-box;
+    background-image: url("../img/bmp/aboveFold/snow_Mountain2/snow_Mountain_Peaks.bmp");
+    background-size: auto;
+    background-repeat: repeat;
+    border: 5px dashed red;
+    width: 100%;
+}
+
+.maindiv {
+    /* flexbox arrangements */
+    
+    /* styling */
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 
 /* This gives the introudction to me with a greeting next to picture */
 .myfacediv{
@@ -268,6 +330,8 @@ a {
     justify-content: center;
     align-content: center;
     width: 100%;
+    /* styling */
+    padding-top: 15px;
 }
 
 .myface {
@@ -284,8 +348,6 @@ a {
     justify-content: center;
     align-content: center;
     /* styling */
-    background-color: black;
-    opacity: 0.7;
     margin-left: 15px;
     margin-right: 15px;
 }
@@ -294,6 +356,7 @@ a {
     /* Text formatting */
     font-family: 'Dosis', sans-serif;
     font-weight: bold;
+    line-height: 1.2;
     color: white;
     align-self: center;
     font-size: 3rem;
@@ -307,9 +370,7 @@ a {
     /* flexbox arrangements...are they needed? */
     height: auto;
     /* styling */
-    background-color: black;
-    opacity: 0.7;
-    padding: 2px;
+    padding: 5px;
     margin-left: 15px;
     margin-right: 15px;
 }
@@ -324,6 +385,8 @@ a {
     text-align: center;
     /* styling */
     padding: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
     height: auto;
 }
 
@@ -338,7 +401,12 @@ a {
 
 /* Here's a quick showing of my skills. */
 .what_doing_container {
-    width: 100%;
+    /* width: 100%; */
+    /* flexbox arrangements */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
     height: auto;
     background-color: black;
     padding: 15px;
@@ -351,6 +419,22 @@ a {
     text-align: center;
     font-size: 2rem;
     padding: 10px;
+}
+
+.projectdownloaddiv{
+    /* flexbox arrangements */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.projectlinkdiv{
+    /* flexbox arrangements */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
 }
 
 /*  ###################################### Footer SECTION ##########################*/
@@ -371,14 +455,32 @@ footer {
     font-size: 2rem;
 }
 
+.mainfootersection {
+    /* Flex-box display */
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.footersectionSpace{
+    /* Flex-box display */
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 45%;
+}
+
 .infodiv {
     /* Flex-box display */
     display: flex;
     flex-flow: wrap;
-    margin: 5px;
+    align-content: center;
+    justify-content: center;
+
     /* Size and color */
-    width: 100%;
-    border: 2px solid teal;
 }
 
 .infospace {
@@ -396,7 +498,7 @@ footer {
     font-size: 1rem;
     color: black;
     text-align: center;
-    margin: 5px;
+    padding: 5px;
 }
 
 .svgimgdiv {
@@ -429,7 +531,7 @@ footer {
 
 /* This is for the contact form */
 .divform {
-    background-color: pink;
+    background-color: black;
     border: 3px dashed peru;
 }
 
@@ -502,6 +604,9 @@ footer {
     font-size: 1rem;
     color: white;
 }
+
+.headerLinks:hover {color: yellow;}
+
 
 /* This is for formatting pictures on mobile */
 .picturegallerydiv {
@@ -593,6 +698,11 @@ footer {
 
 #stuffshower {
     opacity: 100%;
+}
+
+.wideProjectPic {
+    width: 500px;
+    height: 500px;
 }
 
 /* This is for showing and displaying video */
