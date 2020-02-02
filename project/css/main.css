@@ -701,8 +701,8 @@ footer {
 }
 
 .wideProjectPic {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    display: block;
 }
 
 /* This is for showing and displaying video */
