@@ -79,19 +79,15 @@
     opacity: 100%;
 }
 
-/* This is for showing and displaying video */
-.videoDiv {
-    /* flexbox content */
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    /* padding */
-    padding: 5px;
-    margin: 5px;
+/* This is for testing a fading image */
+#stage {
+    border: 4px solid black;
+    background-color: salmon;
+    order: 0;
 }
 
-.YTVideoPlayer {
-    width: 420px;
-    height: 345px;
+#fadingImage {
+    width: 100px;
+    height: 100px;
+    order: 1;
 }

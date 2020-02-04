@@ -3,6 +3,7 @@ var whichPic1 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 var whichPic2 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 var whichPic3 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 
+
 /* The first three functions are called when a User clicks either the left or right
 Arrow buttons to change the pictures...they are used to add 1 or lose 1 to the 'whichpic' variable associated
 to it. 
@@ -265,4 +266,34 @@ function emailSend(){
         successOrNot.innerHTML = "Success! Email sent!";
     }
 
+}
+
+/* This is for testing the gradually fading photos */
+function picFade(whichPage){
+    var whichPic = 0;
+    var fadingPic = document.getElementById("fadingImage");
+    fadingPic.style.transition = "opacity 2s linear 0s";
+    fadingPic.style.opacity = "0";
+
+    setTimeout(function() {
+        fadingPic.src = "img/GameDesign/Trashtronaught_cover_photo.png";
+        fadingPic.style.transition = "opacity 2s linear 0s";
+        fadingPic.style.opacity = "1";
+    }, 3500);
+
+    /*
+    switch(whichPage){
+        case 0:
+
+            break;
+        case 1:
+
+            break;
+        case 2:
+            //Set picture
+            
+            
+            break;
+    }
+    */
 }
