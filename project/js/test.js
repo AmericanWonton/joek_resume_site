@@ -3,6 +3,9 @@ var whichPic1 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 var whichPic2 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 var whichPic3 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 
+var count = 0; /* This is used for our fading pictures */
+var pictureOrder = 0; /* This is used to keep track of the fading pictures */
+
 
 /* The first three functions are called when a User clicks either the left or right
 Arrow buttons to change the pictures...they are used to add 1 or lose 1 to the 'whichpic' variable associated
@@ -270,30 +273,46 @@ function emailSend(){
 
 /* This is for testing the gradually fading photos */
 function picFade(whichPage){
-    var whichPic = 0;
+    //Set source strings to change into.
+    console.log("Hey, we changing pictures");
+    var picsArray = ["img/GameDesign/team_photo_game_jam_2019.jpg", "img/Joe+Keller+Front.jpg", "img/levelDesign/Bathroom.png"];
     var fadingPic = document.getElementById("fadingImage");
-    fadingPic.style.transition = "opacity 2s linear 0s";
-    fadingPic.style.opacity = "0";
+    var myCount = setInterval(fadePic, 8000);
+    
+    function fadePic(){
+        pictureOrder = pictureOrder + 1;
+        if (pictureOrder > picsArray.length -1){
+            pictureOrder = 0;
+            //Fade the picture out
+            fadingPic.style.transition = "opacity 2s linear 0s";
+            fadingPic.style.opacity = "0";
+            var oof = setInterval(unFadePic, 4000);
+        } else {
+            //Fade the picture out
+            fadingPic.style.transition = "opacity 2s linear 0s";
+            fadingPic.style.opacity = "0";
+            var oof = setInterval(unFadePic, 4000);
+        }
 
-    setTimeout(function() {
-        fadingPic.src = "img/GameDesign/Trashtronaught_cover_photo.png";
+        function unFadePic(){
+            fadingPic.src = picsArray[pictureOrder];
+            fadingPic.style.transition = "opacity 2s linear 0s";
+            fadingPic.style.opacity = "1";
+            fadingPic.src = picsArray[pictureOrder];
+            clearInterval(oof);
+        }
+
+        count = count + 1;
+        console.log("Count is " + count);
+        if (count >= 10){
+            clearInterval(myCount);
+        }
+    }
+
+    function unFadePic(){
         fadingPic.style.transition = "opacity 2s linear 0s";
         fadingPic.style.opacity = "1";
-    }, 3500);
-
-    /*
-    switch(whichPage){
-        case 0:
-
-            break;
-        case 1:
-
-            break;
-        case 2:
-            //Set picture
-            
-            
-            break;
+        fadingPic.src = picsArray[pictureOrder];
     }
-    */
+
 }
