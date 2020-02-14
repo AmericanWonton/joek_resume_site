@@ -81,13 +81,68 @@
 
 /* This is for testing a fading image */
 #stage {
+    /* Flex boxing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
     border: 4px solid black;
     background-color: salmon;
     order: 0;
+    height: auto;
+    width: 100%;
 }
 
-#fadingImage {
-    width: 100px;
-    height: 100px;
-    order: 1;
+#picHolder {
+    /* Flex boxing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    /* Uhhh */
+    /* Styling */
+    border: 4px solid green;
+    background-color: yellow;
 }
+
+#stage2 {
+    /* position */
+    position: absolute;
+    z-index: auto;
+    /* sizing */
+    width: 30vw;
+    height: 30vh;
+}
+
+#stage2_1 {
+    z-index: 1;
+    position: absolute;
+}
+
+#stage2_2 {
+    z-index: 2;
+    position: absolute;
+}
+
+.topImage {
+    margin: 0 auto;
+    opacity: 1;
+    width: 30vw;
+    height: 30vh;
+    /* This is for the animation */
+    /*
+    animation-name: fadeAnim;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    */
+}
+
+/* Here's our animation */
+/*
+@keyframes fadeAnim {
+    0% {opacity: 1;}
+    50% {opacity: 1;}
+    100% {opacity: 1;}
+}
+*/

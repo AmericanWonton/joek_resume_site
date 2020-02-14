@@ -4,7 +4,7 @@ var whichPic2 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 var whichPic3 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 
 var count = 0; /* This is used for our fading pictures */
-var pictureOrder = 0; /* This is used to keep track of the fading pictures */
+var pictureOrder = 2;
 
 
 /* The first three functions are called when a User clicks either the left or right
@@ -272,12 +272,18 @@ function emailSend(){
 }
 
 /* This is for testing the gradually fading photos */
-function picFade(whichPage){
+function picFade(whichGallery){
     //Set source strings to change into.
-    console.log("Hey, we changing pictures");
-    var picsArray = ["img/GameDesign/team_photo_game_jam_2019.jpg", "img/Joe+Keller+Front.jpg", "img/levelDesign/Bathroom.png"];
-    var fadingPic = document.getElementById("fadingImage");
-    var myCount = setInterval(fadePic, 8000);
+    switch (whichGallery){
+        case 0:
+            //This is for the first set of pic gallery
+            console.log("Hey, we changing pictures on gallery " + whichGallery);
+            var picsArray = ["img/GameDesign/combat_board.png", "img/GameDesign/combat_board2.png", 
+            "img/GameDesign/die-r-combat-dice.jpg", "img/GameDesign/Die-R-Combat-Game-Pic.png", 
+            "img/GameDesign/die-r-combat-paper-page.jpg", "img/GameDesign/die-r-combat-RulePage.jfif"];
+            var fadingPic = document.getElementById("fadingImage");
+            var myCount = setInterval(fadePic, 8000);
+    }
     
     function fadePic(){
         pictureOrder = pictureOrder + 1;
@@ -302,17 +308,44 @@ function picFade(whichPage){
             clearInterval(oof);
         }
 
-        count = count + 1;
-        console.log("Count is " + count);
-        if (count >= 10){
-            clearInterval(myCount);
-        }
     }
 
-    function unFadePic(){
-        fadingPic.style.transition = "opacity 2s linear 0s";
-        fadingPic.style.opacity = "1";
-        fadingPic.src = picsArray[pictureOrder];
+}
+
+function picFade2 (amountODivs){
+    console.log("Hey, we changing pictures on gallery ");
+    console.log("Picture Order is currently: " + pictureOrder);
+    var picHolder = document.getElementById("picHolder");
+    var myStages = picHolder.getElementsByTagName("div");
+
+    if (pictureOrder != 0){
+        myStages[pictureOrder].style.transition = "opacity 2s linear 0s";
+        myStages[pictureOrder].style.opacity = "0";
+        pictureOrder = pictureOrder - 1;
+    } else if (pictureOrder === 0){
+        myStages[pictureOrder].style.transition = "opacity 2s linear 0s";
+        myStages[pictureOrder].style.opacity = "0";
+        pictureOrder = picHolder.length - 1;
+    } else {
+        console.log("We got a problem, buddy.");
     }
 
+    
+
+    /* This begins the start of the fade loop for all the pictures */
+    /*
+    var picLoop = setInterval(startLooping(pictureOrder), 6000);
+
+    function startLooping (pictureOrder){
+        myStages[pictureOrder].style.transition = "opacity 2s linear 0s";
+        fadingPic.style.opacity = "0";
+    }
+
+    */
+    
+}
+
+/* This is for testing sliding photos */
+function picSlide (whichGallery){
+    
 }
