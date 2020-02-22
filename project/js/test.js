@@ -4,7 +4,8 @@ var whichPic2 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 var whichPic3 = 0; /* This is supposed to have 3 pics so far...3 dogs */
 
 var count = 0; /* This is used for our fading pictures */
-var pictureOrder = 2;
+var canClick = true; /* This is used to see when the User can click,(if transition is done). */
+
 
 
 /* The first three functions are called when a User clicks either the left or right
@@ -345,7 +346,63 @@ function picFade2 (amountODivs){
     
 }
 
-/* This is for testing sliding photos */
-function picSlide (whichGallery){
+function picFader1(){
+    var ourPhotos = new Array (
+    "img/GameDesign/combat_board.png", "img/GameDesign/combat_board2.png", 
+    "img/GameDesign/Die+R+Combat_TitlePage.png", "img/GameDesign/die-r-combat-dice.jpg",
+    "img/GameDesign/Die-R-Combat-Game-Pic.png", "img/GameDesign/die-r-combat-paper-page.jpg", 
+    "img/GameDesign/die-r-combat-RulePage.jfif", "img/GameDesign/Drone+Shot.png",
+    "img/GameDesign/global_game_jam_2019.jpg", "img/GameDesign/python_DRC.jfif", 
+    "img/GameDesign/python_DRC2.jfif", "img/GameDesign/Sewer_pic.png",
+    "img/GameDesign/team_photo_game_jam_2019.jpg", "img/GameDesign/Trashtronaught_cover_photo.png");
+    console.log("Starting Fade Counter. Counter is at: " + count);
+    var theInterval = setInterval(picFader1, 14000);
+    console.log("Starting to transition from pic " + count + " to pic " + (count + 1));
+    setTimeout(unFader, 3500);
+    var fadingPic = document.getElementById("transpicHolder");
+    var fadingActualPic = document.getElementById("bigprojectpicture_mobile1");
+
+    fadingPic.style.transition = "opacity 2s linear 0s";
+    fadingPic.style.opacity = "0";
+
+    function unFader(){
+        console.log("Okay, we're unfading rn");
+        if (count > ourPhotos.length -1){
+            count = 0;
+        } else{
+            count = count + 1;
+        }
+        fadingActualPic.src = ourPhotos[count];
+        fadingPic.style.transition = "opacity 2s linear 0s";
+        fadingPic.style.opacity = "1";
+    }
     
+    /*
+    if (canClick === true){
+        canClick = false;
+        console.log("Started with a click. Can click is " + canClick);
+        var fadingPic = document.getElementById("transpicHolder");
+        var fadingActualPic = document.getElementById("bigprojectpicture_mobile1");
+
+        fadingPic.style.transition = "opacity 2s linear 0s";
+        fadingPic.style.opacity = "0";
+        setTimeout(unFader, 6000);
+
+        function unFader(){
+            console.log("Okay, we're unfading rn");
+            fadingActualPic.src = "img/GameDesign/die-r-combat-RulePage.jfif";
+            fadingPic.style.transition = "opacity 2s linear 0s";
+            fadingPic.style.opacity = "1";
+            setTimeout(resetClick, 2100);
+            function resetClick(){
+                canClick = true;
+                count = count + 1;
+                console.log("Can Click is now " + canClick);
+            }
+        }
+
+    }else{
+        console.log("Started with a click. Can click is " + canClick);
+    }
+    */
 }
