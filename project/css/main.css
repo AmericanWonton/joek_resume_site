@@ -479,7 +479,6 @@ footer {
     flex-flow: wrap;
     align-content: center;
     justify-content: center;
-
     /* Size and color */
 }
 
@@ -609,6 +608,78 @@ footer {
 
 
 /* This is for formatting pictures on mobile */
+/* newer iterations are up top */
+#picHolder {
+    /* Flex boxing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#transpicHolder {
+    /* Flex boxing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    /* sizing */
+    height: auto;
+    width: 100%;
+}
+
+#transpicHolder1 {
+    /* Flex boxing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    /* sizing */
+    height: auto;
+    width: 100%;
+}
+
+#transpicHolder2 {
+    /* Flex boxing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    /* sizing */
+    height: auto;
+    width: 100%;
+}
+
+#fadingPic {
+    /* This is for formatting the pic */
+    width: 45vw;
+    height: 45vh;
+    /* This keeps it aligned in the center for viewing */
+    align-content: center;
+    padding: 1px;
+    margin: 1px;
+}
+
+#fadingPic1 {
+    /* This is for formatting the pic */
+    width: 45vw;
+    height: 45vh;
+    /* This keeps it aligned in the center for viewing */
+    align-content: center;
+    padding: 1px;
+    margin: 1px;
+}
+
+#fadingPic2 {
+    /* This is for formatting the pic */
+    width: 45vw;
+    height: 45vh;
+    /* This keeps it aligned in the center for viewing */
+    align-content: center;
+    padding: 1px;
+    margin: 1px;
+}
+
 .picturegallerydiv {
     /* flexbox content */
     display: flex;

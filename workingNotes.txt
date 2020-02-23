@@ -7,7 +7,6 @@ To Do List:
 7. Figure out to have a big picture display when User clicks on a picture,(like Confluence)
 7. Maybe make a 'FavIcon',(that shit Websites have with the logo on the tab screen)
 8. Change our pngs to fancy bitmaps
-9. Find some SVGS for buttons
 11. Can we make the animations smoother?
 
 
