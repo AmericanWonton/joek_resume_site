@@ -385,15 +385,6 @@ a {
     height: auto;
 }
 
-.bignum{
-    font-size: 2em;
-    font-weight: bold;
-}
-
-.nowrapspans {
-    white-space: nowrap;
-}
-
 /* Here's a quick showing of my skills. */
 .what_doing_container {
     /* width: 100%; */
@@ -477,40 +468,11 @@ footer {
     /* Size and color */
 }
 
-.infospace {
-    /* Flex-box display */
-    display: flex;
-    flex-flow: nowrap;
-    align-content: center;
-    justify-content: center;
-    width: 50%;
-    /* This aligns the text */
-    text-align: center;
-}
-
 .infop {
     font-size: 1rem;
     color: black;
     text-align: center;
     padding: 5px;
-}
-
-.svgimgdiv {
-    /* flex-box arrangements */
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    width: 30%;
-    border: 1px solid black;
-}
-
-.footerfont {
-    /* flex-box arrangements */
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    width: 70%;
-    border: 1px solid pink;
 }
 
 .infoimg {
@@ -527,10 +489,6 @@ footer {
 .divform {
     background-color: black;
     border: 3px dashed peru;
-}
-
-.formMobile {
-
 }
 
 .contactFormRow {
@@ -694,97 +652,6 @@ footer {
     align-content: center;
     padding: 1px;
     margin: 1px;
-}
-
-.picturegallerydiv {
-    /* flexbox content */
-    display: flex;
-    flex-wrap: row wrap;
-    width: 100%;
-    /* spacing */
-    margin: 2px;
-    padding: 2px;
-}
-
-.buttonspacediv {
-    /* flexbox content */
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    width: 25%;
-    background-color: darkred;
-}
-
-.buttonclicker {
-    width: 10vw;
-    height: 10vh;
-    font-size: .5em;
-    text-align: center;
-}
-
-.bigprojectpicture_div {
-    /* flexbox content */
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    width: 50%;
-    border: 2px solid red;
-    /* This is a background image test
-        background-image: url('../img/test_image.jpg');
-    background-size: cover;
-    */
-    
-}
-
-#bigprojectpicture_mobile1 {
-    /* This is for formatting the pic */
-    width: 45vw;
-    height: 45vh;
-    /* This keeps it aligned in the center for viewing */
-    align-content: center;
-    padding: 1px;
-    margin: 1px;
-}
-
-#bigprojectpicture_mobile2 {
-    /* This is for formatting the pic */
-    width: 45vw;
-    height: 45vh;
-    /* This keeps it aligned in the center for viewing */
-    align-content: center;
-    padding: 1px;
-    margin: 1px;
-}
-
-#bigprojectpicture_mobile3 {
-    /* This is for formatting the pic */
-    width: 45vw;
-    height: 45vh;
-    /* This keeps it aligned in the center for viewing */
-    align-content: center;
-    padding: 1px;
-    margin: 1px;
-}
-
-#bigprojectpicture_mobile4 {
-    /* This is for formatting the pic */
-    width: 45vw;
-    height: 45vh;
-    /* This keeps it aligned in the center for viewing */
-    align-content: center;
-    padding: 1px;
-    margin: 1px;
-}
-
-
-.showstuff {
-    border: 2px solid black;
-}
-
-#stuffshower {
-    opacity: 100%;
 }
 
 .wideProjectPic {
