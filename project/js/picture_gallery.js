@@ -18,9 +18,12 @@ var ourPhotos3 = new Array ("img/levelDesign/Bathroom.png", "img/levelDesign/Buc
                             "img/levelDesign/Grave+Area.png", "img/levelDesign/Into+Bathroom.png",
                             "img/levelDesign/Level+Artway.png", "img/levelDesign/Level+Hallway.png",
                             "img/levelDesign/Prayer+Room.png");
+var ourPhotos4 = new Array ("img/writing/s1.jpg", "img/writing/s2.jpg", "img/writing/s3.jpg",
+                            "img/writing/s4.jpg", "img/writing/s5.jpg", "img/writing/s6.jpg",
+                            "img/writing/s7.jpg", "img/writing/s8.jpg",);
 //This is to control which section is allowed to transition.
-canClickArray = new Array(true, true, true);
-countArray = new Array(0, 0, 0);
+canClickArray = new Array(true, true, true, true);
+countArray = new Array(0, 0, 0, 0);
 
 /* The first three functions are called when a User clicks either the left or right
 Arrow buttons to change the pictures...they are used to add 1 or lose 1 to the 'whichpic' variable associated
@@ -609,7 +612,7 @@ function picFader1(whichPics){
             //Flips through the Test Level pics
             if (canClickArray[2] === true){
                 console.log("Okay, we're fading rn from " + countArray[2] + " to " + (countArray[2] + 1));
-                canClickArray[1] = false;
+                canClickArray[2] = false;
                 var fadingPic = document.getElementById("transpicHolder2");
                 var fadingActualPic = document.getElementById("fadingPic2");
         
@@ -635,6 +638,38 @@ function picFader1(whichPics){
                 }
             } else {
                 console.log("Canclick is still " + canClickArray[2]);
+            }
+            break;
+        case 3:
+            //Flips through the Storyboard pics
+            if (canClickArray[3] === true){
+                console.log("Okay, we're fading rn from " + countArray[3] + " to " + (countArray[3] + 1));
+                canClickArray[3] = false;
+                var fadingPic = document.getElementById("transpicHolder3");
+                var fadingActualPic = document.getElementById("fadingPic3");
+        
+                fadingPic.style.transition = "opacity 2s linear 0s";
+                fadingPic.style.opacity = "0";
+                setTimeout(unFader, 3000);
+        
+                function unFader(){
+                    console.log("Okay, we're unfading rn");
+                    setTimeout(resetClick, 2100);
+                    if (countArray[3] >= (ourPhotos4.length - 1)){
+                        countArray[3] = 0;
+                    } else{
+                        countArray[3] = countArray[3] + 1;
+                    }
+                    fadingActualPic.src = ourPhotos4[countArray[3]];
+                    fadingPic.style.transition = "opacity 2s linear 0s";
+                    fadingPic.style.opacity = "1";
+        
+                    function resetClick(){
+                        canClickArray[3] = true;
+                    }
+                }
+            } else {
+                console.log("Canclick is still " + canClickArray[3]);
             }
             break;
         default:

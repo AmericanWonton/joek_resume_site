@@ -5,6 +5,8 @@
         <title>Joseph Keller Site</title>
         <!--Phone pixel density markup-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Our FavIcon-->
+        <link rel="shortcut icon" type="image/png" href="img/favicons/keyboardFav.png">
         <!--Media Query and stylesheets-->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/styling.css">
@@ -63,7 +65,7 @@
                         pirate-fantasy universe! Check them out!
                         <br>
                         <!-- How do I have people download my PDF? You have files in the project folder. -->
-                        <a href="" class="headerLinks" alt="Crazies First Act Script Download">
+                        <a href="misc/Crazies_First_Act_JoeK.pdf" class="headerLinks" alt="Crazies First Act Script Download" target="_blank" download>
                             <i>Crazies First Act Script Download</i>
                         </a>
                         <br>
@@ -84,19 +86,9 @@
                 </div>
                 <!--Storyboard drawings-->
                 <div class="infodiv">
-                    <div class="picturegallerydiv">
-                        <div class="buttonspacediv">
-                            <button class="buttonclicker" id="button_pic" onclick="changePicSet(0, 3)">
-                                Back
-                            </button>
-                        </div>
-                        <div class="bigprojectpicture_div">
-                            <img id="bigprojectpicture_mobile4" src="img/writing/S1.jpg" alt="Storyboard Picture">
-                        </div>
-                        <div class="buttonspacediv">
-                            <button class="buttonclicker" id="button_pic" onclick="changePicSet(1, 3)">
-                                Next
-                            </button>
+                    <div id="picHolder">
+                        <div id="transpicHolder3" onmouseover="picFader1(3)">
+                            <img id="fadingPic3" src="img/writing/S1.jpg">
                         </div>
                     </div>
                 </div>
