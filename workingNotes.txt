@@ -1,7 +1,6 @@
 To Do List:
 
 1. Try to make a form that will take information and submit an email to me.
-2. As of 2/24/2020, START GETTING RID OF SHIT YOU AREN'T USING!
 
 So apparently if you want flexbox to work sometimes, you just need 'wrap'...not row wrap or column wrap...the hell?
 
