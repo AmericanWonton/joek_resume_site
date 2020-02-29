@@ -47,7 +47,6 @@ function getEmailContent() {
         alert("Please enter last part for phone number.");
         clearFields();
     } else {
-        console.log("We did it! Now onto data check!");
         //Bad Character Check
         var i = 0;
         //Country check
@@ -136,4 +135,3 @@ function getEmailContent() {
     }
     
 }
-

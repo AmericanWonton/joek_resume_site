@@ -487,8 +487,13 @@ footer {
 
 /* This is for the contact form */
 .divform {
-    background-color: black;
     border: 3px dashed peru;
+}
+
+#my-form {
+    /* flexbox styling */
+
+    /* styling */
 }
 
 .contactFormRow {

@@ -58,7 +58,26 @@
                 <br><br>
                 <!--Form Fillout-->
                 <div class="divform">
-                    
+                    <form id="my-form">
+                        <label>Firstname:</label>
+                        <input type="text" name="firstname" id="inputTextMobileFName"/>
+                        <label>Lastname:</label>
+                        <input type="text" name="lastname" id="inputTextMobileLName"/>
+                        <label>Email:</label>
+                        <input type="email" name="email" id="inputTextMobileEmail"/>
+                        <label>Subject</label>
+                        <input type="text" name="Subject" id="inputTextMobileSubject"/>
+                        <label>Message:</label>
+                        <textarea name="message" form="my-form" id="inputTextMobileMessage"></textarea>
+                        <label>Website:</label>
+                        <input type="text" name="website" id="inputTextMobileWebsite"/>
+                        <label>PhoneNum:</label>
+                        <input type="text" name="country_code" id="inputTitlePhoneNum1" maxlength=1/>
+                        <input type="text" name="area_code" id="inputTitlePhoneNum2" maxlength=3/>
+                        <input type="text" name="phonenum_1" id="inputTitlePhoneNum3" maxlength=3/>
+                        <input type="text" name="phonenum_2" id="inputTitlePhoneNum4" maxlength=4/>
+                        <button id="my-form-button" onclick="getEmailContent()">Submit</button>
+                    </form>
                 </div>
                 <!-- My contact info section -->
                 <div class="what_doing_container">
@@ -97,5 +116,6 @@
                 </div>
             </div>
         </footer>
+        
     </body>                    
 </html>
