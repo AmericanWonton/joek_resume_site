@@ -1,4 +1,6 @@
 function getEmailContent() {
+    
+    //Get and define variables of the form
     var fName = document.getElementById("inputTextMobileFName");
     var lName = document.getElementById("inputTextMobileLName");
     var email = document.getElementById("inputTextMobileEmail");
@@ -114,6 +116,89 @@ function getEmailContent() {
         console.log("Email build failed.");
     }
     function sendEmail () {
+        //Get and Define Scripts
+        var js1 = document.createElement("script");
+        js1.type = "text/javascript";
+        js1.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js";
+        document.body.appendChild(js1);
+        var js2 = document.createElement("script");
+        js2.type = "text/javascript";
+        js2.src = "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js";
+        document.body.appendChild(js2);
+        //Create virtual form
+        var fakeForm = document.createElement("fakeForm");
+        fakeForm.setAttribute("id", "fakeForm");
+        document.body.appendChild(fakeForm);
+        //Add Firstname
+        var fakeFName = document.createElement("INPUT");
+        fakeFName.setAttribute("name", "firstname");
+        fakeFName.setAttribute("type", "text");
+        fakeFName.setAttribute("id", "fNameID");
+        fakeFName.setAttribute("value", fName.value);
+        document.getElementById("fakeForm").appendChild(fakeFName);
+        //Add Lastname
+        var fakeFName = document.createElement("INPUT");
+        fakeLName.setAttribute("name", "lastname");
+        fakeLName.setAttribute("type", "text");
+        fakeLName.setAttribute("id", "lNameID");
+        fakeLName.setAttribute("value", lName.value);
+        document.getElementById("fakeForm").appendChild(fakeLName); 
+        //Email
+        var fakeEmail = document.createElement("INPUT");
+        fakeEmail.setAttribute("name", "email");
+        fakeLName.setAttribute("type", "email");
+        fakeEmail.setAttribute("id", "emailID");
+        fakeEmail.setAttribute("value", email.value);
+        document.getElementById("fakeForm").appendChild(fakeEmail);
+        //Subject
+        var fakeSubject = document.createElement("INPUT");
+        fakeSubject.setAttribute("name", "subject");
+        fakeSubject.setAttribute("type", "text");
+        fakeSubject.setAttribute("id", "subjectID");
+        fakeSubject.setAttribute("value", subject.value);
+        document.getElementById("fakeForm").appendChild(fakeSubject);
+        //Message
+        var fakeMessage = document.createElement("TEXTAREA");
+        fakeMessage.setAttribute("name", "message");
+        fakeMessage.setAttribute("id", "messageID");
+        fakeMessage.setAttribute("form", "fakeForm");
+        fakeMessage.setAttribute("value", message.value);
+        document.getElementById("fakeForm").appendChild(fakeMessage);
+        //Website
+        var fakeWebsite = document.createElement("INPUT");
+        fakeWebsite.setAttribute("name", "website");
+        fakeWebsite.setAttribute("type", "text");
+        fakeWebsite.setAttribute("id", "websiteID");
+        fakeWebsite.setAttribute("value", website.value);
+        document.getElementById("fakeForm").appendChild(fakeWebsite);
+        //Country Code
+        var fakeCountryCode = document.createElement("INPUT");
+        fakeCountryCode.setAttribute("name", "country_code");
+        fakeCountryCode.setAttribute("type", "text");
+        fakeCountryCode.setAttribute("id", "country_code_ID");
+        fakeCountryCode.setAttribute("value", phoneNumNums[0].value);
+        document.getElementById("fakeForm").appendChild(fakeCountryCode);
+        //Area Code
+        var fakeAreaCode = document.createElement("INPUT");
+        fakeAreaCode.setAttribute("name", "area_code");
+        fakeAreaCode.setAttribute("type", "text");
+        fakeAreaCode.setAttribute("id", "area_code_ID");
+        fakeAreaCode.setAttribute("value", phoneNumNums[1].value);
+        document.getElementById("fakeForm").appendChild(fakeAreaCode);
+        //PhoneNum1
+        var fakePN1 = document.createElement("INPUT");
+        fakePN1.setAttribute("name", "pn1");
+        fakePN1.setAttribute("type", "text");
+        fakePN1.setAttribute("id", "pn1_ID");
+        fakePN1.setAttribute("value", phoneNumNums[2].value);
+        document.getElementById("fakeForm").appendChild(fakePN1);
+        //PhoneNum2
+        var fakePN2 = document.createElement("INPUT");
+        fakePN2.setAttribute("name", "pn2");
+        fakePN2.setAttribute("type", "text");
+        fakePN2.setAttribute("id", "pn2_ID");
+        fakePN2.setAttribute("value", phoneNumNums[3].value);
+        document.getElementById("fakeForm").appendChild(fakePN2);
         
     }
     

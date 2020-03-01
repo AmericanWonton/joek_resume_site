@@ -15,6 +15,8 @@
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Bowlby+One+SC|Dosis|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
         <!--Javascript-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="js/email.js"></script>
     </head>
     <body>
@@ -58,7 +60,7 @@
                 <br><br>
                 <!--Form Fillout-->
                 <div class="divform">
-                    <form id="my-form">
+                    <form id="my-form" onsubmit="return false">
                         <label>Firstname:</label>
                         <input type="text" name="firstname" id="inputTextMobileFName"/>
                         <label>Lastname:</label>
