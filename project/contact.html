@@ -13,7 +13,7 @@
         <link rel="stylesheet" media="(min-width: 600px)" href="css/mq_600.css">
         <link rel="stylesheet" media="(min-width: 900px)" href="css/mq_900.css">
         <!--Fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Bowlby+One+SC|Dosis|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Bowlby+One+SC|Dosis|Nunito|Odibee+Sans|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
         <!--Javascript-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
@@ -65,24 +65,90 @@
                     method="POST"
                     onload=""
                     >
-                        <label>Firstname:</label>
-                        <input type="text" name="firstname" id="inputTextMobileFName"/>
-                        <label>Lastname:</label>
-                        <input type="text" name="lastname" id="inputTextMobileLName"/>
-                        <label>Email:</label>
-                        <input type="email" name="email" id="inputTextMobileEmail"/>
-                        <label>Subject</label>
-                        <input type="text" name="Subject" id="inputTextMobileSubject"/>
-                        <label>Message:</label>
-                        <textarea name="message" form="my-form" id="inputTextMobileMessage"></textarea>
-                        <label>Website:</label>
-                        <input type="text" name="website" id="inputTextMobileWebsite"/>
-                        <label>PhoneNum:</label>
-                        <input type="text" name="country_code" id="inputTitlePhoneNum1" maxlength=1/>
-                        <input type="text" name="area_code" id="inputTitlePhoneNum2" maxlength=3/>
-                        <input type="text" name="phonenum_1" id="inputTitlePhoneNum3" maxlength=3/>
-                        <input type="text" name="phonenum_2" id="inputTitlePhoneNum4" maxlength=4/>
-                        <button id="my-form-button">Submit</button>
+                        <!--Firstname-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    FIRSTNAME:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="firstname" id="inputTextMobileFName"/>
+                            </div>
+                        </div>
+                        <!--Lastname-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    LASTNAME:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="lastname" id="inputTextMobileLName"/>
+                            </div>
+                        </div>
+                        <!--Email-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    EMAIL:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="email" id="inputTextMobileEmail"/>
+                            </div>
+                        </div>
+                        <!--Subject-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    SUBJECT:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="Subject" id="inputTextMobileSubject"/>
+                            </div>
+                        </div>
+                        <!--Message-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    MESSAGE:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <textarea name="message" form="my-form" id="inputTextMobileMessage"></textarea>
+                            </div>
+                        </div>
+                        <!--Website-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    WEBSITE:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="website" id="inputTextMobileWebsite"/>
+                            </div>
+                        </div>
+                        <!--Phone Number-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    PHONE-NUMBER:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="country_code" id="inputTitlePhoneNum1" maxlength=1/>
+                                <input type="text" name="area_code" id="inputTitlePhoneNum2" maxlength=3/>
+                                <input type="text" name="phonenum_1" id="inputTitlePhoneNum3" maxlength=3/>
+                                <input type="text" name="phonenum_2" id="inputTitlePhoneNum4" maxlength=4/>
+                            </div>
+                        </div>
+                        <!--Submit Button-->
+                        <div class="fieldSection">
+                            <button id="my-form-button">Submit</button>
+                        </div>
                     </form>
                 </div>
                 <!-- My contact info section -->
@@ -143,13 +209,24 @@
                 }
     
                 function error() {
-                    status.innerHTML = "Oops! There was a problem.";
-                    alert("Oops, there's a problem...");
+                    form.reset();
                 }
     
                 // handle the form submission event
     
                 form.addEventListener("submit", function(ev) {
+                    //If 0, all the fields are okay, send the email
+                    /* Come back to this later! 
+                    if (isEmailValid() === 0){
+                        ev.preventDefault();
+                        var data = new FormData(form);
+                        ajax(form.method, form.action, data, success, error);
+                    } else {
+                        //If a value is returned that is NOT 0, there's a problem, clear the field and
+                        //print the error. 
+                        error();
+                    }
+                    */
                     ev.preventDefault();
                     var data = new FormData(form);
                     ajax(form.method, form.action, data, success, error);

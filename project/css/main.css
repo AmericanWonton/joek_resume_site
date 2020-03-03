@@ -54,6 +54,8 @@ body, div, p, q, i, h1, h2, h3, h4, h5, h6, a, header, footer {
     font-family: 'Open Sans Condensed', sans-serif;
     font-family: 'Dosis', sans-serif;
     font-family: 'Bebas Neue', cursive, sans-serif;
+    font-family: 'Odibee Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 /* ------------------------------------------------- */
@@ -317,7 +319,7 @@ a {
 }
 
 
-/* This gives the introudction to me with a greeting next to picture */
+/* This gives the introduction to me with a greeting next to picture */
 .myfacediv{
     /* flexbox arrangements */
     display: flex;
@@ -496,20 +498,104 @@ footer {
     /* styling */
 }
 
-.contactFormRow {
-    /* flexbox content */
+.fieldSection {
+    /*flexbox styling */
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: wrap;
     align-content: center;
     justify-content: center;
-    background-color: cornflowerblue;
-    padding: 5px;
+    width: 100%;
+    /* styling */
+    margin-top: .5rem;
+    margin-bottom: .5rem;
 }
 
-.inputTextMobile{
+.labelDiv {
+    /* flexbox styling */
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-end;
+    align-content: center;
     width: 45%;
-    border: 2px solid orange;
-    display: inline-block;
+}
+
+.labelPText {
+    /* styling */
+    font-size: 1rem;
+    padding-right: 1rem;
+    font-family: 'Odibee Sans', sans-serif;
+}
+
+.inputDiv {
+    /* flexbox styling */
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    width: 45%;
+}
+
+#inputTextMobileFName{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTextMobileLName{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTextMobileEmail{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTextMobileSubject{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTextMobileMessage{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTextMobileWebsite{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTitlePhoneNum1 {
+    width: 10%;
+    height: auto;
+    margin-right: .5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTitlePhoneNum2 {
+    width: 15%;
+    height: auto;
+    margin-right: .5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTitlePhoneNum3 {
+    width: 15%;
+    height: auto;
+    margin-right: .5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTitlePhoneNum4 {
+    width: 20%;
+    height: auto;
+    font-family: 'Nunito', sans-serif;
 }
 
 .inputTextMobileMessage {
@@ -546,13 +632,6 @@ footer {
     width: 45%;
     /* Debug colors */
     background-color: orchid;
-}
-
-.inputTitlePhoneNum {
-    width: 15%;
-    height: auto;
-    margin: 5px;
-    text-align: right;
 }
 
 /* This is for links */

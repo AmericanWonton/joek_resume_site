@@ -1,6 +1,7 @@
 To Do List:
 
-1. 1st create a form for contact that sends stuff...THEN try and make it look pretty.
+1. FOR NOW: We will have our form have no validation...we'll come back to it later! For now, we shall
+pretty this baby up!
 
 So apparently if you want flexbox to work sometimes, you just need 'wrap'...not row wrap or column wrap...the hell?
 
