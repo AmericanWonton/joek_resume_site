@@ -13,3 +13,30 @@ Having a really shitty time turning SVGs from PNGs on GIMP and elsewhere....it k
 Downloading InkScape to see if that will work well...
 
 To close all code sections in VS Code, press CTRL + K + 0
+or Command + k + 0 in Mac
+
+How to get this website online: 
+Overview Steps:
+STEP1: By a name with Google Domains,(or find out how to transfer with SquareSpace).
+STEP2: Go to the Google Cloud Developer Console to create a new Project with a Project ID(HOLD ON TO PROJECT ID)
+STEP3: You need two files that you need in the root to any site you want to deploy to Google Cloud, (Todd has em', it's a YAML file 
+and something else and MAIN.go)
+STEP4: in the YAML file, put the Cloud Project ID in the 'application' spot
+STEP5: deploy project, (go to terminal with that phrase Todd has in the video)
+STEP6: You can find website at the appID.appspot.com
+STEP7: You need to change the DNS info at Google domains. You have to point your domain to the appengine project 
+STEP8: FOR ABOVE, go to Google Domains, go to manage my domains, configure DNS, then 'domain forwarding',(watch the video, it might 
+have changed from when Todd did it last).
+
+IN-DEPTH STEPS
+STEP 1: Go to Google Domain and search some domains,(or go through SquareSpace, you got the code from them.)
+You could try 'domain name generator' or something clever to generate a website name
+STEP 2: Google is a CDN...content Delivery Network...servers everywhere to deliver your stuff. It's better cuz it's a lot
+of servers everywhere.
+STEP 3: Go to Google Cloud. Go to Platform as a service,(App Engine, IIAS). Click on View App Engine Docs
+Sleect standard Golang environment.
+You gotta download and install the SDK
+STEP 4: Download, click go 64 bit. There's a checksum to make sure you downloaded the correct thing.
+STEP 5: Launch the installation, extract the zip or whatever,(I'm gunna put it in the D drive).
+STEP 6: There should be a GOENGINE you can click into. You need to add the environment variables to the folder path.
+STEP 7: You need to check if Python is installed: In the bash, type in the following: python -v 
