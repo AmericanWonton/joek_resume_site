@@ -476,9 +476,9 @@ footer {
     flex-flow: wrap;
     align-content: center;
     justify-content: center;
-    width: 100%;
     /* styling */
     padding: .2rem;
+    width: 100%;
 }
 
 .infodiv {

@@ -96,7 +96,7 @@ header {
 .myName {
     /* This is for style */
     font-family: 'Bowlby One SC', cursive, serif, sans-serif;
-    font-size: 3rem;
+    font-size: 5rem;
     /* font alignment */
     align-content: center;
     text-align: center;
@@ -128,7 +128,7 @@ header {
     /* Styling */
     font-family: 'Bebas Neue', cursive, sans-serif;
     padding: 10px;
-    font-size: 1.5rem;
+    font-size: 3rem;
     color: white;
     background-color: rgb(54, 50, 50);
 }
@@ -159,7 +159,7 @@ header {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #94a095; font-family: 'Bebas Neue', cursive, sans-serif;
-color: white; font-size: 1.5rem;}
+color: white; font-size: 3rem;}
 
 .inspirationaldiv{
     /* flexbox content */
@@ -182,14 +182,14 @@ color: white; font-size: 1.5rem;}
 }
 
 .inspirationalp {
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
 }
 
 .inspirational_quote {
     /* font styling */
     font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 1rem;
+    font-size: 2rem;
     font-style: italic;
     text-align: center;
 }
@@ -231,7 +231,7 @@ color: white; font-size: 1.5rem;}
     font-weight: bold;
     text-align: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     margin: 2px;
     padding: 2px;
     width: 100%;
@@ -248,7 +248,7 @@ a {
 
 /* This is for the 'above the fold' look */
 .above_fold {
-    height: 125vh;
+    height: 110vh;
     /* border: 5px solid black; */
     box-sizing: border-box;
     /* This is for the background styling */
@@ -337,7 +337,7 @@ a {
 }
 
 .myface {
-    width: 30vw;
+    width: 25vw;
     height: 30vh;
     border-radius: 50%;
 }
@@ -410,7 +410,7 @@ a {
     color: white;
     align-self: center;
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     padding: 10px;
 }
 
@@ -445,7 +445,7 @@ footer {
     width: 100%;
     color: red;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .mainfootersection {
@@ -472,7 +472,6 @@ footer {
     flex-flow: wrap;
     align-content: center;
     justify-content: center;
-    width: 100%;
     /* styling */
     padding: .2rem;
 }
@@ -487,15 +486,15 @@ footer {
 }
 
 .infop {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: black;
     text-align: center;
     padding: 5px;
 }
 
 .infoimg {
-    width: 25px;
-    height: 25px;
+    width: 9vw;
+    height: 9vh;
 }
 
 .infoimg_larger {
@@ -577,7 +576,7 @@ footer {
     /* font styling */
     font-size: 1rem;
     font-family: 'Nunito', sans-serif;
-    width: 35vw;
+    width: 40vw;
 }
 
 #inputTextMobileMessage{
@@ -592,7 +591,7 @@ footer {
     /* font styling */
     font-size: 1rem;
     font-family: 'Nunito', sans-serif;
-    width: 35vw;
+    width: 40vw;
 }
 
 #inputTitlePhoneNum1 {
@@ -625,6 +624,7 @@ footer {
 #my-form-button {
     width: 20vw;
     height: 10vh;
+    font-size: 2.5rem;
 }
 
 .inputTextMobileMessage {
@@ -666,7 +666,7 @@ footer {
 /* This is for links */
 .headerLinks {
     font-family: 'Bebas Neue', cursive, sans-serif;
-    font-size: 1.8rem;
+    font-size: 3rem;
     color: white;
 }
 

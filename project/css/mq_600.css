@@ -461,9 +461,12 @@ footer {
     /* Flex-box display */
     display: flex;
     flex-flow: wrap;
+    /*
     align-content: center;
     justify-content: center;
+    */
     width: 45%;
+    /* debug styling */
 }
 
 .sub_footerSectionSpace {
@@ -472,9 +475,9 @@ footer {
     flex-flow: wrap;
     align-content: center;
     justify-content: center;
-    width: 100%;
     /* styling */
     padding: .2rem;
+    /* debug styling */
 }
 
 .infodiv {
@@ -487,15 +490,15 @@ footer {
 }
 
 .infop {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: black;
     text-align: center;
     padding: 5px;
 }
 
 .infoimg {
-    width: 25px;
-    height: 25px;
+    width: 8vw;
+    height: 8vh;
 }
 
 .infoimg_larger {
@@ -625,6 +628,7 @@ footer {
 #my-form-button {
     width: 20vw;
     height: 10vh;
+    font-size: 2rem;
 }
 
 .inputTextMobileMessage {
