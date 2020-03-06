@@ -1,7 +1,14 @@
 To Do List:
 
-1. FOR NOW: We will have our form have no validation...we'll come back to it later! For now, we shall
-pretty this baby up!
+1. Mkay, it's prettied up...now to get this bad person online. 
+Okay, so I transferred the domain to Google, but Google says they need to ask SquareSpace to transfer that shite.
+According to SquareSpace, I STILL NEED TO CANCEL SERVICE WITH THEM after this is transferred!
+
+Here's the Google Cloud ID for the Project: Resume-Site 37384 ( or joe-k-resume-site, idk yet).
+(It says the ProjectID is : joe-k-resume-site and teh project number is: '210884010076')
+Here's the Google Engine Standard Documentation site: https://cloud.google.com/appengine/docs
+Here's the Checksum for the Google Cloud if we need it: 87603d6bd183979bf907e96139dc4e988999db09a5d0a4e44efac05e71ba3440
+
 
 So apparently if you want flexbox to work sometimes, you just need 'wrap'...not row wrap or column wrap...the hell?
 
@@ -34,9 +41,23 @@ You could try 'domain name generator' or something clever to generate a website 
 STEP 2: Google is a CDN...content Delivery Network...servers everywhere to deliver your stuff. It's better cuz it's a lot
 of servers everywhere.
 STEP 3: Go to Google Cloud. Go to Platform as a service,(App Engine, IIAS). Click on View App Engine Docs
-Sleect standard Golang environment.
+Select standard Golang environment. https://cloud.google.com/appengine/docs
 You gotta download and install the SDK
 STEP 4: Download, click go 64 bit. There's a checksum to make sure you downloaded the correct thing.
 STEP 5: Launch the installation, extract the zip or whatever,(I'm gunna put it in the D drive).
 STEP 6: There should be a GOENGINE you can click into. You need to add the environment variables to the folder path.
-STEP 7: You need to check if Python is installed: In the bash, type in the following: python -v 
+STEP 7: You need to check if Python is installed: In the bash, type in the following: python -v. YOU NEED PYTHON 2.7 (Maybe unintsall and RE-install)
+STEP 8: Set Path Variable for AppEngine. Go to Enviornment Variables. Watch 'Publishing your site- Google Cloud' at 10 mins to see that. Restart 
+machine after that. (The next video has him setting the environment vairalbe another way for Python). He's got the links for this nonesense
+in his lesson notes.
+STEP 9: Create a Project at developer console. Click Create Project, take note of the ID as well.
+When you deploy, you'll be able to see it at the project name, the project name, and the uniqueID.
+STEP 10: Make sure you have the Go and the YAML files. Insert the APP ID in the YAML,(with the project title)
+STEP 11: cd into the prject and type goapp deploy...maybe...you might just have to follow the doucmentation
+or watch this dude again. Go to the Doc in Go App Engine Standard Enviornment. Look at this dude's notes and doucmentation.
+STEP 12: Need to assossiate name with Server. Go to Google Domains and 'Configure DNS'. Go to App Engine Area, and point it to the 
+App Engine ID. Maybe you can try to serve the email as well in the settings.
+
+
+
+Can maybe do this on the Raspberry Pi? Need to install Go and Python?
