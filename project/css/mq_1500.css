@@ -36,3 +36,11 @@
     height: 10vh;
     font-size: 3rem;
 }
+
+.labelPText {
+    /* styling */
+    font-size: 3rem;
+    padding-right: 1rem;
+    font-family: 'Odibee Sans', sans-serif;
+    color: rgb(207, 157, 157);
+}
