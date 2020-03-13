@@ -6,6 +6,8 @@ According to SquareSpace, I STILL NEED TO CANCEL SERVICE WITH THEM after this is
 
 Here's the Google Cloud ID for the Project: Resume-Site 37384 ( or joe-k-resume-site, idk yet).
 (It says the ProjectID is : joe-k-resume-site and teh project number is: '210884010076')
+Or it may be...: Project Name: Resume-Site 37384 with Project ID: resume-site-37384 and 
+Project Name: 659845184583
 Here's the Google Engine Standard Documentation site: https://cloud.google.com/appengine/docs
 Here's the Checksum for the Google Cloud if we need it: 87603d6bd183979bf907e96139dc4e988999db09a5d0a4e44efac05e71ba3440
 
