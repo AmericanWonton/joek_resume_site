@@ -11,6 +11,9 @@ Project Name: 659845184583
 Here's the Google Engine Standard Documentation site: https://cloud.google.com/appengine/docs
 Here's the Checksum for the Google Cloud if we need it: 87603d6bd183979bf907e96139dc4e988999db09a5d0a4e44efac05e71ba3440
 
+Holy crap, got it working! here's the thing, I just needed to follow this instead: 
+https://github.com/StuLast/deploy-go-app-to-gcloud-appengine
+
 
 So apparently if you want flexbox to work sometimes, you just need 'wrap'...not row wrap or column wrap...the hell?
 
