@@ -14,6 +14,7 @@ Here's the Checksum for the Google Cloud if we need it: 87603d6bd183979bf907e961
 Holy crap, got it working! here's the thing, I just needed to follow this instead: 
 https://github.com/StuLast/deploy-go-app-to-gcloud-appengine
 
+For now, we can see this garbage working here: https://resume-site-37384.appspot.com/
 
 So apparently if you want flexbox to work sometimes, you just need 'wrap'...not row wrap or column wrap...the hell?
 

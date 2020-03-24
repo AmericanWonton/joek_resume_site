@@ -248,7 +248,7 @@ a {
 
 /* This is for the 'above the fold' look */
 .above_fold {
-    height: 147vh;
+    height: auto;
     /* border: 5px solid black; */
     box-sizing: border-box;
     /* This is for the background styling */

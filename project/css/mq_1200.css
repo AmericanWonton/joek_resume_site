@@ -1,5 +1,5 @@
 .myface {
-    width: 25vw;
+    width: 30vw;
     height: 35vh;
     border-radius: 50%;
 }
@@ -12,7 +12,7 @@
 }
 
 .above_fold {
-    height: auto;
+    height: 145vh;
     /* border: 5px solid black; */
     box-sizing: border-box;
     /* This is for the background styling */
