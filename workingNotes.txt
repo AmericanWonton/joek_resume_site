@@ -1,9 +1,5 @@
 To Do List:
 
-1. Mkay, it's prettied up...now to get this bad person online. 
-Okay, so I transferred the domain to Google, but Google says they need to ask SquareSpace to transfer that shite.
-According to SquareSpace, I STILL NEED TO CANCEL SERVICE WITH THEM after this is transferred!
-
 Here's the Google Cloud ID for the Project: Resume-Site 37384 ( or joe-k-resume-site, idk yet).
 (It says the ProjectID is : joe-k-resume-site and teh project number is: '210884010076')
 Or it may be...: Project Name: Resume-Site 37384 with Project ID: resume-site-37384 and 
@@ -59,6 +55,7 @@ in his lesson notes.
 STEP 9: Create a Project at developer console. Click Create Project, take note of the ID as well.
 When you deploy, you'll be able to see it at the project name, the project name, and the uniqueID.
 STEP 10: Make sure you have the Go and the YAML files. Insert the APP ID in the YAML,(with the project title)
+(WARNING, THIS STEP MIGHT BE OUTDATED AS FAR AS THE APP ID IS CONCERNED)
 STEP 11: cd into the prject and type goapp deploy...maybe...you might just have to follow the doucmentation
 or watch this dude again. Go to the Doc in Go App Engine Standard Enviornment. Look at this dude's notes and doucmentation.
 STEP 12: Need to assossiate name with Server. Go to Google Domains and 'Configure DNS'. Go to App Engine Area, and point it to the 
