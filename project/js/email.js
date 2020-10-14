@@ -1,3 +1,15 @@
+var theForm = document.getElementById("my-form");
+var fName = document.getElementById("inputTextMobileFName");
+var lName = document.getElementById("inputTextMobileLName");
+var email = document.getElementById("inputTextMobileEmail");
+var subject = document.getElementById("inputTextMobileSubject");
+var message = document.getElementById("inputTextMobileMessage");
+var website = document.getElementById("inputTextMobileWebsite");
+var areaCode = document.getElementById("inputTitlePhoneNum1");
+var phoneNum1 = document.getElementById("inputTitlePhoneNum2");
+var phoneNum2 = document.getElementById("inputTitlePhoneNum3");
+var phoneNum3 = document.getElementById("inputTitlePhoneNum4");
+
 function isEmailValid() {
     
     //Get and define variables of the form
@@ -107,4 +119,38 @@ function isEmailValid() {
     /* return value for a good email */
     return goodCharacters;
     
+}
+
+function submitEmail(){
+    var userEmail = {
+        FName = fName.value,
+        LName = lName.value,
+        Email = email.value,
+        Subject = subject.value,
+        Message = message.value,
+        Website = website.value,
+        AreaCode = areaCode.value,
+        PhoneNum1 = phoneNum1.value,
+        PhoneNum2 = phoneNum2.value,
+        PhoneNum3 = phoneNum3.value
+    };
+
+    var jsonString = JSON.stringify(userEmail);
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/emailSubmit', true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.addEventListener('readystatechange', function(){
+        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200){
+            var item = xhr.responseText;
+            var successMSG = JSON.parse(item);
+            if (successMSG.SuccessNum == 0){
+                console.log("DEBUG: Successful User submission, going to main page.");
+                alert(successMSG.Message);
+            } else {
+                console.log("DEBUG: Unsuccessful User submission: " + successMSG.Message);
+                alert(successMSG.Message);
+            }
+        }
+    });
+    xhr.send(jsonString);
 }
