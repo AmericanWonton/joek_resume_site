@@ -10,6 +10,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"time"
 
 	"golang.org/x/oauth2"
@@ -159,8 +160,9 @@ func signUpUserEmail(emailPosted UserEmail) bool {
 }
 
 func intializecreds() {
-
-	file, err := os.Open("creds/creds.txt")
+	currEnv, _ := os.Getwd()
+	theFile := filepath.Join(currEnv, "static", "creds", "creds.txt")
+	file, err := os.Open(theFile)
 
 	if err != nil {
 		fmt.Printf("Trouble opening file for Gmail Credentials: %v\n", err.Error())
