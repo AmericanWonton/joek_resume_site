@@ -43,6 +43,62 @@ type UserEmail struct {
 //Used to handle emails submitted to us
 func emailSubmit(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
+		fmt.Println("DEBUG: We are in emailSubmit.")
+		//Collect JSON from Postman or wherever
+		//Get the byte slice from the request body ajax
+		bs, err := ioutil.ReadAll(r.Body)
+		if err != nil {
+			fmt.Println(err)
+		}
+		//Unmarshal Data
+		var emailPosted UserEmail
+		json.Unmarshal(bs, &emailPosted)
+		//Get values
+		goodEmail := true //signUpUserEmail(emailPosted) fix this between letting resume be up!
+		//Compile Response accordingly
+		if goodEmail == true {
+			type successMSG struct {
+				Message     string `json:"Message"`
+				SuccessNum  int    `json:"SuccessNum"`
+				RedirectURL string `json:"RedirectURL"`
+			}
+			msgSuccess := successMSG{
+				Message:     "Email Sent! I hope to get back to you soon!",
+				SuccessNum:  0,
+				RedirectURL: "http://" + "localhost:" + port,
+			}
+
+			theJSONMessage, err := json.Marshal(msgSuccess)
+			if err != nil {
+				fmt.Println(err)
+			}
+			fmt.Println("Email successfully submitted.")
+			fmt.Fprint(w, string(theJSONMessage))
+		} else {
+			type successMSG struct {
+				Message     string `json:"Message"`
+				SuccessNum  int    `json:"SuccessNum"`
+				RedirectURL string `json:"RedirectURL"`
+			}
+			msgSuccess := successMSG{
+				Message:     "Email issue! Please review information sent",
+				SuccessNum:  1,
+				RedirectURL: "http://" + "localhost:" + port,
+			}
+
+			theJSONMessage, err := json.Marshal(msgSuccess)
+			if err != nil {
+				fmt.Println(err)
+			}
+			fmt.Fprint(w, string(theJSONMessage))
+		}
+	}
+}
+
+//Used to handle emails submitted to us
+/*
+func emailSubmit() {
+	if r.Method == http.MethodPost {
 		//Collect JSON from Postman or wherever
 		//Get the byte slice from the request body ajax
 		bs, err := ioutil.ReadAll(r.Body)
@@ -71,6 +127,7 @@ func emailSubmit(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				fmt.Println(err)
 			}
+			fmt.Println("Email successfully submitted.")
 			fmt.Fprint(w, string(theJSONMessage))
 		} else {
 			type successMSG struct {
@@ -93,7 +150,7 @@ func emailSubmit(w http.ResponseWriter, r *http.Request) {
 	}
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }
-
+*/
 //Initialized at begininning of program
 func OAuthGmailService() {
 	config := oauth2.Config{
@@ -128,19 +185,19 @@ func OAuthGmailService() {
 }
 
 //Attempts to send an email to User
-func signUpUserEmail(emailPosted UserEmail) bool {
-
+func signUpUserEmail(theEmail UserEmail) bool {
+	fmt.Println("DEBUG: Sending email in signUpUpserEmail")
 	goodEmailSend := true
-	theMessage := "Recieved a message from " + emailPosted.FName + " " + emailPosted.LName +
-		" at " + emailPosted.Website + ":\n\n" + emailPosted.Message + "\n\n" +
-		"Phone Num is: " + emailPosted.AreaCode + "-" + emailPosted.PhoneNum1 + "-" +
-		emailPosted.PhoneNum2 + "-" + emailPosted.PhoneNum3 + "\n" +
-		"Email: " + emailPosted.Email
-	theSubject := emailPosted.Subject
+	theMessage := "Recieved a message from " + theEmail.FName + " " + theEmail.LName +
+		" at " + theEmail.Email + ":\n\n" + theEmail.Message + "\n\n" +
+		"Phone Num is: " + theEmail.AreaCode + "-" + theEmail.PhoneNum1 + "-" +
+		theEmail.PhoneNum2 + "-" + theEmail.PhoneNum3 + "\n" +
+		"Email: " + theEmail.Email
+	theSubject := theEmail.Subject
 
 	var message gmail.Message
 
-	emailTo := "To: " + emailPosted.Email + "\r\n"
+	emailTo := "To: " + "jbkeller0303@gmail.com" + "\r\n"
 	subject := "Subject: " + theSubject + "\n"
 	mime := "MIME-version: 1.0;\nContent-Type: text/plain; charset=\"UTF-8\";\n\n"
 	msg := []byte(emailTo + subject + mime + "\n" + theMessage)
@@ -148,6 +205,7 @@ func signUpUserEmail(emailPosted UserEmail) bool {
 	message.Raw = base64.URLEncoding.EncodeToString(msg)
 
 	// Send the message
+	fmt.Println("DEBUG: About to send this Gmail...")
 	_, err := GmailService.Users.Messages.Send("me", &message).Do()
 	if err != nil {
 		errMsg := "Error sending this message to the User: " + err.Error()
@@ -183,4 +241,5 @@ func intializecreds() {
 	theClientSecret = text[1]
 	theAccessToken = text[2]
 	theRefreshToken = text[3]
+	fmt.Println("DEBUG: Email Credentials Initialized")
 }

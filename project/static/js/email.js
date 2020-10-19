@@ -1,14 +1,13 @@
-var theForm = document.getElementById("my-form");
-var fName = document.getElementById("inputTextMobileFName");
-var lName = document.getElementById("inputTextMobileLName");
-var email = document.getElementById("inputTextMobileEmail");
-var subject = document.getElementById("inputTextMobileSubject");
-var message = document.getElementById("inputTextMobileMessage");
-var website = document.getElementById("inputTextMobileWebsite");
-var areaCode = document.getElementById("inputTitlePhoneNum1");
-var phoneNum1 = document.getElementById("inputTitlePhoneNum2");
-var phoneNum2 = document.getElementById("inputTitlePhoneNum3");
-var phoneNum3 = document.getElementById("inputTitlePhoneNum4");
+
+
+var host = ""; //This is filled in by server
+
+function setHosting(theHosting){
+    var theForm = document.getElementById("my-form");
+    host = "http://localhost:" + theHosting + "/contact";
+    theForm.setAttribute("action", host);
+    console.log("We set the host action to: " + host);
+}
 
 function isEmailValid() {
     
@@ -122,19 +121,32 @@ function isEmailValid() {
 }
 
 function submitEmail(){
+    //Get and define variables of the form
+    var fName = document.getElementById("inputTextMobileFName");
+    var lName = document.getElementById("inputTextMobileLName");
+    var email = document.getElementById("inputTextMobileEmail");
+    var subject = document.getElementById("inputTextMobileSubject");
+    var website = document.getElementById("inputTextMobileWebsite");
+    var message = document.getElementById("inputTextMobileMessage");
+    var phoneNumNums = new Array (document.getElementById("inputTitlePhoneNum1"),
+                                    document.getElementById("inputTitlePhoneNum2"),
+                                    document.getElementById("inputTitlePhoneNum3"),
+                                    document.getElementById("inputTitlePhoneNum4"));
+    var theForm = document.getElementById("my-form");
     var userEmail = {
-        FName = fName.value,
-        LName = lName.value,
-        Email = email.value,
-        Subject = subject.value,
-        Message = message.value,
-        Website = website.value,
-        AreaCode = areaCode.value,
-        PhoneNum1 = phoneNum1.value,
-        PhoneNum2 = phoneNum2.value,
-        PhoneNum3 = phoneNum3.value
+        FName: fName.value,
+        LName: lName.value,
+        Email: email.value,
+        Subject: subject.value,
+        Message: message.value,
+        Website: website.value,
+        AreaCode: phoneNumNums[0].value,
+        PhoneNum1: phoneNumNums[1].value,
+        PhoneNum2: phoneNumNums[2].value,
+        PhoneNum3: phoneNumNums[3].value
     };
-
+    console.log("Ready to send our email:");
+    console.log(userEmail);
     var jsonString = JSON.stringify(userEmail);
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/emailSubmit', true);
@@ -153,4 +165,8 @@ function submitEmail(){
         }
     });
     xhr.send(jsonString);
+}
+
+function oof(){
+    console.log("oof");
 }

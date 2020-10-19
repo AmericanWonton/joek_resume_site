@@ -1,63 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>Joseph Keller Site</title>
-        <!--Phone pixel density markup-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--Our FavIcon-->
-        <link rel="shortcut icon" type="image/png" href="img/favicons/keyboardFav.png">
-        <!--Media Query and stylesheets-->
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/styling.css">
-        <link rel="stylesheet" media="(min-width: 600px)" href="css/mq_600.css">
-        <link rel="stylesheet" media="(min-width: 900px)" href="css/mq_900.css">
-        <link rel="stylesheet" media="(min-width: 1500px)" href="css/mq_1500.css">
-        <!--Fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Bowlby+One+SC|Dosis|Nunito|Odibee+Sans|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
-        <!--Javascript-->
-        <script type="text/javascript" src="js/picture_gallery.js"></script>
-
+        {{/* Here is our meta charset and title */}}
+        {{template "meta-title"}}
+        {{/* Here is our pixel density markup */}}
+        {{template "pixel-dense"}}
+        {{/* Here is our FavIcon */}}
+        {{template "fav-icon1"}}
+        {{/* Here are our fonts */}}
+        {{template "fonts1"}}
+        {{/* Here are our Media Query and stylesheets */}}
+        {{template "media-queries"}}
+        {{/* Here is our Javascript or additional code needed */}}
+        {{template "javascript"}}
     </head>
     <body>
         <!--Header Navigation Area-->
-        <!--Header Navigation Area-->
-        <header>
-            <!--This will contain my name in large font-->
-            <div class="namediv">
-                <h1 class="myName">Joseph Keller.com</h1>
-            </div>
-            <!--This will contain the links throughout my page-->
-            <div class="linkdiv">
-                <a href="index.html" class="headerLinks">About Me</a>
-                <!--Not sure how to pull off the 'Check Out My Work' tab...-->
-                <div class="dropdown">
-                    <button class="dropbtn">Check Out My Work!</button>
-                    <div class="dropdown-content">
-                        <a href="softwaredesign.html" class="headerLinks">Software Design</a>
-                        <a href="gamedesign.html" class="headerLinks">Game Design</a>
-                        <a href="leveldesign.html" class="headerLinks">Level Design</a>
-                        <a href="writing.html" class="headerLinks">Writing</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="headerLinks">Contact</a>
-            </div>
-            <!--This will contain a short, inspirational quote-->
-            <div class="inspirationaldiv">
-                <div class="inspirationalTextDiv">
-                    <p class="inspirationalp">
-                        <q class="inspirational_quote" cite="https://www.emergingedtech.com/2015/01/inspirational-quotes-for-teachers-from-dr-martin-luther-king-jr/">
-                        “The ultimate measure of a man is not where he stands in moments of comfort and convenience,
-                        but where he stands at times of challenge and controversy.”</q>
-                    </p>
-                </div>
-                <div class="inspirationalTextDiv">
-                    <p class="inspirationalp">
-                        -Martin Luther King Jr.
-                    </p>
-                </div>
-            </div>
-        </header>
+        {{/* Header */}}
+        {{template "header_div"}}
 
         <!-- Main Page Body -->
         <div class="backgroundpicDivWriting">
@@ -73,7 +33,7 @@
                         pirate-fantasy universe! Check them out!
                         <br>
                         <!-- How do I have people download my PDF? You have files in the project folder. -->
-                        <a href="misc/Crazies_First_Act_JoeK.pdf" class="headerLinks" alt="Crazies First Act Script Download" target="_blank" download>
+                        <a href="static/misc/Crazies_First_Act_JoeK.pdf" class="headerLinks" alt="Crazies First Act Script Download" target="_blank" download>
                             <i>Crazies First Act Script Download</i>
                         </a>
                         <br>
@@ -96,35 +56,13 @@
                 <div class="infodiv">
                     <div id="picHolder">
                         <div id="transpicHolder3" onmouseover="picFader1(3)">
-                            <img id="fadingPic3" src="img/writing/S1.jpg">
+                            <img id="fadingPic3" src="static/img/writing/S1.jpg">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!--This is the footer content-->
-        <footer>
-            <div class="myname">
-                Made by Joseph Keller
-            </div>
-            <div class="mainfootersection">
-                <div class="footersectionSpace">
-                    <div class="sub_footerSectionSpace">
-                        <img class="infoimg" src="img/svg/phone.svg">
-                    </div>
-                    <div class="sub_footerSectionSpace">
-                        <p class="infop">314-322-8594</p>
-                    </div>
-                </div>
-                <div class="footersectionSpace">
-                    <div class="sub_footerSectionSpace">
-                        <img class="infoimg" src="img/svg/gmail.svg">
-                    </div>
-                    <div class="sub_footerSectionSpace">
-                        <p class="infop">jbkeller0303@gmail.com</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        {{template "footer_div"}}
     </body>                    
 </html>

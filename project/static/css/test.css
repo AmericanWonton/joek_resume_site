@@ -160,3 +160,9 @@
     height: auto;
     width: 100%;
 }
+
+.spagoogler {
+    width: 8vw;
+    height: 8vh;
+    color: green;
+}

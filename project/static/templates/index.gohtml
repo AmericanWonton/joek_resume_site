@@ -16,8 +16,51 @@
     </head>
     <body>
         <!--Here's our 'Above the fold' content.-->
-        {{/* Header */}}
-        {{template "header_div"}}
+        <div class="above_fold">
+            {{/* Header */}}
+            {{template "header_div"}}
+            <!--Here's the 'introductionary content'-->
+            <div class="maindiv">
+                <!--Here's my face-->
+                <div class="myfacediv">
+                    <img class="myface" src="static/img/Joe+Keller+Front.jpg" alt="Joseph Keller Picture">
+                </div>
+                <!--Here's a quote with a greeting to the User.-->
+                <div class="emptyfacediv">
+                    <h2 class="itsme">Hello, my name is Joseph Keller!</h2>
+                </div>
+                <!--This is an introduction to me...-->
+                <div class="quicksphelediv">
+                    <p class="quicksphelep">
+                        I'm a Developer of web apps, mobile apps, and video games. I've always
+                        found myself happy to move into the next big opportunity offered!
+                        Currently, I'm working at Centene on a Software Production Support
+                        team. Also, my friends and I collaborate on creating video games
+                        and apps for web/mobile platforms. Around my colleagues I'm known for my
+                        leadership skills, dedication to a project, cooperation, and
+                        creativity applied when tackling a tough problem.
+                    </p>
+                </div>
+                <!-- This is a section for folks to download my resume. -->
+                <div class="downloadresdiv">
+                    <div class="instructionressection">
+                        <p class="resumeInfo">
+                            Download my Resume...
+                        </p>
+                    </div>
+                    <div class="resdownloadsection">
+                        <a href="static/resumes/Joseph_Keller_Resume_2019.pdf" target="_blank" download>
+                            <img src="static/img/svg/big_pdf.svg" class="infoimg_larger" alt="PDF download">
+                        </a>
+                    </div>
+                    <div class="resdownloadsection">
+                        <a href="static/resumes/Joseph_Keller_Resume_2020.docx" download>
+                            <img src="static/img/svg/microsoftword.svg" class="infoimg_larger" alt="Microsoft Word Download">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--Here's the 'look what I can do' section.-->
         <div class="what_doing_container">
             <div class="emptyfacediv">

@@ -30,6 +30,7 @@
     <script type="text/javascript" src="static/js/email.js"></script>
     <script type="text/javascript" src="static/js/picture_gallery.js"></script>
     <script type="text/javascript" src="static/js/test.js"></script>
+    <script type="text/javascript" src="static/js/linkhandlers.js"></script>
 {{end}}
 
 {{/******* END OF HEAD SECTION *****/}}
@@ -43,18 +44,18 @@
         </div>
         <!--This will contain the links throughout my page-->
         <div class="linkdiv">
-            <a href="static/templates/index.gohtml" class="headerLinks">About Me</a>
+            <p onclick="linkHandling(0)" class="headerLinks">About Me</a>
             <!--Not sure how to pull off the 'Check Out My Work' tab...-->
             <div class="dropdown">
                 <button class="dropbtn">Check Out My Work!</button>
                 <div class="dropdown-content">
-                    <a href="static/templates/softwaredesign.gohtml" class="headerLinks">Software Design</a>
-                    <a href="static/templates/gamedesign.gohtml" class="headerLinks">Game Design</a>
-                    <a href="static/templates/leveldesign.gohtml" class="headerLinks">Level Design</a>
-                    <a href="static/templates/writing.gohtml" class="headerLinks">Writing</a>
+                    <p onclick="linkHandling(2)" class="headerLinks">Software Design</p>
+                    <p onclick="linkHandling(3)" class="headerLinks">Game Design</p>
+                    <p onclick="linkHandling(4)" class="headerLinks">Level Design</p>
+                    <p onclick="linkHandling(5)" class="headerLinks">Writing</p>
                 </div>
             </div>
-            <a href="static/templates/contact.gohtml" class="headerLinks">Contact</a>
+            <p onclick="linkHandling(1)" class="headerLinks">Contact</p>
         </div>
         <!--This will contain a short, inspirational quote-->
         <div class="inspirationaldiv">
@@ -78,7 +79,14 @@
 {{/******** BEGINNING OF BODY SECTION *********/}}
 
 {{/******** END OF BODY SECTION ********/}}
-
+{{define "getlocalhost"}}
+    <script>
+        window.addEventListener('DOMContentLoaded', function(){
+            //Set Localhost in email.js
+            setHosting({{.Host}});
+        });
+    </script>
+{{end}}
 {{/******* BEGINNING OF FOOTER SECTION ******/}}
 {{define "footer_div"}}
     <footer>
@@ -88,7 +96,7 @@
         <div class="mainfootersection">
             <div class="footersectionSpace">
                 <div class="sub_footerSectionSpace">
-                    <img class="infoimg" src="img/svg/phone.svg">
+                    <img class="infoimg" src="static/img/svg/phone.svg">
                 </div>
                 <div class="sub_footerSectionSpace">
                     <p class="infop">314-322-8594</p>
@@ -96,7 +104,7 @@
             </div>
             <div class="footersectionSpace">
                 <div class="sub_footerSectionSpace">
-                    <img class="infoimg" src="img/svg/gmail.svg">
+                    <img class="infoimg" src="static/img/svg/gmail.svg">
                 </div>
                 <div class="sub_footerSectionSpace">
                     <p class="infop">jbkeller0303@gmail.com</p>
