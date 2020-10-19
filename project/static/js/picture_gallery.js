@@ -1,22 +1,22 @@
 
 //These are defined categorically by each section of the page.
-var ourPhotos1 = new Array ("img/GameDesign/Trashtronaught_cover_photo.png", "img/GameDesign/Sewer_pic.png",
-                            "img/GameDesign/Drone+Shot.png", "img/GameDesign/global_game_jam_2019.jpg",
-                            "img/GameDesign/team_photo_game_jam_2019.jpg");
-var ourPhotos2 = new Array ("img/GameDesign/combat_board.png", "img/GameDesign/combat_board2.png", 
-"img/GameDesign/Die+R+Combat_TitlePage.png", "img/GameDesign/die-r-combat-dice.jpg",
-"img/GameDesign/Die-R-Combat-Game-Pic.png", "img/GameDesign/die-r-combat-paper-page.jpg",
-"img/GameDesign/die-r-combat-RulePage.jfif", "img/GameDesign/python_DRC.jfif",
-"img/GameDesign/python_DRC2.jfif");
-var ourPhotos3 = new Array ("img/levelDesign/Bathroom.png", "img/levelDesign/Buck+E+Cheese+Hallway.png",
-                            "img/levelDesign/Dice+Stuff.png", "img/levelDesign/Eating+Room.png",
-                            "img/levelDesign/Elevator+Stuff.png", "img/levelDesign/ElevatorHallway.png",
-                            "img/levelDesign/Grave+Area.png", "img/levelDesign/Into+Bathroom.png",
-                            "img/levelDesign/Level+Artway.png", "img/levelDesign/Level+Hallway.png",
-                            "img/levelDesign/Prayer+Room.png");
-var ourPhotos4 = new Array ("img/writing/s1.jpg", "img/writing/s2.jpg", "img/writing/s3.jpg",
-                            "img/writing/s4.jpg", "img/writing/s5.jpg", "img/writing/s6.jpg",
-                            "img/writing/s7.jpg", "img/writing/s8.jpg",);
+var ourPhotos1 = new Array ("static/img/GameDesign/Trashtronaught_cover_photo.png", "static/img/GameDesign/Sewer_pic.png",
+"static/img/GameDesign/Drone+Shot.png", "static/img/GameDesign/global_game_jam_2019.jpg",
+"static/img/GameDesign/team_photo_game_jam_2019.jpg");
+var ourPhotos2 = new Array ("static/img/GameDesign/combat_board.png", "static/img/GameDesign/combat_board2.png", 
+"static/img/GameDesign/Die+R+Combat_TitlePage.png", "static/img/GameDesign/die-r-combat-dice.jpg",
+"static/img/GameDesign/Die-R-Combat-Game-Pic.png", "static/img/GameDesign/die-r-combat-paper-page.jpg",
+"static/img/GameDesign/die-r-combat-RulePage.jfif", "static/img/GameDesign/python_DRC.jfif",
+"static/img/GameDesign/python_DRC2.jfif");
+var ourPhotos3 = new Array ("static/img/levelDesign/Bathroom.png", "static/img/levelDesign/Buck+E+Cheese+Hallway.png",
+"static/img/levelDesign/Dice+Stuff.png", "static/img/levelDesign/Eating+Room.png",
+"static/img/levelDesign/Elevator+Stuff.png", "static/img/levelDesign/ElevatorHallway.png",
+"static/img/levelDesign/Grave+Area.png", "static/img/levelDesign/Into+Bathroom.png",
+"static/img/levelDesign/Level+Artway.png", "static/img/levelDesign/Level+Hallway.png",
+"static/img/levelDesign/Prayer+Room.png");
+var ourPhotos4 = new Array ("static/img/writing/s1.jpg", "static/img/writing/s2.jpg", "static/img/writing/s3.jpg",
+"static/img/writing/s4.jpg", "static/img/writing/s5.jpg", "static/img/writing/s6.jpg",
+"static/img/writing/s7.jpg", "static/img/writing/s8.jpg");
 //This is to control which section is allowed to transition.
 canClickArray = new Array(true, true, true, true);
 countArray = new Array(0, 0, 0, 0);

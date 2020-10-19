@@ -54,7 +54,7 @@ func emailSubmit(w http.ResponseWriter, r *http.Request) {
 		var emailPosted UserEmail
 		json.Unmarshal(bs, &emailPosted)
 		//Get values
-		goodEmail := true //signUpUserEmail(emailPosted) fix this between letting resume be up!
+		goodEmail, theErr := signUpUserEmail(emailPosted)
 		//Compile Response accordingly
 		if goodEmail == true {
 			type successMSG struct {
@@ -81,7 +81,7 @@ func emailSubmit(w http.ResponseWriter, r *http.Request) {
 				RedirectURL string `json:"RedirectURL"`
 			}
 			msgSuccess := successMSG{
-				Message:     "Email issue! Please review information sent",
+				Message:     "Email issue! Please review information sent\n" + theErr.Error(),
 				SuccessNum:  1,
 				RedirectURL: "http://" + "localhost:" + port,
 			}
@@ -185,7 +185,7 @@ func OAuthGmailService() {
 }
 
 //Attempts to send an email to User
-func signUpUserEmail(theEmail UserEmail) bool {
+func signUpUserEmail(theEmail UserEmail) (bool, error) {
 	fmt.Println("DEBUG: Sending email in signUpUpserEmail")
 	goodEmailSend := true
 	theMessage := "Recieved a message from " + theEmail.FName + " " + theEmail.LName +
@@ -214,7 +214,7 @@ func signUpUserEmail(theEmail UserEmail) bool {
 		goodEmailSend = false
 	}
 
-	return goodEmailSend
+	return goodEmailSend, err
 }
 
 func intializecreds() {

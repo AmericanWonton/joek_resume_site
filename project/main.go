@@ -26,6 +26,7 @@ func init() {
 	template1 = template.Must(template.ParseGlob("./static/templates/*"))
 	//Initalize Emails with Credentials
 	intializecreds()
+	OAuthGmailService() //Initialize Gmail Services
 }
 
 //Handles the Index page
@@ -125,5 +126,6 @@ func handleRequests() {
 }
 
 func main() {
+	//Test email send
 	handleRequests()
 }

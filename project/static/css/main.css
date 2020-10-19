@@ -148,7 +148,7 @@ header {
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content p {
     color: black;
     padding: 10px;
     text-decoration: none;
@@ -156,7 +156,7 @@ header {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: rgb(168, 90, 168);}
+.dropdown-content p:hover {background-color: rgb(168, 90, 168);}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block; background-color: white;}
