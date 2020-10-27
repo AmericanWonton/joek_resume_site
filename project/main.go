@@ -6,8 +6,6 @@ import (
 	"net/http"
 	"os"
 	"text/template"
-
-	"github.com/gorilla/mux"
 )
 
 var port string //Port String
@@ -101,31 +99,23 @@ func HandleError(w http.ResponseWriter, err error) {
 	}
 }
 
-func handleRequests() {
-	fmt.Printf("DEBUG: Handling Request...\n")
-
-	myRouter := mux.NewRouter().StrictSlash(true)
-	myRouter.Handle("/favicon.ico", http.NotFoundHandler()) //For missing FavIcon
-	/* Handle passed templates */
-	myRouter.HandleFunc("/test", test)
-	myRouter.HandleFunc("/", index)
-	myRouter.HandleFunc("/contact", contact)
-	myRouter.HandleFunc("/gamedesign", gamedesign)
-	myRouter.HandleFunc("/leveldesign", leveldesign)
-	myRouter.HandleFunc("/softwaredesign", softwaredesign)
-	myRouter.HandleFunc("/writing", writing)
-	/* HANDLE EMAIL SENDING */
-	myRouter.HandleFunc("/emailSubmit", emailSubmit).Methods("POST")
-
-	log.Printf("listenting on port %s\n", port)
-
-	//Serve our static files
-	myRouter.Handle("/", http.FileServer(http.Dir("./static")))
-	myRouter.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
-	log.Fatal(http.ListenAndServe(":"+port, myRouter))
-}
-
 func main() {
 	//Test email send
-	handleRequests()
+	fmt.Printf("DEBUG: We should be on this port: %v\n", port)
+	http.Handle("/favicon.ico", http.NotFoundHandler()) //For missing FavIcon
+	/* Handle passed templates */
+	http.HandleFunc("/", index)
+	http.HandleFunc("/contact", contact)
+	http.HandleFunc("/gamedesign", gamedesign)
+	http.HandleFunc("/leveldesign", leveldesign)
+	http.HandleFunc("/softwaredesign", softwaredesign)
+	http.HandleFunc("/writing", writing)
+	/* HANDLE EMAIL SENDING */
+	http.HandleFunc("/emailSubmit", emailSubmit)
+	//Handles our passed files
+	muxFiles := http.NewServeMux()
+	muxFiles.Handle("/", http.FileServer(http.Dir(".")))
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
+		log.Fatal(err)
+	}
 }

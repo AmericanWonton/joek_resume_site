@@ -1,5 +1,8 @@
 To Do List:
 
+Rewrite this to have an email sent and not just be a static site. Currently trying to 
+make sure Users can reach my page!
+
 INSTRUCTIONS FOR UPLOADING TO GCLOUD:
 1. gcloud components update
 2. gcloud config set project PROJECT-NAME (gcloud config set project resume-site-37384)
