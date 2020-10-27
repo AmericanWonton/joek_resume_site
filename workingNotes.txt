@@ -73,4 +73,7 @@ App Engine ID. Maybe you can try to serve the email as well in the settings.
 
 
 
-Can maybe do this on the Raspberry Pi? Need to install Go and Python?
+Here's some SSH Commands for our server on Amazon:
+ssh -i /d/goworkspace/src/resume_site_deployment/joek_resume_site/security/resumekeypair.pem ubuntu@ec2-3-128-190-13.us-east-2.compute.amazonaws.com
+
+D:\goworkspace\src\resume_site_deployment\joek_resume_site\security

@@ -2,3 +2,6 @@ creds.txt
 creds/creds.txt
 *.txt
 Makefile
+security
+*.pem
+resumekeypair.pem
