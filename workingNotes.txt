@@ -1,5 +1,7 @@
 To Do List:
 
+SCREW USING GCLOUD, DO IT ON AN AMAZON SERVER INSTEAD! IT'S WAY EASIER!
+
 Rewrite this to have an email sent and not just be a static site. Currently trying to 
 make sure Users can reach my page!
 
@@ -72,8 +74,32 @@ STEP 12: Need to assossiate name with Server. Go to Google Domains and 'Configur
 App Engine ID. Maybe you can try to serve the email as well in the settings.
 
 
-
 Here's some SSH Commands for our server on Amazon:
 ssh -i /d/goworkspace/src/resume_site_deployment/joek_resume_site/security/resumekeypair.pem ubuntu@ec2-3-128-190-13.us-east-2.compute.amazonaws.com
 
+Test for Public Address:
+ssh -i /d/goworkspace/src/resume_site_deployment/joek_resume_site/security/resumekeypair.pem ubuntu@ec2-3-128-190-13.us-east-2.compute.amazonaws.com
+
 D:\goworkspace\src\resume_site_deployment\joek_resume_site\security
+
+Docker Notes:
+Useful docker commands are in our make file. Here's a few extra:
+docker run -d -p 80:80 -v photo-images:/static/images/pictures americanwonton/suberdb
+docker run -it -p 80:80 -v photo-images:/static/images/pictures americanwonton/suberdb
+docker run -it -p 80:80 -v big-photo:/amazonimages/ americanwonton/suberdb
+docker run -it -p 80:80 americanwonton/resumeproj
+docker run -d -p 80:80 americanwonton/resumeproj
+docker pull americanwonton/resumeproj:latest
+
+How to log into docker profile: https://docs.docker.com/engine/reference/commandline/login/
+sudo docker login --username americanwonton --password peanutdoggydoo111
+
+Get rid of old Docker images:
+sudo docker image prune -a -y
+
+To stop all docker images currently running:
+sudo docker stop $(sudo docker ps -a -q)
+
+Getting this website hosted on AWS Server:
+https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-ec2-instance.html
+Address of instance IP4: 3.128.190.13

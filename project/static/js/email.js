@@ -1,5 +1,3 @@
-
-
 var host = ""; //This is filled in by server
 
 function setHosting(theHosting){
