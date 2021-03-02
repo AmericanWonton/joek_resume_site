@@ -84,9 +84,9 @@ D:\goworkspace\src\resume_site_deployment\joek_resume_site\security
 
 Docker Notes:
 Useful docker commands are in our make file. Here's a few extra:
-docker run -d -p 80:80 -v photo-images:/static/images/pictures americanwonton/suberdb
-docker run -it -p 80:80 -v photo-images:/static/images/pictures americanwonton/suberdb
-docker run -it -p 80:80 -v big-photo:/amazonimages/ americanwonton/suberdb
+docker run -d -p 80:80 -v photo-images:/static/images/pictures americanwonton/resumeproj
+docker run -it -p 80:80 -v photo-images:/static/images/pictures americanwonton/resumeproj
+docker run -it -p 80:80 -v big-photo:/amazonimages/ americanwonton/resumeproj
 docker run -it -p 80:80 americanwonton/resumeproj
 docker run -d -p 80:80 americanwonton/resumeproj
 docker pull americanwonton/resumeproj:latest
