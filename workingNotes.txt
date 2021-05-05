@@ -103,3 +103,8 @@ sudo docker stop $(sudo docker ps -a -q)
 Getting this website hosted on AWS Server:
 https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-ec2-instance.html
 Address of instance IP4: 3.128.190.13
+
+Note, new instance we have that works!
+ssh -i /d/goworkspace/src/resume_site_deployment/joek_resume_site/security/resumekeypair.pem ubuntu@ec2-18-223-29-184.us-east-2.compute.amazonaws.com
+
+Not sure what we did to bypass all that security garbage...all I did was make a new EC2 and make EVERYTHING open...
