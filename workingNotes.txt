@@ -107,6 +107,6 @@ Address of instance IP4: 3.128.190.13
 Note, new instance we have that works!
 ssh -i /d/goworkspace/src/resume_site_deployment/joek_resume_site/security/resumekeypair.pem ubuntu@ec2-18-223-29-184.us-east-2.compute.amazonaws.com
 
-scp -i /d/goworkspace/src/resume_site_deployment/joek_resume_site/security/resumekeypair.pem superdbbinary ubuntu@ec2-3-137-207-149.us-east-2.compute.amazonaws.com:
+scp -i /home/joek/go/src/joek_resume_site/joek_resume_site/security/resumekeypair.pem resume-update-script.sh ubuntu@ec2-3-137-207-149.us-east-2.compute.amazonaws.com:
 
 Not sure what we did to bypass all that security garbage...all I did was make a new EC2 and make EVERYTHING open...
