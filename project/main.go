@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	"text/template"
 
 	"github.com/gorilla/mux"
@@ -17,11 +16,7 @@ var template1 *template.Template
 
 func init() {
 	//Initialize Port
-	port = os.Getenv("PORT")
-	if port == "" {
-		port = "80"
-		log.Printf("Defaulting to port %s \n", port)
-	}
+	port = "3000"
 	//Initialize template
 	template1 = template.Must(template.ParseGlob("./static/templates/*"))
 	//Initalize Emails with Credentials
