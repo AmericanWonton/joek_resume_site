@@ -12,7 +12,7 @@
 }
 
 .above_fold {
-    height: 145vh;
+    /* height: 150vh; */
     /* border: 5px solid black; */
     box-sizing: border-box;
     /* This is for the background styling */

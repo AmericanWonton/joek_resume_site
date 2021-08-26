@@ -60,9 +60,16 @@ body, div, p, q, i, h1, h2, h3, h4, h5, h6, a, header, footer {
 
 /* ------------------------------------------------- */
 /*     Document Design under 600px.... */
-body {
-    display: flex;
-    flex-flow: row wrap;
+body, html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    vertical-align: baseline;
     /* background image */
     /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN36ChyOUvSwnwVi7flolYO0PqtybaM5qOGbFC-IjWcVjWYuVOfw&s"); */
     background-repeat: repeat;
@@ -248,7 +255,7 @@ a {
 
 /* This is for the 'above the fold' look */
 .above_fold {
-    height: auto;
+    /* height: 150vh; */
     /* border: 5px solid black; */
     box-sizing: border-box;
     /* This is for the background styling */
@@ -318,7 +325,7 @@ a {
     /* flexbox arrangements */
     
     /* styling */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     margin-left: 20px;
     margin-right: 20px;
 }
