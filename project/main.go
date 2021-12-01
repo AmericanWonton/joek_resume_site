@@ -16,7 +16,7 @@ var template1 *template.Template
 
 func init() {
 	//Initialize Port
-	port = "80"
+	port = "5000"
 	//Initialize template
 	template1 = template.Must(template.ParseGlob("./static/templates/*"))
 	//Initalize Emails with Credentials
