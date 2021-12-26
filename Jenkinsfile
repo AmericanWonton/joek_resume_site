@@ -37,6 +37,7 @@ pipeline {
                 expression {
                     params.runinit
                     echo 'Params have been initialized...'
+                    echo 'Begining Dev Deployment...'
                 }
             }
             steps{
