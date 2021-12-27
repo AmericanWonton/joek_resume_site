@@ -10,7 +10,7 @@ pipeline {
         This is just one way of doing it...you can also use the 'withCredentials()' wrapper,
         (see the deploy section)  */
         //SERVER_CREDENTIALS = credentials('test-file-cred')
-        DOCKER_CREDENTIALS = credentials('dockerCreds')
+        DOCKER_CREDENTIALS = credentials('dockerLogin')
         GIT_LOGIN = credentials('gitLogin')
         //RESUME_PEM = credentials('resume-private-key')
         //GO111MODULE = 'on' //Used from Go Plugin; kind of messing up go modules
