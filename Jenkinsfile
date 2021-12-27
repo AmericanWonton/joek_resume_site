@@ -15,7 +15,7 @@ pipeline {
         //RESUME_PEM = credentials('resume-private-key')
         //GO111MODULE = 'on' //Used from Go Plugin; kind of messing up go modules
         // Ensure the desired Go version is installed
-        def root = tool type: 'go', name: 'go-1.16.12'
+        def root = tool type: 'go', name: 'Go-Installation-1.16.12'
     }
 
     //Used to deploy application with certain paramters given
