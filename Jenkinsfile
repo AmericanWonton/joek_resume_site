@@ -36,11 +36,11 @@ pipeline {
             when {
                 expression {
                     params.runinit
-                    echo 'Params have been initialized...'
-                    echo 'Beginning Production deployment...'
                 }
             }
             steps{
+                echo 'Params have been initialized...'
+                echo 'Beginning Production deployment...'
                 //writeFile(file: "./jenkinsscripts/script.groovy", text: "")
                 /* This is how we load our groovy scripts into Jenkins */
                 script {
