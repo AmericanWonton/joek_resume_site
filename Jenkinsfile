@@ -91,18 +91,11 @@ pipeline {
             }
             steps{
                 echo "Golang App starting Testing"
-                /* 
-                
-                sh 'go version'
-                sh 'go env'
-                sh 'go test ./testing/ -v'
-                */
-                
                 
                 withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
                     sh 'go version'
                     sh 'go env'
-                    sh 'go test ./testing/ -v'
+                    sh 'go test .project/testing/ -v'
                 }
                 
             }
