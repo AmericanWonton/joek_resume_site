@@ -95,7 +95,7 @@ pipeline {
                 withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
                     sh 'go version'
                     //sh 'go env'
-                    dir("testing"){
+                    dir('testing'){
                         def exists = fileExists 'go.mod'
 
                         if (exists) {
