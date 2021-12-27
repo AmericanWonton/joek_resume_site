@@ -94,7 +94,21 @@ pipeline {
                 
                 withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
                     sh 'go version'
-                    sh 'go env'
+                    //sh 'go env'
+                    dir("testing"){
+                        def exists = fileExists 'go.mod'
+
+                        if (exists) {
+                            echo 'Deleting existing go.mod file'
+                            sh 'rm -f go.mod'
+                            sh 'go mod init'
+                            sh 'go mod tidy'
+                        } else {
+                            echo 'Creating new go.mod file'
+                            sh 'go mod init'
+                            sh 'go mod tidy'
+                        }
+                    }
                     sh 'go test ./testing/ -v'
                 }
                 
