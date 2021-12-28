@@ -210,7 +210,7 @@ pipeline {
         success{
             echo "========pipeline executed successfully ========"
             echo "We shall now run the test-ssh-job"
-            build job: 'test-ssh-pipeline', parameters: [string(name: 'MY_STRING_PARAM', value: 'Hey, it is the value from our main jenkins')]
+            //build job: 'test-ssh-pipeline', parameters: [string(name: 'MY_STRING_PARAM', value: 'Hey, it is the value from our main jenkins')]
         }
         failure{
             echo "========pipeline execution failed========"
