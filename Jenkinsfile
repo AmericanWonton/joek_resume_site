@@ -66,10 +66,11 @@ pipeline {
             steps{
                 echo "building the golang applicaiton"
                 /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
-                //echo "building version ${NEW_VERSION}"
-                //sh "mvn install" //Available by adding in tools
-                //sh "ls -a" 
-                //sh "pwd"
+                script {
+                    dir ('project') {
+                        gv.exampleBuildApp() //Build golang app in docker
+                    }
+                }
             }
             post{
                 always{
