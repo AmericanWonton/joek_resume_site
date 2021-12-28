@@ -42,19 +42,12 @@ pipeline {
             steps{
                 echo 'Params have been initialized...'
                 echo 'Begining Dev Deployment...'
-                //writeFile(file: "./jenkinsscripts/script.groovy", text: "")
                 /* This is how we load our groovy scripts into Jenkins */
                 script {
                     gv = load "./jenkinsscripts/script.groovy"
                 }
                 /* Need to write a pem key file and folder for us to work in */
-                
-                dir ('security'){
-                    echo 'Writing our pem file'
-                    /* We'll need to make this more secure later */
-                    
-                }
-                
+
             }
         }
         stage("build"){
@@ -66,14 +59,15 @@ pipeline {
             steps{
                 echo "building the golang applicaiton"
                 /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
-                //echo "building version ${NEW_VERSION}"
-                //sh "mvn install" //Available by adding in tools
-                //sh "ls -a" 
-                //sh "pwd"
+                script {
+                    dir ('project') {
+                        gv.exampleBuildApp() //Build golang app in docker
+                    }
+                }
             }
             post{
                 always{
-                    echo "Finished building golang application"
+                    echo "Finished building golang application in docker"
                 }
                 success{
                     echo "Golang app built successfully"
@@ -175,7 +169,7 @@ pipeline {
             steps{
                 /* Example using scripts within Jenkins */
                 script {
-                    gv.exampleBuildApp() //Print Line
+                    //gv.exampleBuildApp() //Print Line
                     gv.examplePingServer() //Ping server
                 }
             }
