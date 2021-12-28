@@ -149,13 +149,6 @@ pipeline {
                 /* You can also use this. It takes object Syntax, from Groovy.
                 Passes in the Username and password you defined in Jenkins Admin.
                 It then stores the Username you define in USER and password in PWD  */
-                withCredentials([
-                    usernamePassword(credentialsId: 'test-file-cred', usernameVariable: USER, passwordVariable: PWD)
-                ]) {
-                    //Here, you can run a shell script with those variables to do stuff
-                    sh "echo ${USER}"
-                    sh "echo ${PWD}"
-                }
             }
             post{
                 always{
@@ -184,8 +177,6 @@ pipeline {
                     gv.exampleBuildApp() //Print Line
                     gv.examplePingServer() //Ping server
                     /* Not sure how to do this in groovy with ssh key so I'll do it in here */
-                    sh 'pwd'
-                    //sh 'scp -i ./security/resumekeypair.pem ./project/main.go ubuntu@ec2-3-137-207-149.us-east-2.compute.amazonaws.com:'
                 }
             }
 
