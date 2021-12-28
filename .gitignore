@@ -1,6 +1,5 @@
 creds.txt
 creds/creds.txt
-Makefile
 security
 *.pem
 resumekeypair.pem
