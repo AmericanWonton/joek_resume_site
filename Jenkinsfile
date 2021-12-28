@@ -111,7 +111,9 @@ pipeline {
                                 sh 'go mod tidy'
                             }
                         }
-                        sh 'go test ./testing/ -v'
+                        dir('testing'){
+                            sh 'go test -v'
+                        }
                     }
                 }
             }
