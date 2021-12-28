@@ -101,11 +101,13 @@ pipeline {
                             if (exists) {
                                 echo 'Deleting existing go.mod file'
                                 sh 'rm -f go.mod'
-                                sh 'go mod init'
+                                //sh 'go mod init'
+                                sh 'go mod init github.com/AmericanWonton/joek_resume_site'
                                 sh 'go mod tidy'
                             } else {
                                 echo 'Creating new go.mod file'
-                                sh 'go mod init'
+                                //sh 'go mod init'
+                                sh 'go mod init github.com/AmericanWonton/joek_resume_site'
                                 sh 'go mod tidy'
                             }
                         }
