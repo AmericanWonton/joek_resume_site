@@ -175,7 +175,7 @@ pipeline {
             steps{
                 /* Example using scripts within Jenkins */
                 script {
-                    gv.exampleBuildApp() //Print Line
+                    //gv.exampleBuildApp() //Print Line
                     gv.examplePingServer() //Ping server
                     /* Not sure how to do this in groovy with ssh key so I'll do it in here */
                 }
