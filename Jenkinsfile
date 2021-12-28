@@ -103,12 +103,16 @@ pipeline {
                                 sh 'rm -f go.mod'
                                 //sh 'go mod init'
                                 sh 'go mod init github.com/AmericanWonton/joek_resume_site'
+                                sh 'go build'
                                 sh 'go mod tidy'
+                                sh 'go mod vendor'
                             } else {
                                 echo 'Creating new go.mod file'
                                 //sh 'go mod init'
                                 sh 'go mod init github.com/AmericanWonton/joek_resume_site'
+                                sh 'go build'
                                 sh 'go mod tidy'
+                                sh 'go mod vendor'
                             }
                         }
                         dir('testing'){
