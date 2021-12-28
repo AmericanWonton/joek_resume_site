@@ -13,7 +13,7 @@ pipeline {
         DOCKER_CREDENTIALS = credentials('dockerLogin')
         GIT_LOGIN = credentials('gitLogin')
         //RESUME_PEM = credentials('resume-private-key')
-        GO111MODULE = 'off' //Used from Go Plugin; kind of messing up go modules
+        GO111MODULE = 'on' //Used from Go Plugin; kind of messing up go modules
         CGO_ENABLED=0
         // Ensure the desired Go version is installed
         def root = tool type: 'go', name: 'Go-Installation-1.16.12'
