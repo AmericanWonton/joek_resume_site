@@ -198,6 +198,9 @@ pipeline {
     post{
         always{
             echo "========always========"
+            cleanWs(cleanWhenNotBuilt: true,
+                    deleteDirs: true,
+                    disableDeferredWipeout: true)
         }
         success{
             echo "========pipeline executed successfully ========"
