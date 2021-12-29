@@ -61,7 +61,7 @@ pipeline {
                 /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
                 script {
                     dir ('project') {
-                        gv.exampleBuildApp() //Build golang app in docker
+                        sh 'make dockerbuild'
                     }
                 }
             }
@@ -191,6 +191,9 @@ pipeline {
     post{
         always{
             echo "========always========"
+            cleanWs(cleanWhenNotBuilt: true,
+                    deleteDirs: true,
+                    disableDeferredWipeout: true)
         }
         success{
             echo "========pipeline executed successfully ========"
