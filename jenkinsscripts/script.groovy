@@ -5,7 +5,20 @@ def exampleBuildApp() {
     def result = new StringBuilder()
     def error = new StringBuilder()
 
-    def command = 'make dockerbuild'.execute()
+    def command = "pwd".execute()
+    command.consumeProccessOutput(result, error)
+    command.waitForOrKill(50000)
+
+    if (!error.toString() == ("")) {
+        println "Bad Build"
+        println error.toString()
+    } else {
+        println "Successful Docker Build"
+    }
+
+    result = new StringBuilder()
+    error = new StringBuilder()
+    command = "ls -a".execute()
     command.consumeProccessOutput(result, error)
     command.waitForOrKill(50000)
 

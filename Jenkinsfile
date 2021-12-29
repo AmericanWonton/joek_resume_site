@@ -61,7 +61,7 @@ pipeline {
                 /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
                 script {
                     dir ('project') {
-                        sh 'make dockerbuild'
+                        gv.exampleBuildApp() //Build golang app in docker
                     }
                 }
             }
