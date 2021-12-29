@@ -5,7 +5,7 @@ def exampleBuildApp() {
     def result = new StringBuilder()
     def error = new StringBuilder()
 
-    def command = "sudo make dockerbuild".execute()
+    def command = 'make dockerbuild'.execute()
     command.consumeProccessOutput(result, error)
     command.waitForOrKill(50000)
 
