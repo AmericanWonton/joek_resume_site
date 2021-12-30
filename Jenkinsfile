@@ -1,7 +1,12 @@
 def gv //Need this to declare our groovy script into a variable under 'init'
+def dockerapp //Needed for our docker build
 
 pipeline {
     agent any //Run this on ANY Jenkins Server
+    tools {
+        //Docker Tooling
+        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' '18.09'
+    }
     //This is used to define environmental variables; they can be used in any stage!
     environment {
         NEW_VERSION = '1.1' //Test variable, you would get this from your code usually
@@ -60,8 +65,13 @@ pipeline {
                 echo "building the golang applicaiton"
                 /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
                 script {
-                    dir ('jenkinsscripts') {
-                        sh 'dockerbuild.sh'
+                    withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]){
+                        dir ('project') {
+                            echo 'building go project...'
+                            sh 'make gobuild'
+                            echo 'go project built successfully. Building with Docker...'
+                            sh 'make dockerbuild'
+                        }
                     }
                 }
             }
