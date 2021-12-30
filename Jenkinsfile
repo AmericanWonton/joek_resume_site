@@ -60,8 +60,8 @@ pipeline {
                 echo "building the golang applicaiton"
                 /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
                 script {
-                    dir ('project') {
-                        gv.exampleBuildApp() //Build golang app in docker
+                    dir ('jenkinsscripts') {
+                        sh 'dockerbuild.sh'
                     }
                 }
             }
