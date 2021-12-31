@@ -203,6 +203,11 @@ pipeline {
     post{
         always{
             echo "========always========"
+            /* Cleanup Project */
+            cleanWs(cleanWhenNotBuilt: false,
+                    deleteDirs: true,
+                    disableDeferredWipeout: true,
+                    notFailBuild: true)
         }
         success{
             echo "========pipeline executed successfully ========"
