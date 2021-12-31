@@ -15,7 +15,7 @@ serverssh:
 serversecurecopy:
 	scp -i /d/goworkspace/src/resume_site_deployment/joek_resume_site/security/resumekeypair.pem resumesite ubuntu@ec2-3-128-190-13.us-east-2.compute.amazonaws.com:
 dockerbuild:
-	(cd .. && pwd && docker build . -t resumeproj -f project)
+	(cd .. && pwd && sudo docker build . -t resumeproj -f project)
 dockerrun:
 	docker run -it -p 80:80 resumeproj
 dockerbuildandpush:
