@@ -3,7 +3,7 @@ def dockerapp //Needed for our docker build
 
 pipeline {
     //agent any //Run this on ANY Jenkins Server
-    agent {dockerfile true}
+    agent 
     tools {
         //Docker Tooling
         'org.jenkinsci.plugins.docker.commons.tools.DockerTool' '18.09'
