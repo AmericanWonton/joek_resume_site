@@ -71,7 +71,7 @@ pipeline {
                             echo 'building go project...'
                             sh 'make gobuild'
                             echo 'go project built successfully. Building with Docker...'
-                            sh 'make dockerbuild'
+                            sh 'sudo make dockerbuild'
                             echo 'Successfully built dockerbuild'
                         }
                     }
