@@ -18,6 +18,8 @@ pipeline {
         //SERVER_CREDENTIALS = credentials('test-file-cred')
         DOCKER_CREDENTIALS = credentials('dockerLogin')
         GIT_LOGIN = credentials('gitLogin')
+        SERVER_SSH_CREDS = credentials('basic-SSH')
+        RESUME_IP_ADDRESS = credentials('resume-server-ip-address')
         //RESUME_PEM = credentials('resume-private-key')
         GO111MODULE = 'on' //Used from Go Plugin; kind of messing up go modules
         CGO_ENABLED=0
@@ -54,39 +56,6 @@ pipeline {
                 }
                 /* Need to write a pem key file and folder for us to work in */
 
-            }
-        }
-        stage("build"){
-            when {
-                expression {
-                    params.runBuild
-                }
-            }
-            steps{
-                echo "building the golang applicaiton"
-                /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
-                script {
-                    withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]){
-                        dir ('project') {
-                            echo 'building go project...'
-                            sh 'make gobuild'
-                            echo 'go project built successfully. Building with Docker...'
-                            sh 'sudo make dockerbuild'
-                            echo 'Successfully built dockerbuild'
-                        }
-                    }
-                }
-            }
-            post{
-                always{
-                    echo "Finished building golang application in docker"
-                }
-                success{
-                    echo "Golang app built successfully"
-                }
-                failure{
-                    echo "Golang app build un-successfully"
-                }
             }
         }
         stage("test"){
@@ -140,6 +109,39 @@ pipeline {
                 }
             }
         }
+        stage("build"){
+            when {
+                expression {
+                    params.runBuild
+                }
+            }
+            steps{
+                echo "building the golang applicaiton"
+                /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
+                script {
+                    withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]){
+                        dir ('project') {
+                            echo 'building go project...'
+                            sh 'make gobuild'
+                            echo 'go project built successfully. Building with Docker...'
+                            sh 'sudo make dockerbuild'
+                            echo 'Successfully built dockerbuild'
+                        }
+                    }
+                }
+            }
+            post{
+                always{
+                    echo "Finished building golang application in docker"
+                }
+                success{
+                    echo "Golang app built successfully"
+                }
+                failure{
+                    echo "Golang app build un-successfully"
+                }
+            }
+        }
         stage("deploy"){
             /* This would be a good place to pass credentials to a server, for building on a dev machine, 
             or SSH into a dev machine */
@@ -151,10 +153,26 @@ pipeline {
             steps{
                 echo "Deploying Golang App"
                 echo "Deploying vesrion ${params.TEST_PARAMETER}"
-                //echo "Here is our server credentials: ${SERVER_CREDENTIALS}" //This is insecure, you get a warning
-                /* You can also use this. It takes object Syntax, from Groovy.
-                Passes in the Username and password you defined in Jenkins Admin.
-                It then stores the Username you define in USER and password in PWD  */
+                //Start by building and pushing to DockerHub
+                script {
+                    withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]){
+                        dir ('project') {
+                            //Login into my docker account, pass creds
+                            sh('sudo docker login --username $DOCKER_CREDENTIALS_USR --password $DOCKER_CREDENTIALS_PSW')
+                            //Build and push built image to Dockerhub
+                            sh 'sudo make dockerbuildandpush'
+                            echo 'Successfully built dockerbuild'
+                            //ssh onto Resume Server to restart the app with new docker image
+                            sshagent(credentials: ['basic-SSH']){
+                                sh '''
+                                    [ -d ~/.ssh ] || mkdir ~/.ssh && chmod 0700 ~/.ssh
+                                    ssh-keyscan -t rsa,dsa example.com >> ~/.ssh/known_hosts
+                                    ssh root@$RESUME_IP_ADDRESS_PSW
+                                '''
+                            }
+                        }
+                    }
+                }
 
             }
             post{
