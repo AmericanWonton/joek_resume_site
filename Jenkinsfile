@@ -165,10 +165,8 @@ pipeline {
                             echo 'Successfully built dockerbuild'
                             //ssh onto Resume Server to restart the app with new docker image
                             sshagent(credentials: ['private-resume-key']){
-                                sh '''
-                                    ssh root@$RESUME_IP_ADDRESS_PSW
-                                    ls -a
-                                '''
+                                sh 'ssh root@147.182.179.80'
+                                sh 'ls -a'
                             }
                         }
                     }
