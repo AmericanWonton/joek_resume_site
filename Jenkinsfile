@@ -20,6 +20,7 @@ pipeline {
         GIT_LOGIN = credentials('gitLogin')
         SERVER_SSH_CREDS = credentials('basic-SSH')
         RESUME_IP_ADDRESS = credentials('resume-server-ip-address')
+        RESUME_SERVER_PRIVATE = credentials('private-resume-key')
         //RESUME_PEM = credentials('resume-private-key')
         GO111MODULE = 'on' //Used from Go Plugin; kind of messing up go modules
         CGO_ENABLED=0
@@ -163,11 +164,10 @@ pipeline {
                             sh 'sudo make dockerbuildandpush'
                             echo 'Successfully built dockerbuild'
                             //ssh onto Resume Server to restart the app with new docker image
-                            sshagent(credentials: ['basic-SSH']){
+                            sshagent(credentials: ['private-resume-key']){
                                 sh '''
-                                    [ -d ~/.ssh ] || mkdir ~/.ssh && chmod 0700 ~/.ssh
-                                    ssh-keyscan -t rsa,dsa example.com >> ~/.ssh/known_hosts
                                     ssh root@$RESUME_IP_ADDRESS_PSW
+                                    ls -a
                                 '''
                             }
                         }
