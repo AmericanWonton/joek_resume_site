@@ -35,6 +35,11 @@ func shutdown() {
 	fmt.Printf("Setting up shutdown values/functions...\n")
 }
 
+/* Test Look for Environment example*/
+func TestGetCreds(t *testing.T){
+	intializecreds()
+}
+
 /* Test DIRECTORY EXAMPLE */
 func TestReadFile(t *testing.T) {
 	data, err := ioutil.ReadFile("test-data/test.data")

@@ -163,11 +163,6 @@ pipeline {
                             //Build and push built image to Dockerhub
                             sh 'sudo make dockerbuildandpush'
                             echo 'Successfully built dockerbuild'
-                            //ssh onto Resume Server to restart the app with new docker image
-                            sshagent(credentials: ['private-resume-key']){
-                                sh 'ssh root@147.182.179.80'
-                                sh 'ls -a'
-                            }
                         }
                     }
                 }
@@ -178,7 +173,10 @@ pipeline {
                     echo "Finished Deploying Golang App"
                 }
                 success{
-                    echo "Golang App Succeeded deploying"
+                    echo "Golang App Succeeded deploying...updating Resume Server with new Docker container"
+                    script {
+                        build job: 'test-freestyle-ssh', parameters: [string(name: 'MY_STRING_PARAM', value: 'We are deploying this version ${params.TEST_PARAMETER}')]
+                    }
                 }
                 failure{
                     echo "Golang App failed deploying"
@@ -227,8 +225,6 @@ pipeline {
         }
         success{
             echo "========pipeline executed successfully ========"
-            echo "We shall now run the test-ssh-job"
-            //build job: 'test-ssh-pipeline', parameters: [string(name: 'MY_STRING_PARAM', value: 'Hey, it is the value from our main jenkins')]
         }
         failure{
             echo "========pipeline execution failed========"

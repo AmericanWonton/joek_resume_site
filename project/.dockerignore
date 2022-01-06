@@ -1,0 +1,11 @@
+#ignore git
+.git
+.cache
+.gitattributes
+
+#ignore app.yaml
+app.yaml
+
+#gcloudignore
+.gcloudignore 
+
