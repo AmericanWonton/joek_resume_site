@@ -101,7 +101,9 @@ pipeline {
                             sh 'go test -v'
                             echo 'Binary testing complete. Now running in Docker container'
                             //This is docker testing
-                            
+                            //Login into my docker account, pass creds
+                            sh('sudo docker login --username $DOCKER_CREDENTIALS_USR --password $DOCKER_CREDENTIALS_PSW')
+                            sh ('sudo make dockerbuildandpushtest')
                             echo 'Docker testing complete'
                         }
                     }
