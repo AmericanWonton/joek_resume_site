@@ -1,0 +1,8 @@
+/* Below are for my lists and unordered lists */
+.myul {
+    list-style: circle;
+    color:white;
+}
+.myol {
+    list-style: upper-roman;
+}

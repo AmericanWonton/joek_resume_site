@@ -51,17 +51,6 @@ func TestReadFile(t *testing.T) {
 	}
 }
 
-/* Test logwrite example */
-func TestLogWriter(t *testing.T) {
-	/* Test read */
-	_, err := ioutil.ReadFile("logging/weblog.txt")
-	if err != nil {
-		t.Fatal("Could not open file:\n" + err.Error())
-	}
-	/* Test logwriter write */
-	logWriter("This is a test message")
-}
-
 /* Test HTTP Example */
 func TestHTTPRequest(t *testing.T) {
 	handler := func(w http.ResponseWriter, r *http.Request) {

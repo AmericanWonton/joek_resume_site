@@ -53,7 +53,8 @@ sudo docker pull americanwonton/resumeproj:latest
 #Careful sleep
 sleep 5
 #Run the Resume Docker Container
-sudo docker run --name resume-proj \
+sudo docker run --env-file /root/startUpCronJob/env-creds.list \
+--name resume-proj \
 -d -p 3000:80 americanwonton/resumeproj \
 >> $FULLFILEPATH 2>&1
 #Careful sleep

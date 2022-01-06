@@ -15,12 +15,16 @@ pipeline {
         It's in the 'credentials binding' plug-in you need installed. It takes the ID you made as refference.
         This is just one way of doing it...you can also use the 'withCredentials()' wrapper,
         (see the deploy section)  */
-        //SERVER_CREDENTIALS = credentials('test-file-cred')
         DOCKER_CREDENTIALS = credentials('dockerLogin')
         GIT_LOGIN = credentials('gitLogin')
         SERVER_SSH_CREDS = credentials('basic-SSH')
         RESUME_IP_ADDRESS = credentials('resume-server-ip-address')
         RESUME_SERVER_PRIVATE = credentials('private-resume-key')
+        //Used for app creds
+        AW_CLIENTID = credentials('AW_CLIENTID')
+        AW_CLIENT_SECRET = credentials('AW_CLIENT_SECRET')
+        AW_ACCESS_TOKEN = credentials('AW_ACCESS_TOKEN')
+        AW_REFRESHTOKEN = credentials('AW_REFRESHTOKEN')
         //RESUME_PEM = credentials('resume-private-key')
         GO111MODULE = 'on' //Used from Go Plugin; kind of messing up go modules
         CGO_ENABLED=0
@@ -93,7 +97,12 @@ pipeline {
                             }
                         }
                         dir('testing'){
+                            //This is binary testing
                             sh 'go test -v'
+                            echo 'Binary testing complete. Now running in Docker container'
+                            //This is docker testing
+                            
+                            echo 'Docker testing complete'
                         }
                     }
                 }

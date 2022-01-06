@@ -1,0 +1,822 @@
+/* CSS Reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body, html {
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    vertical-align: baseline;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Usage of Google Fonts */
+body, div, p, q, i, h1, h2, h3, h4, h5, h6, a, header, footer {
+    font-family: 'Bowlby One SC', cursive, sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Bebas Neue', cursive, sans-serif;
+    font-family: 'Odibee Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* ------------------------------------------------- */
+/*     Document Design under 600px.... */
+body {
+    display: flex;
+    flex-flow: row wrap;
+    /* background image */
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN36ChyOUvSwnwVi7flolYO0PqtybaM5qOGbFC-IjWcVjWYuVOfw&s"); */
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+/* This is the main header content */
+header {
+    margin-top: 0px;
+    margin: 0px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    color: white;
+}
+
+.namediv {
+    /* Flexbox setup */
+    display: flex;
+    flex-wrap: row wrap;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    /* Styling */
+    background-color: rgb(7, 121, 121);
+    padding: 2px;
+    /* Order for mobile */
+    order: 1;
+}
+
+.myName {
+    /* This is for style */
+    font-family: 'Bowlby One SC', cursive, serif, sans-serif;
+    font-size: 3rem;
+    /* font alignment */
+    align-content: center;
+    text-align: center;
+    /*
+    margin: 15rem;
+    padding: 15rem;
+    */
+}
+
+.linkdiv{
+    /* Flexbox Setup */
+    display: flex;
+    flex-wrap: row wrap;
+    align-content: center;
+    justify-content: flex-end;
+    width: 100%;
+    /* Styling */
+    border: 2px solid black;
+    background-color: rgb(54, 50, 50);
+    /* Order for mobile */
+    order: 3;
+}
+
+/* This is maintenece info for the header */
+.maintenenceDiv {
+    /* Flexbox setup */
+    display: flex;
+    flex-wrap: row wrap;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    /* Styling */
+    background-color: rgb(240, 3, 3);
+    padding: 2px;
+    /* Order for mobile */
+    order: 1;
+}
+
+.maintenenceH1{
+    /* This is for style */
+    font-family: 'Bowlby One SC', cursive, serif, sans-serif;
+    font-size: 4.5rem;
+    color: black;
+    padding: 2px; 
+    /* font alignment */
+    align-content: center;
+    text-align: center;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: rgb(54, 50, 50);
+}
+
+/* Dropdown Button */
+.dropbtn {
+    /* Styling */
+    font-family: 'Bebas Neue', cursive, sans-serif;
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(54, 50, 50);
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: rgb(54, 50, 50);
+}
+
+/* Links inside the dropdown */
+.dropdown-content p {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content p:hover {background-color: rgb(168, 90, 168);}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block; background-color: white;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #94a095; font-family: 'Bebas Neue', cursive, sans-serif;
+color: white; font-size: 1rem;}
+
+.inspirationaldiv{
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    /* Styling */
+    background-color: rgb(7, 121, 121);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* Order for mobile */
+    order: 2;
+}
+
+.inspirationalTextDiv {
+    width: 100%;
+    margin: 2px;
+}
+
+.inspirationalp {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.inspirational_quote {
+    /* font styling */
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* This is the div section for downloading my resumes */
+.downloadresdiv {
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    /* styling */
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.instructionressection {
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.resdownloadsection {
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.resumeInfo {
+    /* text size and alignment */
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    margin: 2px;
+    padding: 2px;
+    width: 100%;
+}
+
+a {
+    font-size: 1rem;
+    margin: 5px;
+    padding: 5px;
+}
+
+/*  ###################################### MAIN PAGE SECTION ##########################*/
+/* This is the main page section */
+
+/* This is for the 'above the fold' look */
+.above_fold {
+    /* height: 150vh; */
+    /* border: 5px solid black; */
+    box-sizing: border-box;
+    /* This is for the background styling */
+    background-image: url("../img/bmp/aboveFold/Lake_And_Forest_500px.bmp");
+    /* background-size: 800px; */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* This is for backgrounds in each content html section */
+.backgroundpicDivSoft {
+    /* This is for the background styling */
+    /* INSERT BACKGROUND IMAGE ON EACH PAGE! */
+    /* background-size: 800px; */
+    box-sizing: border-box;
+    background-image: url("../img/bmp/aboveFold/okayMountain.bmp");
+    background-size: auto;
+    background-repeat: repeat;
+    width: 100%;
+}
+
+.backgroundpicDivGame {
+    /* This is for the background styling */
+    /* INSERT BACKGROUND IMAGE ON EACH PAGE! */
+    /* background-size: 800px; */
+    box-sizing: border-box;
+    background-image: url("../img/bmp/aboveFold/forest_mountain_trail.bmp");
+    background-size: auto;
+    background-repeat: repeat;
+    width: 100%;
+}
+
+.backgroundpicDivLevel {
+    /* This is for the background styling */
+    /* INSERT BACKGROUND IMAGE ON EACH PAGE! */
+    /* background-size: 800px; */
+    box-sizing: border-box;
+    background-image: url("../img/bmp/aboveFold/forest_mountain_trail.bmp");
+    background-size: auto;
+    background-repeat: repeat;
+    width: 100%;
+}
+
+.backgroundpicDivWriting {
+    /* This is for the background styling */
+    /* INSERT BACKGROUND IMAGE ON EACH PAGE! */
+    /* background-size: 800px; */
+    box-sizing: border-box;
+    background-image: url("../img/bmp/aboveFold/snow_Mountain2/snow_Mountain2.bmp");
+    background-size: auto;
+    background-repeat: repeat;
+    width: 100%;
+}
+
+.backgroundpicDivContact {
+    /* This is for the background styling */
+    /* INSERT BACKGROUND IMAGE ON EACH PAGE! */
+    /* background-size: 800px; */
+    box-sizing: border-box;
+    background-image: url("../img/bmp/aboveFold/snow_Mountain2/snow_Mountain_Peaks.bmp");
+    background-size: auto;
+    background-repeat: repeat;
+    width: 100%;
+}
+
+.maindiv {
+    /* flexbox arrangements */
+    
+    /* styling */
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+/* This gives the introduction to me with a greeting next to picture */
+.myfacediv{
+    /* flexbox arrangements */
+    display: flex;
+    flex-wrap: row nowrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    /* styling */
+    padding-top: 15px;
+}
+
+.myface {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* This is the text introducing the user to me */
+.emptyfacediv {
+    /* flexbox arrangements */
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: center;
+    align-content: center;
+    /* styling */
+    margin-left: 15px;
+    margin-right: 15px;
+}
+/* Here's the text greeting the user */
+.itsme{
+    /* Text formatting */
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    line-height: 1.2;
+    color: white;
+    align-self: center;
+    font-size: 3rem;
+    text-align: center;
+    /* Format Style */
+    padding: 2px;
+}
+
+/* Here's a quick info bit about me...the 'quicksphele' */
+.quicksphelediv {
+    /* flexbox arrangements...are they needed? */
+    height: auto;
+    /* styling */
+    padding: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.quicksphelep {
+    /* Font sytling */
+    font-family: 'Dosis', sans-serif;
+    align-self: center;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    text-align: center;
+    /* styling */
+    padding: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: auto;
+}
+
+/* Here's a quick showing of my skills. */
+.what_doing_container {
+    /* width: 100%; */
+    /* flexbox arrangements */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height: auto;
+    background-color: black;
+    padding: 15px;
+}
+
+.comelook_h3 {
+    /* styling */
+    color: white;
+    align-self: center;
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.projectdownloaddiv{
+    /* flexbox arrangements */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.projectlinkdiv{
+    /* flexbox arrangements */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+/*  ###################################### Footer SECTION ##########################*/
+footer {
+    margin-top: 0px;
+    margin: 0px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    color: white;
+    background-color: burlywood;
+}
+
+.myname {
+    width: 100%;
+    color: red;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.mainfootersection {
+    /* Flex-box display */
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.footersectionSpace{
+    /* Flex-box display */
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 45%;
+}
+
+.sub_footerSectionSpace {
+    /* Flex-box display */
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: center;
+    /* styling */
+    padding: .2rem;
+    width: 100%;
+}
+
+.infodiv {
+    /* Flex-box display */
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: center;
+    /* Size and color */
+}
+
+.infop {
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    padding: 5px;
+}
+
+.infoimg {
+    width: 6vw;
+    height: 6vh;
+}
+
+.infoimg_larger {
+    width: 10vw;
+    height: 10vh;
+}
+
+/* This is for the contact form */
+.divform {
+    
+}
+
+#my-form {
+    /* flexbox styling */
+
+    /* styling */
+}
+
+.fieldSection {
+    /*flexbox styling */
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    /* styling */
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.labelDiv {
+    /* flexbox styling */
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    width: 45%;
+}
+
+.labelPText {
+    /* styling */
+    font-size: 1rem;
+    padding-right: 1rem;
+    font-family: 'Odibee Sans', sans-serif;
+    color: rgb(207, 157, 157);
+}
+
+.inputDiv {
+    /* flexbox styling */
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    width: 45%;
+}
+
+#inputTextMobileFName{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTextMobileLName{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTextMobileEmail{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTextMobileSubject{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTextMobileMessage{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTextMobileWebsite{
+    /* font styling */
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTitlePhoneNum1 {
+    width: 10%;
+    height: auto;
+    margin-right: .5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTitlePhoneNum2 {
+    width: 15%;
+    height: auto;
+    margin-right: .5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTitlePhoneNum3 {
+    width: 15%;
+    height: auto;
+    margin-right: .5rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+#inputTitlePhoneNum4 {
+    width: 20%;
+    height: auto;
+    font-family: 'Nunito', sans-serif;
+}
+
+#my-form-button {
+    
+}
+
+.inputTextMobileMessage {
+    width: 45%;
+    /* height added for message stuff */
+    height: 10vh;
+    /* text-align used for message stuff */
+    text-align: left;
+    vertical-align: text-top;
+    border: 2px solid orange;
+    display: inline-block;
+}
+
+.inputTitleDivMobile{
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-end;
+    width: 45%;
+    border: 2px solid teal;
+}
+
+.inputTitlePMobile {
+    font-size: 1.5rem;
+    margin: 2px;
+}
+
+.phoneNumDiv {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 45%;
+    /* Debug colors */
+    background-color: orchid;
+}
+
+/* This is for links */
+.headerLinks {
+    font-family: 'Bebas Neue', cursive, sans-serif;
+    font-size: 1rem;
+    color: white;
+}
+
+.headerLinks:hover {color: yellow;}
+
+
+/* This is for formatting pictures on mobile */
+/* newer iterations are up top */
+#picHolder {
+    /* Flex boxing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#transpicHolder {
+    /* Flex boxing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    /* sizing */
+    height: auto;
+    width: 100%;
+}
+
+#transpicHolder1 {
+    /* Flex boxing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    /* sizing */
+    height: auto;
+    width: 100%;
+}
+
+#transpicHolder2 {
+    /* Flex boxing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    /* sizing */
+    height: auto;
+    width: 100%;
+}
+
+#transpicHolder3 {
+    /* Flex boxing */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    /* sizing */
+    height: auto;
+    width: 100%;
+}
+
+#fadingPic {
+    /* This is for formatting the pic */
+    width: 70vw;
+    height: 45vh;
+    /* This keeps it aligned in the center for viewing */
+    align-content: center;
+    padding: 1px;
+    margin: 1px;
+}
+
+#fadingPic1 {
+    /* This is for formatting the pic */
+    width: 70vw;
+    height: 45vh;
+    /* This keeps it aligned in the center for viewing */
+    align-content: center;
+    padding: 1px;
+    margin: 1px;
+}
+
+#fadingPic2 {
+    /* This is for formatting the pic */
+    width: 75vw;
+    height: 45vh;
+    /* This keeps it aligned in the center for viewing */
+    align-content: center;
+    padding: 1px;
+    margin: 1px;
+}
+
+#fadingPic3 {
+    /* This is for formatting the pic */
+    width: 75vw;
+    height: 45vh;
+    /* This keeps it aligned in the center for viewing */
+    align-content: center;
+    padding: 1px;
+    margin: 1px;
+}
+
+.wideProjectPic {
+    width: 100%;
+    display: block;
+}
+
+/* This is for showing and displaying video */
+.videoDiv {
+    /* flexbox content */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    /* padding */
+    padding: 5px;
+    margin: 5px;
+}
+
+.YTVideoPlayer {
+    width: 420px;
+    height: 345px;
+}
+
+/* This is a testing zone */

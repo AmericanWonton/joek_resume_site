@@ -1,0 +1,46 @@
+.myface {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.myname {
+    width: 100%;
+    color: red;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.above_fold {
+    /* height: 150vh; */
+    /* border: 5px solid black; */
+    box-sizing: border-box;
+    /* This is for the background styling */
+    background-image: url("../img/bmp/aboveFold/Lake_And_Forest_500px.bmp");
+    /* background-size: 800px; */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.comelook_h3 {
+    /* styling */
+    color: white;
+    align-self: center;
+    text-align: center;
+    font-size: 3rem;
+    padding: 10px;
+}
+
+#my-form-button {
+    width: 20vw;
+    height: 10vh;
+    font-size: 3rem;
+}
+
+.labelPText {
+    /* styling */
+    font-size: 3rem;
+    padding-right: 1rem;
+    font-family: 'Odibee Sans', sans-serif;
+    color: rgb(207, 157, 157);
+}

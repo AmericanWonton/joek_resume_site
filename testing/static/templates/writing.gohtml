@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{/* Here is our meta charset and title */}}
+        {{template "meta-title"}}
+        {{/* Here is our pixel density markup */}}
+        {{template "pixel-dense"}}
+        {{/* Here is our FavIcon */}}
+        {{template "fav-icon1"}}
+        {{/* Here are our fonts */}}
+        {{template "fonts1"}}
+        {{/* Here are our Media Query and stylesheets */}}
+        {{template "media-queries"}}
+        {{/* Here is our Javascript or additional code needed */}}
+        {{template "javascript"}}
+    </head>
+    <body>
+        <!--Header Navigation Area-->
+        {{/* Header */}}
+        {{template "header_div"}}
+
+        <!-- Main Page Body -->
+        <div class="backgroundpicDivWriting">
+            <div class="maindiv">
+                <!--Here's a general collection of my work.-->
+                <!--Here's my work for Crazies-->
+                <div class="quicksphelediv">
+                    <h2 class="itsme">Check out some of my writing work!</h2>
+                    <br>
+                    <p class="quicksphelep">
+                        Here’s a script draft I wrote for film or TV, called "Crazies". It's a spin on an 
+                        apocalyptic, drug fueled hellscape. There's also Euotioa: Fallen Lands, my spin on a 
+                        pirate-fantasy universe! Check them out!
+                        <br>
+                        <!-- How do I have people download my PDF? You have files in the project folder. -->
+                        <a href="static/misc/Crazies_First_Act_JoeK.pdf" class="headerLinks" alt="Crazies First Act Script Download" target="_blank" download>
+                            <i>Crazies First Act Script Download</i>
+                        </a>
+                        <br>
+                        <a href="https://www.writing.com/main/portfolio/view/americanwonton" class="headerLinks" target="_blank" alt="writing portfolio">
+                            <i>Here's my writing portfolio profile!</i>
+                        </a>
+                        <br>
+                    </p>
+                </div>
+
+                <!--Here's my work for storyboards-->
+                <div class="quicksphelediv">
+                    <p class="quicksphelep">
+                        Here's some short stories I've drawn up shot lists and storyboards for.
+                        Click through to check them out!
+                        <br>
+                    </p>
+                </div>
+                <!--Storyboard drawings-->
+                <div class="infodiv">
+                    <div id="picHolder">
+                        <div id="transpicHolder3" onmouseover="picFader1(3)">
+                            <img id="fadingPic3" src="static/img/writing/S1.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--This is the footer content-->
+        {{template "footer_div"}}
+    </body>                    
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{/* Here is our meta charset and title */}}
+        {{template "meta-title"}}
+        {{/* Here is our pixel density markup */}}
+        {{template "pixel-dense"}}
+        {{/* Here is our FavIcon */}}
+        {{template "fav-icon1"}}
+        {{/* Here are our fonts */}}
+        {{template "fonts1"}}
+        {{/* Here are our Media Query and stylesheets */}}
+        {{template "media-queries"}}
+        {{/* Here is our Javascript or additional code needed */}}
+        {{template "javascript"}}
+    </head>
+    <body>
+        <!--Header Navigation Area-->
+        {{template "header_div"}}
+
+        <!--Main page body-->
+        <div class="backgroundpicDivSoft">
+            <div class="maindiv">
+                <!--Here's the invitation for folks to check out my work.-->
+                <p class="quicksphelep">
+                    Here are my projects for Software Design. This ranges from video games, mobile apps,
+                    and of course, this website! Feel free to browse, download, or contribute at your
+                    leisure. Let me know what you think!
+                </p>
+                <!-- Here's my work for the learnrApp -->
+                <div class="quicksphelediv">
+                    <p class="quicksphelep">
+                        My current project involves building a series of adjoining Microservices to deliver text Messages to Users
+                        from other Users on my Website. These are called 'LearnRs', and the intent is to send these LearnRs
+                        as a means to educate someone you care about on a topic they are misinformed on. This can include 
+                        testimonies, links to research, and other factoids about a subject.
+                        <br>
+                        This is currently in Beta, but you should be able to create a test Organization and
+                        LearnR to test amongst yourselves. (Note, in the future, I plan to establish a safeguard
+                        for future LearnRs to curate any misinformation or ill content.) Check it out  
+                        <a href="http://143.244.165.3" class="headerLinks">
+                            <i>HERE</i>
+                        </a>
+                        <br>
+                    </p>
+                    <p class="quicksphelep">
+                        Create a User and let me know what you think!
+                    </p>
+                </div>
+                <!--Here's our pictures. -->
+                <div class="infodiv">
+                    <img class="wideProjectPic"
+                        src="static/img/png/BigLearnRCreation.png"
+                       alt="A pic of the LearnR Creation">
+                </div>
+                <div class="infodiv">
+                    <img class="wideProjectPic"
+                        src="static/img/png/SendLearnRScreenshot.png"
+                       alt="A pic of the Sending LearnR screenshot">
+                </div>
+                <div class="infodiv">
+                    <img class="wideProjectPic"
+                        src="static/img/jpg/phonescreenshot.jpg"
+                       alt="A pic of the phone screenshot">
+                </div>
+                <!-- Here's my work for the messageboard microservice -->
+                <div class="quicksphelediv">
+                    <p class="quicksphelep">
+                        This project involved me building a simple set of messageboards build around a series
+                        of Micro-services,(including ones for sending email/text updates, managing CRUD operations,
+                        and hosting the web application to communicate with each other). Each separate service has its
+                        own Docker container hosted on an AWS server. Updating each service is as simple as pushing
+                        the new container and rebooting the EC2 Instance with updates managed through a CRON jobs on reboot.
+                        <br>
+                        This one is still in the works,(mostly because I’m attempting to document my
+                        progress as soon as I make updates). I’m hoping this is a project I can utilize
+                        when tackling larger projects as an example piece! Check it out  
+                        <a href="http://3.129.13.253:8080/" class="headerLinks">
+                            <i>HERE: (Currently decomissioned :( due to AWS Constraints)</i>
+                        </a>
+                        <br>
+                    </p>
+                    <p class="quicksphelep">
+                        Create a User and let me know what you think!
+                    </p>
+                </div>
+                <!--Here's our pictures. -->
+                <div class="infodiv">
+                    <img class="wideProjectPic"
+                        src="static/img/png/messageboard_mainpage.png"
+                       alt="A pic of the SuperDBProject">
+                </div>
+                <div class="infodiv">
+                    <img class="wideProjectPic"
+                        src="static/img/png/awsConsoleMicroservice.png"
+                       alt="A pic of the mongoDB section of SuperDBProject">
+                </div>
+                <div class="infodiv">
+                    <img class="wideProjectPic"
+                        src="static/img/png/hotdogmessageboard.png"
+                       alt="A pic of the mongoDB section of SuperDBProject">
+                </div>
+                <!-- Here's my work for the superdbWebApp -->
+                <div class="quicksphelediv">
+                    <p class="quicksphelep">
+                        A project I started a little before Covid involves building a ‘mock-database’ with MongoDB and MySQL.
+                        It currently runs as a docker-process on an AWS linux server.
+                        I also have built a mock API that creates random Users, discards
+                        'junk data', and sends me logging information to monitor the health
+                        of the database.
+                        <br>
+                        I hope to add a number of features soon, such as AWS bucket file storage,
+                        formatted Excel sheets to download, extended Admin privelages,
+                        and many more! You can currently check out the project  
+                        <a href="http://superultimatedbwebapp.com" class="headerLinks">
+                            <i>HERE: (Currently decomissioned :( due to AWS Constraints)</i>
+                        </a>
+                        <br>
+                    </p>
+                    <p class="quicksphelep">
+                        Create a User and let me know what you think!
+                    </p>
+                </div>
+                <!--Here's our picture.-->
+                <div class="infodiv">
+                    <img class="wideProjectPic"
+                        src="static/img/png/superDBExample1.png"
+                       alt="A pic of the SuperDBProject">
+                </div>
+                <div class="infodiv">
+                    <img class="wideProjectPic"
+                        src="static/img/png/superDBExampleMongo.png"
+                       alt="A pic of the mongoDB section of SuperDBProject">
+                </div>
+                <!--Here's my work for the Citizenship app-->
+                <div class="quicksphelediv">
+                    <p class="quicksphelep">
+                        I'm currently designing and developing a 'Citizenship' app to test out a few
+                        new skills I've maintained in MongoDB and GoLang. Afterwards, I hope to use 
+                        some Javascript and XML to turn it into another page demonstrating a 
+                        personally designed ETL load process on this site. Coming soon! 
+                        <br>
+                        <a href="https://github.com/AmericanWonton/Go_Citizen_Project" class="headerLinks" target="_blank" alt="Go_Citizen_Project Link">
+                            <i>Check out the Project</i>
+                        </a>
+                    </p>
+                </div>
+                <!--Here's our picture.-->
+                <div class="infodiv">
+                    <img class="wideProjectPic"
+                        src="static/img/bmp/softDesign/Golang_cit_App.bmp"
+                       srcset='static/img/bmp/softDesign/Golang_cit_App.bmp 2000W,
+                                static/img/bmp/softDesign/Golang_cit_App_MEDIUM.bmp 700W,
+                                static/img/bmp/softDesign/Golang_cit_App_SMALL.bmp 500W'
+                       sizes='(min-width: 900px) 900px,
+                            (min-width: 600px) 700px,
+                                100vw'
+                       alt="A pic of the Citizen Project">
+                </div>
+                <!--Here's my section for 'MemeJudger'-->
+                <div class="quicksphelediv">
+                    <p class="quicksphelep">
+                        I made a simple app in Android Studio to gauge the difficulty of building and
+                        publishing an App on the Google Play Store, along with accessing the phone gallery
+                        and resizing images for different phone formats. It’s called MemeJudger and it
+                        is very simple. Every journey begins with a single step! Search for Meme Judger 
+                        and download on the Google Play store!
+                        <br>
+                        <a href="https://play.google.com/store/apps/details?id=com.joek.memejudger" target="_blank" class="headerLinks" alt="MemeJudger Link">
+                            <i>Click here to download off of Google Play!</i>
+                        </a>
+                    </p>
+                    <!--Here's our picture.-->
+                    <!-- Not working, keep it off
+                    <div class="infodiv">
+                        <img class="wideProjectPic"
+                         src="img/bmp/softDesign/Android_Studio_MemeJudger.bmp" 
+                            srcset='img/bmp/softDesign/Android_Studio_MemeJudger.bmp 2000W
+                                    img/bmp/softDesign/Android_Studio_MemeJudger_MEDIUM.bmp 700W
+                                    img/bmp/softDesign/Android_Studio_MemeJudger_SMALL.bmp 500W'
+                            sizes='(min-width: 900px) 900px,
+                                    (min-width: 600px) 700px,
+                                    100vw'
+                          alt="A pic of the MemeJudger Project">
+                    </div>
+                    -->
+                    <!--Here's a section for Punch Up-->
+                    <p class="quicksphelep">
+                        Here’s a console mock-up I made for an App I’m designing called “Punch Up”.
+                        It's going to assist screenwriters with a database of free Scripts to browse,
+                        along with a messaging system to leave feedback for future writers!
+                        Feel free to check out the Git or Download the Java Eclipse project below!
+                    </p>
+                </div>
+                <div class="projectdownloaddiv">
+                    <div class="projectlinkdiv">
+                        <!--How do folks download a file?-->
+                        <a href="https://github.com/AmericanWonton/Punch_Up" target="_blank" class="headerLinks">Project Download</a>
+                    </div>
+                    <div class="projectlinkdiv">
+                        <a href="https://github.com/AmericanWonton/PunchUpConsole" target="_blank" class="headerLinks">Github Link</a>
+                    </div>
+                    <!--How do folks download a file?-->
+                    <div class="projectlinkdiv">
+                        <a href="https://github.com/AmericanWonton/Punch_Up" target="_blank" class="headerLinks">Simple Java Program</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--This is the footer content-->
+        {{template "footer_div"}}
+    </body>                    
+</html>

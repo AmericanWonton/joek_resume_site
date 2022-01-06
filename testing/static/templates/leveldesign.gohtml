@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{/* Here is our meta charset and title */}}
+        {{template "meta-title"}}
+        {{/* Here is our pixel density markup */}}
+        {{template "pixel-dense"}}
+        {{/* Here is our FavIcon */}}
+        {{template "fav-icon1"}}
+        {{/* Here are our fonts */}}
+        {{template "fonts1"}}
+        {{/* Here are our Media Query and stylesheets */}}
+        {{template "media-queries"}}
+        {{/* Here is our Javascript or additional code needed */}}
+        {{template "javascript"}}
+    </head>
+    <body>
+        <!--Header Navigation Area-->
+        {{template "header_div"}}
+
+        <!--Main page body-->
+        <div class="backgroundpicDivLevel">
+            <div class="maindiv">
+                <!--Here's a general collection of my work.-->
+                <!--Here's the invitation for folks to check out my level design work.-->
+                <h2 class="itsme">Here's some work I've done with Level Design Production.</h2>
+                <!--Here's my work for My First Level-->
+                <div class="quicksphelediv">
+                    <h2 class="itsme" style="align-self: center;">Level Layout</h2>
+                    <p class="quicksphelep">
+                        Here’s a basic level I’ve been charting out with prefabricated walls and basic props for my scene.
+                        Later on I’ll be adding decals and lighting to give it some life. Feel free to check out the progress
+                        on the Github link or play a test version inside the linked levels!
+                        <br>
+                        <a href="https://github.com/AmericanWonton/FinalMapProjectJoeK" class="headerLinks" target="_blank" alt="Github Level Link">
+                            <i>Clone the Git Project!</i>
+                        </a>
+                        <br>
+                        <a href="https://mega.nz/#!7RxE0SbS!4CHPHPHnHs43or1ewNsTs1-ji1R3QVvfK05RAqiff_8" class="headerLinks" target="_blank" alt="Downlaod test version">
+                            <i>Click here to download a test version!</i>
+                        </a>
+                        <br>
+                    </p>
+                </div>
+                <!--Level Pictures-->
+                <div class="infodiv">
+                    <div id="picHolder">
+                        <div id="transpicHolder2" onmouseover="picFader1(2)">
+                            <img id="fadingPic2" src="static/img/levelDesign/Bathroom.png">
+                        </div>
+                    </div>
+                </div>
+                <!--Here's my section for the assets-->
+                <div class="quicksphelediv">
+                    <h2 class="itsme" style="align-self: center;">Asset Design</h2>
+                    <p class="quicksphelep">
+                        Here’s some assets I’ve created and plan to plug into my future levels.
+                        Feel free to check out the FBX files!
+                        <br>
+                        <a href="https://mega.nz/#F!nN5zlACK!1tQFeyd5QRQ0cppW0WHURA" class="headerLinks" target="_blank" alt="FBX Assets Download">
+                            <i>FBX Assets Download</i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+            
+        <!--This is the footer content-->
+        {{template "footer_div"}}
+    </body>                    
+</html>

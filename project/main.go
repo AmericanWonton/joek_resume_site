@@ -25,24 +25,6 @@ func init() {
 	OAuthGmailService() //Initialize Gmail Services
 }
 
-func logWriter(logMessage string) {
-	//Logging info
-
-	wd, _ := os.Getwd()
-	logDir := filepath.Join(wd, "logging", "resumeapp.txt")
-	logFile, err := os.OpenFile(logDir, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0777)
-
-	defer logFile.Close()
-
-	if err != nil {
-		fmt.Println("Failed opening log file")
-	}
-
-	log.SetOutput(logFile)
-
-	log.Println(logMessage)
-}
-
 //Handles the Index page
 func index(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Serving the index page.\n")
