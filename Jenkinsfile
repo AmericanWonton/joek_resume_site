@@ -18,13 +18,17 @@ pipeline {
         DOCKER_CREDENTIALS = credentials('dockerLogin')
         GIT_LOGIN = credentials('gitLogin')
         SERVER_SSH_CREDS = credentials('basic-SSH')
-        RESUME_IP_ADDRESS = credentials('resume-server-ip-address')
         RESUME_SERVER_PRIVATE = credentials('private-resume-key')
         //Used for app creds
         AW_CLIENTID = credentials('AW_CLIENTID')
         AW_CLIENT_SECRET = credentials('AW_CLIENT_SECRET')
         AW_ACCESS_TOKEN = credentials('AW_ACCESS_TOKEN')
         AW_REFRESHTOKEN = credentials('AW_REFRESHTOKEN')
+        //Used for Resume SSH
+        RESUME_IP_ADDRESS = credentials('resume-server-ip-address')
+        RESUME_SERVER_PRIVATE = credentials('private-resume-key')
+        RESUME_SECRET_FILE = credentials('resume_secret_file')
+        RESUME_ENV_FILE = credentials('resume_env_file')
         //RESUME_PEM = credentials('resume-private-key')
         GO111MODULE = 'on' //Used from Go Plugin; kind of messing up go modules
         CGO_ENABLED=0
@@ -177,7 +181,6 @@ pipeline {
                         }
                     }
                 }
-
             }
             post{
                 always{
@@ -186,7 +189,12 @@ pipeline {
                 success{
                     echo "Golang App Succeeded deploying...updating Resume Server with new Docker container"
                     script {
-                        build job: 'test-freestyle-ssh', parameters: [string(name: 'MY_STRING_PARAM', value: 'We are deploying this version ${params.TEST_PARAMETER}')]
+                        echo 'Attempting to run our script on server...'
+                        //Add env file
+                        sh 'sudo scp -i $RESUME_SECRET_FILE_PSW $RESUME_ENV_FILE_PSW root@$RESUME_IP_ADDRESS_PSW:~/startUpCronJob'
+                        //Run Script
+                        sh 'sudo ssh -i $RESUME_SECRET_FILE_PSW root@$RESUME_IP_ADDRESS_PSW \'~/startUpCronJob/resume-update-script.sh\''
+                        //build job: 'test-freestyle-ssh', parameters: [string(name: 'MY_STRING_PARAM', value: 'We are deploying this version ${params.TEST_PARAMETER}')]
                     }
                 }
                 failure{
