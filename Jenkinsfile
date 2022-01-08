@@ -191,6 +191,8 @@ pipeline {
                         echo 'Attempting to run our script on server...'
                         //Add env file
                         sh 'sudo scp -i $RESUME_SECRET_FILE_PSW $RESUME_ENV_FILE_PSW root@$RESUME_IP_ADDRESS_PSW:~/startUpCronJob'
+                        //Give env file the appropriate permissions
+                        sh 'sudo ssh -t -i $RESUME_SECRET_FILE_PSW root@$RESUME_IP_ADDRESS_PSW \'sudo chmod 777 ~/startUpCronJob/env-creds.list\''
                         //Run Script
                         sh 'sudo ssh -t -i $RESUME_SECRET_FILE_PSW root@$RESUME_IP_ADDRESS_PSW \'~/startUpCronJob/resume-update-script.sh\''
                     }
