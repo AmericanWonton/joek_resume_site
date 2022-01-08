@@ -18,7 +18,6 @@ pipeline {
         DOCKER_CREDENTIALS = credentials('dockerLogin')
         GIT_LOGIN = credentials('gitLogin')
         SERVER_SSH_CREDS = credentials('basic-SSH')
-        RESUME_SERVER_PRIVATE = credentials('private-resume-key')
         //Used for app creds
         AW_CLIENTID = credentials('AW_CLIENTID')
         AW_CLIENT_SECRET = credentials('AW_CLIENT_SECRET')
