@@ -192,8 +192,7 @@ pipeline {
                         //Add env file
                         sh 'sudo scp -i $RESUME_SECRET_FILE_PSW $RESUME_ENV_FILE_PSW root@$RESUME_IP_ADDRESS_PSW:~/startUpCronJob'
                         //Run Script
-                        sh 'sudo ssh -i $RESUME_SECRET_FILE_PSW root@$RESUME_IP_ADDRESS_PSW \'~/startUpCronJob/resume-update-script.sh\''
-                        //build job: 'test-freestyle-ssh', parameters: [string(name: 'MY_STRING_PARAM', value: 'We are deploying this version ${params.TEST_PARAMETER}')]
+                        sh 'sudo ssh -t -i $RESUME_SECRET_FILE_PSW root@$RESUME_IP_ADDRESS_PSW \'~/startUpCronJob/resume-update-script.sh\''
                     }
                 }
                 failure{
