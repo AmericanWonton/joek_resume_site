@@ -45,7 +45,7 @@ sudo docker rm -f $(docker ps -a -q) >> $FULLFILEPATH 2>&1
 sudo docker rmi $(docker images -q) -f >> $FULLFILEPATH 2>&1
 
 #Use Docker Credentials
-sudo docker login --username americanwonton --password peanutdoggydoo111
+sudo docker login --username $AW_DOCKER_UNAME --password $AW_DOCKER_PWORD
 #Pull all relevant docker images
 sudo docker pull americanwonton/resumeproj:latest
 
