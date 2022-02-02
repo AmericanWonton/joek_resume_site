@@ -178,8 +178,16 @@ pipeline {
                         sh 'git pull'
                         sh 'git branch'
                         /* Might need this... */
-                        git config --global user.email "jbkeller0303@gmail.com"
-                        git config --global user.name "AmericanWonton"
+                        sh 'git config user.email "jbkeller0303@gmail.com"'
+                        sh 'git config user.name "AmericanWonton"'
+                        sh 'git config remote.origin.url=https://github.com/AmericanWonton/joek_resume_site.git'
+                        sh 'git config branch.master.remote=origin'
+                        sh 'git config branch.master.merge=refs/heads/master'
+                        sh 'git config branch.dev.remote=origin'
+                        sh 'git config branch.dev.merge=refs/heads/dev'
+                        /* DEBUG show credentials */
+                        sh 'git config user.name'
+                        sh 'git config user.email'
                         sh 'git merge dev'
                         sh 'git push origin master'
                     }
