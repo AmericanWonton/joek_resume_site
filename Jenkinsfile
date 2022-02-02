@@ -178,8 +178,8 @@ pipeline {
                         sh 'git pull'
                         sh 'git branch'
                         /* Might need this... */
-                        sh 'git config user.email "jbkeller0303@gmail.com"'
-                        sh 'git config user.name "AmericanWonton"'
+                        sh 'git config user.email \"jbkeller0303@gmail.com\"'
+                        sh 'git config user.name \"AmericanWonton\"'
                         sh 'git config remote.origin.url=https://github.com/AmericanWonton/joek_resume_site.git'
                         sh 'git config branch.master.remote=origin'
                         sh 'git config branch.master.merge=refs/heads/master'
@@ -190,6 +190,7 @@ pipeline {
                         sh 'git config user.email'
                         sh 'git config remote.origin.url'
                         sh 'git merge dev'
+                        echo 'We got the merge done'
                         sh 'git push origin master'
                     }
                 }
@@ -200,9 +201,6 @@ pipeline {
                 allOf {
                     expression {
                         params.runBuild
-                    }
-                    expression {
-                        buildGood == true
                     }
                 }
             }
