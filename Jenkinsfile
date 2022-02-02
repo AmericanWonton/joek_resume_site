@@ -65,22 +65,6 @@ pipeline {
                 }
             }
         }
-        stage ("whatBranch"){
-            when {
-                branch "dev"
-            }
-            steps {
-                echo 'You are in dev'
-            }
-        }
-        stage ("whatBranch2"){
-            when {
-                branch "master"
-            }
-            steps{
-                echo 'You are in master'
-            }
-        }
         /* Debug for stuff */
         stage ("merge-buildtesting"){
             steps {
@@ -89,7 +73,12 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
                         // the code here can access $pass and $user
                         sh 'git status'
+                        sh 'git fetch'
+                        sh 'git pull'
                         sh 'git checkout master'
+                        sh 'git fetch'
+                        sh 'git pull'
+                        sh 'git checkout dev'
                         sh 'git fetch'
                         sh 'git pull'
                         sh 'git branch'
