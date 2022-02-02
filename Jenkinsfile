@@ -177,6 +177,9 @@ pipeline {
                         sh 'git fetch'
                         sh 'git pull'
                         sh 'git branch'
+                        /* Might need this... */
+                        git config --global user.email "jbkeller0303@gmail.com"
+                        git config --global user.name "AmericanWonton"
                         sh 'git merge dev'
                         sh 'git push origin master'
                     }
