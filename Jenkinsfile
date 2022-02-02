@@ -84,7 +84,7 @@ pipeline {
                         sh 'git merge dev'
                         echo 'We got the merge done'
                         /* sh 'git push origin master' */
-                        sh 'git push https://AmericanWonton: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@github.com/AmericanWonton/joek_resume_site.git'
+                        sh 'git push https://AmericanWonton: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@github.com/AmericanWonton/joek_resume_site.git'
                     }
                 }
             }
@@ -189,7 +189,7 @@ pipeline {
                         sh 'git merge dev'
                         echo 'We got the merge done'
                         /* sh 'git push origin master' */
-                        sh 'git push https://AmericanWonton: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@github.com/AmericanWonton/joek_resume_site.git'
+                        sh 'git push https://AmericanWonton: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@github.com/AmericanWonton/joek_resume_site.git'
                     }
                 }
             }
