@@ -89,6 +89,10 @@ pipeline {
             }
             steps{
                 echo "Golang App starting Testing"
+                withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                    // the code here can access $pass and $user
+                    echo 'git status'
+                }
                 script {
                     withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
                         sh 'go version'
