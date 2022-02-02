@@ -72,7 +72,7 @@ pipeline {
                 echo 'You are in dev'
             }
         }
-        stage ("whatBranch"){
+        stage ("whatBranch2"){
             when {
                 branch "master"
             }
