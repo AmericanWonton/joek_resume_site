@@ -1,6 +1,6 @@
 def gv //Need this to declare our groovy script into a variable under 'init'
 def dockerapp //Needed for our docker build
-def buildGood = "false"
+def buildGood = false
 
 pipeline {
     //agent any //Run this on ANY Jenkins Server
