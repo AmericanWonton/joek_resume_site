@@ -64,13 +64,20 @@ pipeline {
                 }
             }
         }
+        stage ("whatBranch"){
+            when {
+                branch "dev"
+            }
+            steps {
+                echo 'You are in dev'
+            }
+        }
         stage("test"){
             /* This is an example when clause; this works when the expressions defined inside are true */
             when {
                 expression {
                     params.executeTests
                 }
-                branch "dev*"
             }
             steps{
                 echo "Golang App starting Testing"
