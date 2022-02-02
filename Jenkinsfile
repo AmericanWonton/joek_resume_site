@@ -64,6 +64,14 @@ pipeline {
                 }
             }
         }
+        stage ("whatBranch"){
+            when {
+                branch "dev"
+            }
+            steps {
+                echo 'You are in dev'
+            }
+        }
         stage("test"){
             /* This is an example when clause; this works when the expressions defined inside are true */
             when {
@@ -73,6 +81,7 @@ pipeline {
             }
             steps{
                 echo "Golang App starting Testing"
+                echo "Also we are in dev"
                 script {
                     withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
                         sh 'go version'
