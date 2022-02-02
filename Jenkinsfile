@@ -62,8 +62,6 @@ pipeline {
                 script {
                     gv = load "./jenkinsscripts/script.groovy"
                 }
-                /* Need to write a pem key file and folder for us to work in */
-
             }
         }
         stage("test"){
