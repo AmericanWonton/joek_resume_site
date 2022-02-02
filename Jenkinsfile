@@ -1,7 +1,13 @@
 def gv //Need this to declare our groovy script into a variable under 'init'
+def dockerapp //Needed for our docker build
 
 pipeline {
-    agent any //Run this on ANY Jenkins Server
+    //agent any //Run this on ANY Jenkins Server
+    agent any
+    tools {
+        //Docker Tooling
+        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' '18.09'
+    }
     //This is used to define environmental variables; they can be used in any stage!
     environment {
         NEW_VERSION = '1.1' //Test variable, you would get this from your code usually
@@ -9,9 +15,19 @@ pipeline {
         It's in the 'credentials binding' plug-in you need installed. It takes the ID you made as refference.
         This is just one way of doing it...you can also use the 'withCredentials()' wrapper,
         (see the deploy section)  */
-        //SERVER_CREDENTIALS = credentials('test-file-cred')
         DOCKER_CREDENTIALS = credentials('dockerLogin')
         GIT_LOGIN = credentials('gitLogin')
+        SERVER_SSH_CREDS = credentials('basic-SSH')
+        //Used for app creds
+        AW_CLIENTID = credentials('AW_CLIENTID')
+        AW_CLIENT_SECRET = credentials('AW_CLIENT_SECRET')
+        AW_ACCESS_TOKEN = credentials('AW_ACCESS_TOKEN')
+        AW_REFRESHTOKEN = credentials('AW_REFRESHTOKEN')
+        //Used for Resume SSH
+        RESUME_IP_ADDRESS = credentials('resume-server-ip-address')
+        RESUME_SERVER_PRIVATE = credentials('private-resume-key')
+        RESUME_SECRET_FILE = credentials('resume_secret_file')
+        RESUME_ENV_FILE = credentials('resume_env_file')
         //RESUME_PEM = credentials('resume-private-key')
         GO111MODULE = 'on' //Used from Go Plugin; kind of messing up go modules
         CGO_ENABLED=0
@@ -41,46 +57,10 @@ pipeline {
             }
             steps{
                 echo 'Params have been initialized...'
-                echo 'Beginning Production deployment...'
-                //writeFile(file: "./jenkinsscripts/script.groovy", text: "")
+                echo 'Begining Dev Deployment...'
                 /* This is how we load our groovy scripts into Jenkins */
                 script {
                     gv = load "./jenkinsscripts/script.groovy"
-                }
-                /* Need to write a pem key file and folder for us to work in */
-                
-                dir ('security'){
-                    echo 'Writing our pem file'
-                    /* We'll need to make this more secure later */
-                    
-                }
-                
-            }
-        }
-        stage("build"){
-            when {
-                expression {
-                    params.runBuild
-                }
-            }
-            steps{
-                echo "building the golang applicaiton"
-                /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
-                script {
-                    dir ('jenkinsscripts') {
-                        sh 'dockerbuild.sh'
-                    }
-                }
-            }
-            post{
-                always{
-                    echo "Finished building golang application"
-                }
-                success{
-                    echo "Golang app built successfully"
-                }
-                failure{
-                    echo "Golang app build un-successfully"
                 }
             }
         }
@@ -105,20 +85,27 @@ pipeline {
                                 sh 'rm -f go.mod'
                                 //sh 'go mod init'
                                 sh 'go mod init github.com/AmericanWonton/joek_resume_site'
-                                sh 'go build'
                                 sh 'go mod tidy'
                                 sh 'go mod vendor'
+                                sh 'go build'
                             } else {
                                 echo 'Creating new go.mod file'
                                 //sh 'go mod init'
                                 sh 'go mod init github.com/AmericanWonton/joek_resume_site'
-                                sh 'go build'
                                 sh 'go mod tidy'
                                 sh 'go mod vendor'
+                                sh 'go build'
                             }
                         }
                         dir('testing'){
+                            //This is binary testing
                             sh 'go test -v'
+                            echo 'Binary testing complete. Now running in Docker container'
+                            //This is docker testing
+                            //Login into my docker account, pass creds
+                            sh('sudo docker login --username $DOCKER_CREDENTIALS_USR --password $DOCKER_CREDENTIALS_PSW')
+                            sh ('sudo make dockerbuildandpushtest')
+                            echo 'Docker testing complete'
                         }
                     }
                 }
@@ -135,6 +122,39 @@ pipeline {
                 }
             }
         }
+        stage("build"){
+            when {
+                expression {
+                    params.runBuild
+                }
+            }
+            steps{
+                echo "building the golang applicaiton"
+                /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
+                script {
+                    withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]){
+                        dir ('project') {
+                            echo 'building go project...'
+                            sh 'make gobuild'
+                            echo 'go project built successfully. Building with Docker...'
+                            sh 'sudo make dockerbuild'
+                            echo 'Successfully built dockerbuild'
+                        }
+                    }
+                }
+            }
+            post{
+                always{
+                    echo "Finished building golang application in docker"
+                }
+                success{
+                    echo "Golang app built successfully"
+                }
+                failure{
+                    echo "Golang app build un-successfully"
+                }
+            }
+        }
         stage("deploy"){
             /* This would be a good place to pass credentials to a server, for building on a dev machine, 
             or SSH into a dev machine */
@@ -146,17 +166,34 @@ pipeline {
             steps{
                 echo "Deploying Golang App"
                 echo "Deploying vesrion ${params.TEST_PARAMETER}"
-                //echo "Here is our server credentials: ${SERVER_CREDENTIALS}" //This is insecure, you get a warning
-                /* You can also use this. It takes object Syntax, from Groovy.
-                Passes in the Username and password you defined in Jenkins Admin.
-                It then stores the Username you define in USER and password in PWD  */
+                //Start by building and pushing to DockerHub
+                script {
+                    withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]){
+                        dir ('project') {
+                            //Login into my docker account, pass creds
+                            sh('sudo docker login --username $DOCKER_CREDENTIALS_USR --password $DOCKER_CREDENTIALS_PSW')
+                            //Build and push built image to Dockerhub
+                            sh 'sudo make dockerbuildandpush'
+                            echo 'Successfully built dockerbuild'
+                        }
+                    }
+                }
             }
             post{
                 always{
                     echo "Finished Deploying Golang App"
                 }
                 success{
-                    echo "Golang App Succeeded deploying"
+                    echo "Golang App Succeeded deploying...updating Resume Server with new Docker container"
+                    script {
+                        echo 'Attempting to run our script on server...'
+                        //Add env file
+                        sh 'sudo scp -i $RESUME_SECRET_FILE_PSW $RESUME_ENV_FILE_PSW root@$RESUME_IP_ADDRESS_PSW:~/startUpCronJob'
+                        //Give env file the appropriate permissions
+                        sh 'sudo ssh -t -i $RESUME_SECRET_FILE_PSW root@$RESUME_IP_ADDRESS_PSW \'sudo chmod 777 ~/startUpCronJob/env-creds.list\''
+                        //Run Script
+                        sh 'sudo ssh -t -i $RESUME_SECRET_FILE_PSW root@$RESUME_IP_ADDRESS_PSW \'~/startUpCronJob/resume-update-script.sh\''
+                    }
                 }
                 failure{
                     echo "Golang App failed deploying"
@@ -177,7 +214,6 @@ pipeline {
                 script {
                     //gv.exampleBuildApp() //Print Line
                     gv.examplePingServer() //Ping server
-                    /* Not sure how to do this in groovy with ssh key so I'll do it in here */
                 }
             }
 
@@ -198,11 +234,14 @@ pipeline {
     post{
         always{
             echo "========always========"
+            /* Cleanup Project */
+            cleanWs(cleanWhenNotBuilt: false,
+                    deleteDirs: true,
+                    disableDeferredWipeout: true,
+                    notFailBuild: true)
         }
         success{
             echo "========pipeline executed successfully ========"
-            echo "We shall now run the test-ssh-job"
-            //build job: 'test-ssh-pipeline', parameters: [string(name: 'MY_STRING_PARAM', value: 'Hey, it is the value from our main jenkins')]
         }
         failure{
             echo "========pipeline execution failed========"

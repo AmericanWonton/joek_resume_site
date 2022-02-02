@@ -2,6 +2,8 @@ creds.txt
 creds/creds.txt
 security
 *.pem
-resumekeypair.pem]
+resumekeypair.pem
+#Ignore all creds
 project/env-creds.list
 testing/env-creds.list
+env-creds.list

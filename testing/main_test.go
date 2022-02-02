@@ -35,6 +35,11 @@ func shutdown() {
 	fmt.Printf("Setting up shutdown values/functions...\n")
 }
 
+/* Test Look for Environment example*/
+func TestGetCreds(t *testing.T){
+	intializecreds()
+}
+
 /* Test DIRECTORY EXAMPLE */
 func TestReadFile(t *testing.T) {
 	data, err := ioutil.ReadFile("test-data/test.data")
@@ -44,17 +49,6 @@ func TestReadFile(t *testing.T) {
 	if string(data) != "hello world from test.data" {
 		t.Fatal("String contents do not match expected")
 	}
-}
-
-/* Test logwrite example */
-func TestLogWriter(t *testing.T) {
-	/* Test read */
-	_, err := ioutil.ReadFile("logging/weblog.txt")
-	if err != nil {
-		t.Fatal("Could not open file:\n" + err.Error())
-	}
-	/* Test logwriter write */
-	logWriter("This is a test message")
 }
 
 /* Test HTTP Example */
