@@ -188,6 +188,7 @@ pipeline {
                         /* DEBUG show credentials */
                         sh 'git config user.name'
                         sh 'git config user.email'
+                        sh 'git config remote.origin.url'
                         sh 'git merge dev'
                         sh 'git push origin master'
                     }
