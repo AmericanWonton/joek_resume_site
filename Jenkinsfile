@@ -1,5 +1,6 @@
 def gv //Need this to declare our groovy script into a variable under 'init'
 def dockerapp //Needed for our docker build
+def buildGood = false
 
 pipeline {
     //agent any //Run this on ANY Jenkins Server
@@ -80,12 +81,13 @@ pipeline {
                 echo 'You are in master'
             }
         }
-        stage ("gitActions"){
+        stage ("gitActionsDev"){
             steps{
                 script{
                     withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
                         // the code here can access $pass and $user
                         sh 'git status'
+                        sh 'git checkout dev'
                         sh 'git fetch'
                         sh 'git pull'
                         sh 'git branch'
@@ -145,22 +147,65 @@ pipeline {
                 }
                 success{
                     echo "Golang App Tested Successfully"
+                    script {
+                        buildGood = true
+                    }
                 }
                 failure {
                     echo "Golang App Failed testing"
                 }
             }
         }
+        stage("merge-build"){
+            when {
+                allOf {
+                    expression {
+                        params.runBuild
+                    }
+                    expression {
+                        buildGood == true
+                    }
+                }
+            }
+            steps {
+                /* Merge dev into master and pull down results */
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                        // the code here can access $pass and $user
+                        sh 'git status'
+                        sh 'git checkout master'
+                        sh 'git fetch'
+                        sh 'git pull'
+                        sh 'git branch'
+                        /* Merge Dev into Main */
+                        sh 'git merge dev'
+                        echo 'We got the merge done'
+                        sh 'git push origin master'
+                    }
+                }
+            }
+        }
         stage("build"){
             when {
-                expression {
-                    params.runBuild
+                allOf {
+                    expression {
+                        params.runBuild
+                    }
                 }
             }
             steps{
                 echo "building the golang applicaiton"
                 /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
                 script {
+                    /* checkout to main branch */
+                    withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                        // the code here can access $pass and $user
+                        sh 'git status'
+                        sh 'git checkout master'
+                        sh 'git fetch'
+                        sh 'git pull'
+                        sh 'git branch'
+                    }
                     withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]){
                         dir ('project') {
                             echo 'building go project...'
