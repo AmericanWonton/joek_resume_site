@@ -70,9 +70,11 @@ pipeline {
                 expression {
                     params.executeTests
                 }
+                branch "dev*"
             }
             steps{
                 echo "Golang App starting Testing"
+                echo "Also we are in dev"
                 script {
                     withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]) {
                         sh 'go version'
