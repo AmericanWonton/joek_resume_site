@@ -180,7 +180,8 @@ pipeline {
                         /* Merge Dev into Main */
                         sh 'git merge dev'
                         echo 'We got the merge done'
-                        sh 'git push origin master'
+                        /* sh 'git push origin master' */
+                        sh 'git push https://AmericanWonton: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@github.com/AmericanWonton/joek_resume_site.git'
                     }
                 }
             }
