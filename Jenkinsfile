@@ -147,7 +147,9 @@ pipeline {
                 }
                 success{
                     echo "Golang App Tested Successfully"
-                    buildGood = true
+                    script {
+                        buildGood = true
+                    }
                 }
                 failure {
                     echo "Golang App Failed testing"
