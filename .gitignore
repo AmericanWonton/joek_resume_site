@@ -3,3 +3,5 @@ creds/creds.txt
 security
 *.pem
 resumekeypair.pem]
+project/env-creds.list
+testing/env-creds.list
