@@ -73,8 +73,6 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
                         // the code here can access $pass and $user
                         sh 'git status'
-                        sh 'git fetch'
-                        sh 'git pull'
                         sh 'git checkout dev'
                         sh 'git fetch'
                         sh 'git pull'
