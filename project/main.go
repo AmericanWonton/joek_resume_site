@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 	"net/http"
 	"text/template"
 
@@ -122,4 +123,39 @@ func handleRequests() {
 
 func main() {
 	handleRequests()
+}
+
+/* This gets our creds */
+func intializecreds() {
+	
+	//Check to see if ENV Creds are available first
+	_, ok := os.LookupEnv("AW_CLIENTID")
+	if !ok {
+		message := "This ENV Variable is not present: " + "AW_CLIENTID"
+		panic(message)
+	}
+
+	_, ok2 := os.LookupEnv("AW_CLIENT_SECRET")
+	if !ok2 {
+		message := "This ENV Variable is not present: " + "AW_CLIENT_SECRET"
+		panic(message)
+	}
+
+	_, ok3 := os.LookupEnv("AW_ACCESS_TOKEN")
+	if !ok3 {
+		message := "This ENV Variable is not present: " + "AW_ACCESS_TOKEN"
+		panic(message)
+	}
+
+	_, ok4 := os.LookupEnv("AW_REFRESHTOKEN")
+	if !ok4 {
+		message := "This ENV Variable is not present: " + "AW_REFRESHTOKEN"
+		panic(message)
+	}
+
+	theClientID = os.Getenv("AW_CLIENTID")
+	theClientSecret = os.Getenv("AW_CLIENT_SECRET")
+	theAccessToken = os.Getenv("AW_ACCESS_TOKEN")
+	theRefreshToken = os.Getenv("AW_REFRESHTOKEN")
+	fmt.Println("DEBUG: Email Credentials Initialized")
 }

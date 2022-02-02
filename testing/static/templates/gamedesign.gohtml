@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{/* Here is our meta charset and title */}}
+        {{template "meta-title"}}
+        {{/* Here is our pixel density markup */}}
+        {{template "pixel-dense"}}
+        {{/* Here is our FavIcon */}}
+        {{template "fav-icon1"}}
+        {{/* Here are our fonts */}}
+        {{template "fonts1"}}
+        {{/* Here are our Media Query and stylesheets */}}
+        {{template "media-queries"}}
+        {{/* Here is our Javascript or additional code needed */}}
+        {{template "javascript"}}
+    </head>
+    <body>
+        <!--Header Navigation Area-->
+        {{template "header_div"}}
+
+        <!--Main page body-->
+
+        <div class="backgroundpicDivGame">
+            <div class="maindiv">
+                <!--Here's the invitation for folks to check out my games work.-->
+                <h2 class="itsme">Here's what me and my friends have been working on for Game Design!</h2>
+                <br>
+                <!--Here's my work for Trashtronaut-->
+                <div class="quicksphelediv">
+                    <p class="quicksphelep">
+                        This is a game I worked on for the Global Game Jam 2019. I was project lead and Game Programmer.
+                        Trashtronaut is a 2-D survival platformer; collect trash and deposit it in time to return the spaceman home!
+                        Check it out!
+                        <br>
+                        <a href="https://americanwonton.itch.io/trashtronaut" class="headerLinks" target="_blank" alt="Download Trashtronaught">
+                            <i>Download the game here!</i>
+                        </a>
+                        <br>
+                        <a href="https://www.youtube.com/watch?v=XQrjIWdqzXQ"  class="headerLinks" target="_blank" alt="View trailer">
+                            <i>Check out the trailer here!</i>
+                        </a>
+                        <br>
+                        <a href="https://github.com/AmericanWonton/ManAndHouse_GameJam2019" class="headerLinks" target="_blank" alt="Github Trashtronaught link">
+                            <i>Check out the Git as well!</i>
+                        </a>
+                    </p>
+                </div>
+                <!-- Trailer for Trashtronaught -->
+                <div class="videoDiv">
+                    <iframe class="YTVideoPlayer" src="https://www.youtube.com/embed/XQrjIWdqzXQ">
+                    </iframe>
+                </div>
+                <!--Trashtronaught pictures-->
+                <div class="infodiv">
+                    <div id="picHolder">
+                        <div id="transpicHolder" onmouseover="picFader1(0)">
+                            <img id="fadingPic" src="static/img/GameDesign/Trashtronaught_cover_photo.png">
+                        </div>
+                    </div>
+                </div>
+                <!--Here's my section for 'Die-R-Combat'-->
+                <div class="quicksphelediv">
+                    <p class="quicksphelep">
+                        I made a Dice-Combat game called 'Die-R-Combat' in Unreal Engine,(along with an analog version). 
+                        The goal is to keep your knight alive while eliminating your opponent's Knight. Feel free to 
+                        check it out on Windows devices on Itch.io!
+                        <br>
+                        <a href="https://americanwonton.itch.io/die-r-combat" class="headerLinks" target="_blank" alt="Die_R_Combat Link">
+                            <i>Download the game here!</i>
+                        </a>
+                        <a href="https://github.com/search?q=DieRCombat-Phone" class="headerLinks" target="_blank" alt="Die_R_Combat Github Link">
+                            <i>Check out my project on Git!</i>
+                        </a>
+                    </p>
+                </div>
+                <!--Here's our Die-R-Combat Pictures-->
+                <div class="infodiv">
+                    <div id="picHolder">
+                        <div id="transpicHolder1" onmouseover="picFader1(1)">
+                            <img id="fadingPic1" src="static/img/GameDesign/combat_board.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <!--This is the footer content-->
+        {{template "footer_div"}}
+        
+    </body>                    
+</html>

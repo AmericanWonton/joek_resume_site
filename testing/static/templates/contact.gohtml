@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{/* Here is our meta charset and title */}}
+        {{template "meta-title"}}
+        {{/* Here is our pixel density markup */}}
+        {{template "pixel-dense"}}
+        {{/* Here is our FavIcon */}}
+        {{template "fav-icon1"}}
+        {{/* Here are our fonts */}}
+        {{template "fonts1"}}
+        {{/* Here are our Media Query and stylesheets */}}
+        {{template "media-queries"}}
+        {{/* Here is our Javascript or additional code needed */}}
+        {{template "javascript"}}
+    </head>
+    <body>
+        <!--Header Navigation Area-->
+        {{template "header_div"}}
+        
+        <!--Here's the main content section displaying the form-->
+        <div class="backgroundpicDivContact">
+            <div class="maindiv">
+                <!--Here's a large picture of me-->
+                <div class="myfacediv">
+                    <img class="myface" src="static/img/JoeKellerImage2.jpg">
+                </div>
+                <h2 class="itsme">Thanks for visiting, be sure to keep in touch!</h2>
+                <br><br>
+                <!--Form Fillout-->
+                <div class="divform">
+                    <form id="my-form"
+                    name="my-form"
+                    action=""
+                    method="GET"
+                    onload=""
+                    >
+                        <!--Firstname-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    FIRSTNAME:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="firstname" id="inputTextMobileFName"/>
+                            </div>
+                        </div>
+                        <!--Lastname-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    LASTNAME:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="lastname" id="inputTextMobileLName"/>
+                            </div>
+                        </div>
+                        <!--Email-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    EMAIL:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="email" id="inputTextMobileEmail"/>
+                            </div>
+                        </div>
+                        <!--Subject-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    SUBJECT:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="Subject" id="inputTextMobileSubject" maxlength="60"/>
+                            </div>
+                        </div>
+                        <!--Message-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    MESSAGE:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <textarea name="message" form="my-form" id="inputTextMobileMessage"></textarea>
+                            </div>
+                        </div>
+                        <!--Website-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    WEBSITE:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="website" id="inputTextMobileWebsite"/>
+                            </div>
+                        </div>
+                        <!--Phone Number-->
+                        <div class="fieldSection">
+                            <div class="labelDiv">
+                                <p class="labelPText">
+                                    PHONE-NUMBER:
+                                </p>
+                            </div>
+                            <div class="inputDiv">
+                                <input type="text" name="country_code" id="inputTitlePhoneNum1" maxlength=1/>
+                                <input type="text" name="area_code" id="inputTitlePhoneNum2" maxlength=3/>
+                                <input type="text" name="phonenum_1" id="inputTitlePhoneNum3" maxlength=3/>
+                                <input type="text" name="phonenum_2" id="inputTitlePhoneNum4" maxlength=4/>
+                            </div>
+                        </div>
+                        <!--Submit Button-->
+                        <div class="fieldSection">
+                            <input type="button" id="my-form-button" value="Submit" onclick="submitEmail()">
+                        </div>
+                    </form>
+                </div>
+                <!-- My contact info section -->
+                <div class="what_doing_container">
+                    <p class="quicksphelep">
+                        Joseph Keller
+                    </p>
+                    <p class="quicksphelep">
+                        <img class="infoimg" src="static/img/svg/phone_blackspace.svg"
+                        style="border-radius: 50%;">
+                        314-322-8594
+                    </p>
+                    <p class="quicksphelep"><img class="infoimg" src="static/img/svg/gmail.svg">
+                        jbkeller0303@gmail.com</p>
+                    <p class="quicksphelep"> <a href="https://www.linkedin.com/in/josephbk/" class="headerLinks" target="_blank" alt="Linkedin">
+                        <img class="infoimg" src="static/img/svg/LI-In-Bug.svg">
+                        https://www.linkedin.com/in/josephbk/
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!--This is the footer content-->
+        {{template "footer_div"}}
+
+        <!--This is used for sending emails with AJAX-->
+        <script>
+            window.addEventListener("DOMContentLoaded", function() {
+    
+                // get the form elements defined in your form HTML above
+                
+                var form = document.getElementById("my-form");
+                var button = document.getElementById("my-form-button");
+                var status = document.getElementById("my-form-status");
+    
+                // Success and Error functions for after the form is submitted
+                
+                function success() {
+                    form.reset();
+                    //button.style = "display: none ";
+                    //status.innerHTML = "Thanks!";
+                    alert("Thanks for reaching out! You can hear from me soon!");
+                }
+    
+                function error() {
+                    form.reset();
+                }
+    
+                // handle the form submission event
+    
+                form.addEventListener("submit", function(ev) {
+                    //If 0, all the fields are okay, send the email
+                    /* Come back to this later! 
+                    if (isEmailValid() === 0){
+                        ev.preventDefault();
+                        var data = new FormData(form);
+                        ajax(form.method, form.action, data, success, error);
+                    } else {
+                        //If a value is returned that is NOT 0, there's a problem, clear the field and
+                        //print the error. 
+                        error();
+                    }
+                    */
+                    ev.preventDefault();
+                    var data = new FormData(form);
+                    ajax(form.method, form.action, data, success, error);
+                });
+            });
+            
+            // helper function for sending an AJAX request
+    
+            function ajax(method, url, data, success, error) {
+                var xhr = new XMLHttpRequest();
+                xhr.open(method, url);
+                xhr.setRequestHeader("Accept", "application/json");
+                xhr.onreadystatechange = function() {
+                if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                if (xhr.status === 200) {
+                    success(xhr.response, xhr.responseType);
+                } else {
+                    error(xhr.status, xhr.response, xhr.responseType);
+                }
+                };
+                xhr.send(data);
+            }
+        </script>
+
+        {{/* This might be needed to make our form work right */}}
+        <script type="text/javascript">
+            setHosting({{.Host}});
+        </script>
+        
+    </body>                    
+</html>

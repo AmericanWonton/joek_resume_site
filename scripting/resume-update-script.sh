@@ -22,7 +22,6 @@ function logger ()
 date=$(date '+%Y-%m-%d')
 ADATE=$date
 FULLFILENAME="startupLogger-$ADATE.log"
-#FULLFILEPATH="/home/joek2/go-workspace/src/learnrapp/external-project-resources/startupScripts/$FULLFILENAME"
 FULLFILEPATH="/root/startUpCronJob/logging/$FULLFILENAME"
 
 echo $ADATE
@@ -35,17 +34,18 @@ AMESSAGE="We are starting the startupscript for today: $ADATE"
 logger $AMESSAGE $FULLFILEPATH $ADATE
 
 #Update some stuff
-sudo apt update -y && sudo apt upgrade -y
-sudo apt-get update -y && sudo apt-get upgrade -y
-sudo apt autoremove -y
+sudo apt update -y && sudo apt upgrade -y >> $FULLFILEPATH 2>&1
+sudo apt-get update -y && sudo apt-get upgrade -y >> $FULLFILEPATH 2>&1
+sudo apt autoremove -y >> $FULLFILEPATH 2>&1
 
 #See if docker containers are running; if they are, stop and delete them
-sudo docker kill $(docker ps -q)
-sudo docker rm -f $(docker ps -a -q)
-sudo docker rmi $(docker images -q) -f
+sudo docker kill resume-proj >> $FULLFILEPATH 2>&1
+#sudo docker kill $(docker ps -q) >> FULLFILEPATH 2>&1
+sudo docker rm -f $(docker ps -a -q) >> $FULLFILEPATH 2>&1
+sudo docker rmi $(docker images -q) -f >> $FULLFILEPATH 2>&1
 
 #Use Docker Credentials
-sudo docker login --username americanwonton --password peanutdoggydoo111
+sudo docker login --username $AW_DOCKER_UNAME --password $AW_DOCKER_PWORD
 #Pull all relevant docker images
 sudo docker pull americanwonton/resumeproj:latest
 
@@ -53,4 +53,9 @@ sudo docker pull americanwonton/resumeproj:latest
 #Careful sleep
 sleep 5
 #Run the Resume Docker Container
-sudo docker run -d -p 3000:80 americanwonton/resumeproj
+sudo docker run --env-file /root/startUpCronJob/env-creds.list \
+--name resume-proj \
+-d -p 3000:80 americanwonton/resumeproj \
+>> $FULLFILEPATH 2>&1
+#Careful sleep
+sleep 3
