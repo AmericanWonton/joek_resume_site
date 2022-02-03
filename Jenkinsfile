@@ -18,6 +18,7 @@ pipeline {
         (see the deploy section)  */
         DOCKER_CREDENTIALS = credentials('dockerLogin')
         GIT_LOGIN = credentials('gitLogin')
+        AW_GITGENERALTOKEN = credentials('git-general-token')
         SERVER_SSH_CREDS = credentials('basic-SSH')
         //Used for app creds
         AW_CLIENTID = credentials('AW_CLIENTID')
@@ -62,43 +63,6 @@ pipeline {
                 /* This is how we load our groovy scripts into Jenkins */
                 script {
                     gv = load "./jenkinsscripts/script.groovy"
-                }
-            }
-        }
-        stage ("whatBranch"){
-            when {
-                branch "dev"
-            }
-            steps {
-                echo 'You are in dev'
-            }
-        }
-        stage ("whatBranch2"){
-            when {
-                branch "master"
-            }
-            steps{
-                echo 'You are in master'
-            }
-        }
-        /* Debug for stuff */
-        stage ("merge-buildtesting"){
-            steps {
-                /* Merge dev into master and pull down results */
-                script {
-                    withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                        // the code here can access $pass and $user
-                        sh 'git status'
-                        sh 'git checkout master'
-                        sh 'git fetch'
-                        sh 'git pull'
-                        sh 'git branch'
-                        /* Merge Dev into Main */
-                        sh 'git merge dev'
-                        echo 'We got the merge done'
-                        /* sh 'git push origin master' */
-                        sh 'git push https://AmericanWonton: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@github.com/AmericanWonton/joek_resume_site.git'
-                    }
                 }
             }
         }
@@ -177,36 +141,6 @@ pipeline {
                 }
             }
         }
-        stage("merge-build"){
-            when {
-                allOf {
-                    expression {
-                        params.runBuild
-                    }
-                    expression {
-                        buildGood == true
-                    }
-                }
-            }
-            steps {
-                /* Merge dev into master and pull down results */
-                script {
-                    withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                        // the code here can access $pass and $user
-                        sh 'git status'
-                        sh 'git checkout master'
-                        sh 'git fetch'
-                        sh 'git pull'
-                        sh 'git branch'
-                        /* Merge Dev into Main */
-                        sh 'git merge dev'
-                        echo 'We got the merge done'
-                        /* sh 'git push origin master' */
-                        sh 'git push https://AmericanWonton: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@github.com/AmericanWonton/joek_resume_site.git'
-                    }
-                }
-            }
-        }
         stage("build"){
             when {
                 allOf {
@@ -219,14 +153,22 @@ pipeline {
                 echo "building the golang applicaiton"
                 /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
                 script {
-                    /* checkout to main branch */
+                    /* The Dev checks should have passed; merge code into master, then push*/
                     withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                        withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
                         // the code here can access $pass and $user
                         sh 'git status'
+                        sh 'git checkout dev'
+                        sh 'git fetch'
+                        sh 'git pull'
                         sh 'git checkout master'
                         sh 'git fetch'
                         sh 'git pull'
                         sh 'git branch'
+                        /* Merge Dev into Main */
+                        sh 'git merge dev'
+                        /* sh 'git push origin master' */
+                        sh 'git push https://$GIT_LOGIN_USR:$AW_GITGENERALTOKEN_PSW@github.com/$GIT_LOGIN_USR/joek_resume_site.git'
                     }
                     withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]){
                         dir ('project') {
