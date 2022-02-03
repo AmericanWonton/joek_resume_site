@@ -18,6 +18,7 @@ pipeline {
         (see the deploy section)  */
         DOCKER_CREDENTIALS = credentials('dockerLogin')
         GIT_LOGIN = credentials('gitLogin')
+        AW_GITGENERALTOKEN = credentials('git-general-token')
         SERVER_SSH_CREDS = credentials('basic-SSH')
         //Used for app creds
         AW_CLIENTID = credentials('AW_CLIENTID')
@@ -84,7 +85,7 @@ pipeline {
                         sh 'git merge dev'
                         echo 'We got the merge done'
                         /* sh 'git push origin master' */
-                        sh 'git push https://AmericanWonton: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@github.com/AmericanWonton/joek_resume_site.git'
+                        sh 'git push https://$GIT_LOGIN_USR:$AW_GITGENERALTOKEN_PSW@github.com/$GIT_LOGIN_USR/joek_resume_site.git'
                     }
                 }
             }
@@ -189,7 +190,7 @@ pipeline {
                         sh 'git merge dev'
                         echo 'We got the merge done'
                         /* sh 'git push origin master' */
-                        sh 'git push https://AmericanWonton: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@github.com/AmericanWonton/joek_resume_site.git'
+                        sh 'git push https://$GIT_LOGIN_USR:$AW_GITGENERALTOKEN_PSW@github.com/$GIT_LOGIN_USR/joek_resume_site.git'
                     }
                 }
             }
