@@ -273,10 +273,12 @@ pipeline {
         always{
             echo "========always========"
             /* Cleanup Project */
+            /* Not needed for now
             cleanWs(cleanWhenNotBuilt: false,
                     deleteDirs: true,
                     disableDeferredWipeout: true,
                     notFailBuild: true)
+            */
         }
         success{
             echo "========pipeline executed successfully ========"
