@@ -147,6 +147,9 @@ pipeline {
                     expression {
                         params.runBuild
                     }
+                    expression {
+                        buildGood == true
+                    }
                 }
             }
             steps{
