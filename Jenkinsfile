@@ -66,30 +66,6 @@ pipeline {
                 }
             }
         }
-        /* Debug for stuff */
-        stage ("merge-buildtesting"){
-            steps {
-                /* Merge dev into master and pull down results */
-                script {
-                    withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                        // the code here can access $pass and $user
-                        sh 'git status'
-                        sh 'git checkout dev'
-                        sh 'git fetch'
-                        sh 'git pull'
-                        sh 'git checkout master'
-                        sh 'git fetch'
-                        sh 'git pull'
-                        sh 'git branch'
-                        /* Merge Dev into Main */
-                        sh 'git merge dev'
-                        echo 'We got the merge done'
-                        /* sh 'git push origin master' */
-                        sh 'git push https://$GIT_LOGIN_USR:$AW_GITGENERALTOKEN_PSW@github.com/$GIT_LOGIN_USR/joek_resume_site.git'
-                    }
-                }
-            }
-        }
         stage ("gitActionsDev"){
             steps{
                 script{
@@ -165,36 +141,6 @@ pipeline {
                 }
             }
         }
-        stage("merge-build"){
-            when {
-                allOf {
-                    expression {
-                        params.runBuild
-                    }
-                    expression {
-                        buildGood == true
-                    }
-                }
-            }
-            steps {
-                /* Merge dev into master and pull down results */
-                script {
-                    withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                        // the code here can access $pass and $user
-                        sh 'git status'
-                        sh 'git checkout master'
-                        sh 'git fetch'
-                        sh 'git pull'
-                        sh 'git branch'
-                        /* Merge Dev into Main */
-                        sh 'git merge dev'
-                        echo 'We got the merge done'
-                        /* sh 'git push origin master' */
-                        sh 'git push https://$GIT_LOGIN_USR:$AW_GITGENERALTOKEN_PSW@github.com/$GIT_LOGIN_USR/joek_resume_site.git'
-                    }
-                }
-            }
-        }
         stage("build"){
             when {
                 allOf {
@@ -207,14 +153,22 @@ pipeline {
                 echo "building the golang applicaiton"
                 /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
                 script {
-                    /* checkout to main branch */
+                    /* Dev tests should have passed, merge to master and push results,
+                    then build */
                     withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
                         // the code here can access $pass and $user
                         sh 'git status'
+                        sh 'git checkout dev'
+                        sh 'git fetch'
+                        sh 'git pull'
                         sh 'git checkout master'
                         sh 'git fetch'
                         sh 'git pull'
                         sh 'git branch'
+                        /* Merge Dev into Main */
+                        sh 'git merge dev'
+                        /* sh 'git push origin master' */
+                        sh 'git push https://$GIT_LOGIN_USR:$AW_GITGENERALTOKEN_PSW@github.com/$GIT_LOGIN_USR/joek_resume_site.git'
                     }
                     withEnv(["GOROOT=${root}", "PATH+GO=${root}/bin"]){
                         dir ('project') {
