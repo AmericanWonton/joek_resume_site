@@ -153,9 +153,9 @@ pipeline {
                 echo "building the golang applicaiton"
                 /* USE DOUBLE QUOTES SO IT'S COMPATIBLE WITH GROOVY! */
                 script {
-                    /* The Dev checks should have passed; merge code into master, then push*/
+                    /* Dev tests should have passed, merge to master and push results,
+                    then build */
                     withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                        withCredentials([usernamePassword(credentialsId: 'gitLogin', passwordVariable: 'pass', usernameVariable: 'user')]) {
                         // the code here can access $pass and $user
                         sh 'git status'
                         sh 'git checkout dev'
