@@ -27,6 +27,6 @@ FROM alpine:latest AS production
 #Copy the contents of the builder stage into this app directory
 COPY --from=builder /app .
 #Expose port 80
-EXPOSE 80
+EXPOSE 8080
 #Run the executable,(which is whatever name you gave it in the previous step)
 CMD ["./main"]

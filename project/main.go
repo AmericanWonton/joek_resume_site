@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
 	"net/http"
+	"os"
 	"text/template"
 
 	"github.com/gorilla/mux"
@@ -17,7 +17,7 @@ var template1 *template.Template
 
 func init() {
 	//Initialize Port
-	port = "4040"
+	port = "3000"
 	//Initialize template
 	template1 = template.Must(template.ParseGlob("./static/templates/*"))
 	//Initalize Emails with Credentials
@@ -127,7 +127,7 @@ func main() {
 
 /* This gets our creds */
 func intializecreds() {
-	
+
 	//Check to see if ENV Creds are available first
 	_, ok := os.LookupEnv("AW_CLIENTID")
 	if !ok {
