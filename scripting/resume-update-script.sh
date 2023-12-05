@@ -24,33 +24,32 @@ ADATE=$date
 FULLFILENAME="startupLogger-$ADATE.log"
 FULLFILEPATH="/root/startUpCronJob/logging/$FULLFILENAME"
 
-echo $ADATE
-echo $FULLFILENAME
-echo $FULLFILEPATH
+#Call logger to create the file if it dosen't exist
+AMESSAGE="We are starting the startupscript for today: $ADATE"
+logger $AMESSAGE $FULLFILEPATH $ADATE
+
+echo $ADATE | tee -a $FULLFILEPATH
+echo $FULLFILENAME | tee -a $FULLFILEPATH
+echo $FULLFILEPATH | tee -a $FULLFILEPATH
 
 AW_DOCKER_UNAME="americanwonton"
 AW_DOCKER_PWORD="peanutdoggydoo111"
 
-
-#Call Logger for debug print to start out with
-AMESSAGE="We are starting the startupscript for today: $ADATE"
-logger $AMESSAGE $FULLFILEPATH $ADATE
-
 #Update some stuff
-sudo apt update -y && sudo apt upgrade -y >> $FULLFILEPATH 2>&1
-sudo apt-get update -y && sudo apt-get upgrade -y >> $FULLFILEPATH 2>&1
-sudo apt autoremove -y >> $FULLFILEPATH 2>&1
+sudo apt update -y && sudo apt upgrade -y | tee -a $FULLFILEPATH
+sudo apt-get update -y && sudo apt-get upgrade -y | tee -a $FULLFILEPATH
+sudo apt autoremove -y | tee -a $FULLFILEPATH
 
 #See if docker containers are running; if they are, stop and delete them
-sudo docker kill resume-proj >> $FULLFILEPATH 2>&1
+sudo docker kill resume-proj | tee -a $FULLFILEPATH
 #sudo docker kill $(docker ps -q) >> FULLFILEPATH 2>&1
-sudo docker rm -f $(docker ps -a -q) >> $FULLFILEPATH 2>&1
-sudo docker rmi $(docker images -q) -f >> $FULLFILEPATH 2>&1
+sudo docker rm -f $(docker ps -a -q) | tee -a $FULLFILEPATH
+sudo docker rmi $(docker images -q) -f | tee -a $FULLFILEPATH
 
 #Use Docker Credentials
-sudo docker login --username $AW_DOCKER_UNAME --password $AW_DOCKER_PWORD
+sudo docker login --username $AW_DOCKER_UNAME --password $AW_DOCKER_PWORD | tee -a $FULLFILEPATH
 #Pull all relevant docker images
-sudo docker pull americanwonton/resumeproj:latest
+sudo docker pull americanwonton/resumeproj:latest | tee -a $FULLFILEPATH
 
 #Run docker containers with their unique envioronment listings
 #Careful sleep
@@ -59,6 +58,6 @@ sleep 5
 sudo docker run --env-file /root/startUpCronJob/env-creds.list \
 --name resume-proj \
 -d -p 3000:80 americanwonton/resumeproj \
->> $FULLFILEPATH 2>&1
+| tee -a $FULLFILEPATH
 #Careful sleep
-sleep 3
+sleep 3 | tee -a $FULLFILEPATH
