@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #This writes any output into a logfile in this same directory
 function logger ()
@@ -27,6 +27,9 @@ FULLFILEPATH="/root/startUpCronJob/logging/$FULLFILENAME"
 echo $ADATE
 echo $FULLFILENAME
 echo $FULLFILEPATH
+
+AW_DOCKER_UNAME="americanwonton"
+AW_DOCKER_PWORD="peanutdoggydoo111"
 
 
 #Call Logger for debug print to start out with

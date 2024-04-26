@@ -23,6 +23,8 @@ dockerbuildandpush:
 	docker tag resumeproj americanwonton/resumeproj
 	docker push americanwonton/resumeproj
 dockerrun:
-	docker run -it -p 80:80 resumeproj
+	docker run -it -p 80:8080 resumeproj
 dockerrundetached:
-	docker run -d -p 80:80 resumeproj
+	docker run -d -p 80:8080 resumeproj
+dockerrunadvancedwindows:
+	docker run --env-file /d/goworkspace/src/resume_site_deployment/joek_resume_site/project/security/env-creds.env --name resume-proj -d -p 8080:3000 americanwonton/resumeproj

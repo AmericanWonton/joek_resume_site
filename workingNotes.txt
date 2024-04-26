@@ -109,4 +109,9 @@ ssh -i /d/goworkspace/src/resume_site_deployment/joek_resume_site/security/resum
 
 scp -i /home/joek/go/src/joek_resume_site/joek_resume_site/security/resumekeypair.pem resume-update-script.sh ubuntu@ec2-3-129-15-243.us-east-2.compute.amazonaws.com:
 
+or this:
+scp /home/joek2/go-workspace/src/resume-project/joek_resume_site/project/env-creds.list root@164.92.127.223:/root/startUpCronJob/
+
 Not sure what we did to bypass all that security garbage...all I did was make a new EC2 and make EVERYTHING open...
+
+docker exec -it CONTAINER_NAME
