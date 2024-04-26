@@ -26,5 +26,7 @@ dockerrun:
 	docker run -it -p 80:8080 resumeproj
 dockerrundetached:
 	docker run -d -p 80:8080 resumeproj
+dockerrunadvancedlinux:
+	docker run --env-file home/joek2/go-workspace/src/resume-project/joek_resume_site/project/security/env-creds.env --name resume-proj -d -p 8080:3000 americanwonton/resumeproj
 dockerrunadvancedwindows:
 	docker run --env-file /d/goworkspace/src/resume_site_deployment/joek_resume_site/project/security/env-creds.env --name resume-proj -d -p 8080:3000 americanwonton/resumeproj
