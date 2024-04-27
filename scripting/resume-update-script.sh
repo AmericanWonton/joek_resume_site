@@ -19,7 +19,7 @@ function logger ()
 }
 
 #Get Current Date as a format for files
-date=$(date '+%Y-%m-%d')
+date=$(date '+%Y-%m-%d_%H-%m-%S')
 ADATE=$date
 FULLFILENAME="startupLogger-$ADATE.log"
 FULLFILEPATH="/root/startUpCronJob/logging/$FULLFILENAME"
@@ -42,6 +42,7 @@ sudo apt-get update -y && sudo apt-get upgrade -y >> $FULLFILEPATH 2>&1
 sudo apt autoremove -y >> $FULLFILEPATH 2>&1
 
 #See if docker containers are running; if they are, stop and delete them
+sudo docker conatiner kill resume-proj >> $FULLFILEPATH 2>&1
 sudo docker kill resume-proj >> $FULLFILEPATH 2>&1
 #sudo docker kill $(docker ps -q) >> FULLFILEPATH 2>&1
 sudo docker rm -f $(docker ps -a -q) >> $FULLFILEPATH 2>&1
@@ -58,7 +59,7 @@ sleep 5
 #Run the Resume Docker Container
 sudo docker run --env-file /root/startUpCronJob/env-creds.list \
 --name resume-proj \
--d -p 3000:80 americanwonton/resumeproj \
+-d -p 3000:3000 americanwonton/resumeproj \
 >> $FULLFILEPATH 2>&1
 #Careful sleep
 sleep 3
