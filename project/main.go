@@ -7,6 +7,8 @@ import (
 	"os"
 	"text/template"
 
+	"gopkg.in/yaml.v3"
+
 	"github.com/gorilla/mux"
 )
 
@@ -15,14 +17,25 @@ var port string //Port String
 /* TEMPLATE DEFINITION BEGINNING */
 var template1 *template.Template
 
+type Config struct {
+	Email struct {
+		AW_CLIENTID string `yaml:"AW_CLIENTID"`
+		AW_CLIENT_SECRET string `yaml:"AW_CLIENT_SECRET"`
+		AW_ACCESS_TOKEN string `yaml:"AW_ACCESS_TOKEN"`
+		AW_REFRESHTOKEN string `yaml:"AW_REFRESHTOKEN"`
+		MY_EMAIL_ADDRESS string `yaml:"MY_EMAIL_ADDRESS"`
+		MY_BACKUP_EMAIL string `yaml:"MY_BACKUP_EMAIL"`
+		MY_EMAIL_PASSWORD string `yaml:"MY_EMAIL_PASSWORD"`
+	} `yaml:"Email"`
+}
+
 func init() {
 	//Initialize Port
 	port = "3000"
 	//Initialize template
 	template1 = template.Must(template.ParseGlob("./static/templates/*"))
 	//Initalize Emails with Credentials
-	intializecreds()
-	OAuthGmailService() //Initialize Gmail Services
+	getCredsYaml() //Get Creds from a Yaml file
 }
 
 //Handles the Index page
@@ -125,37 +138,31 @@ func main() {
 	handleRequests()
 }
 
-/* This gets our creds */
-func intializecreds() {
+/* This gets our Creds from a yaml file */
+func getCredsYaml() { 
+	fmt.Printf("We will be getting creds with yaml rn...\n")
 
-	//Check to see if ENV Creds are available first
-	_, ok := os.LookupEnv("AW_CLIENTID")
-	if !ok {
-		message := "This ENV Variable is not present: " + "AW_CLIENTID"
-		panic(message)
+	// Open the YAML file
+	file, err := os.Open("security/creds.yaml")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	// Decode the YAML file
+	decoder := yaml.NewDecoder(file)
+	var config Config
+	err = decoder.Decode(&config)
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	_, ok2 := os.LookupEnv("AW_CLIENT_SECRET")
-	if !ok2 {
-		message := "This ENV Variable is not present: " + "AW_CLIENT_SECRET"
-		panic(message)
-	}
-
-	_, ok3 := os.LookupEnv("AW_ACCESS_TOKEN")
-	if !ok3 {
-		message := "This ENV Variable is not present: " + "AW_ACCESS_TOKEN"
-		panic(message)
-	}
-
-	_, ok4 := os.LookupEnv("AW_REFRESHTOKEN")
-	if !ok4 {
-		message := "This ENV Variable is not present: " + "AW_REFRESHTOKEN"
-		panic(message)
-	}
-
-	theClientID = os.Getenv("AW_CLIENTID")
-	theClientSecret = os.Getenv("AW_CLIENT_SECRET")
-	theAccessToken = os.Getenv("AW_ACCESS_TOKEN")
-	theRefreshToken = os.Getenv("AW_REFRESHTOKEN")
-	fmt.Println("DEBUG: Email Credentials Initialized")
+	//Mongo and Email Creds
+	theClientID = config.Email.AW_CLIENTID
+	theClientSecret = config.Email.AW_CLIENT_SECRET
+	theAccessToken = config.Email.AW_ACCESS_TOKEN
+	theRefreshToken = config.Email.AW_REFRESHTOKEN
+	myemailAddress = config.Email.MY_EMAIL_ADDRESS
+	myemailBKPAddress = config.Email.MY_BACKUP_EMAIL
+	myEmailPassword = config.Email.MY_EMAIL_PASSWORD
 }
