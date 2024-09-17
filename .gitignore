@@ -7,3 +7,4 @@ resumekeypair.pem
 project/env-creds.list
 testing/env-creds.list
 *env-creds.list*
+project/security/creds.yaml
